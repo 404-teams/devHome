@@ -64,4 +64,11 @@ API.saveDataForCdnToDataBase = function(req,res){
     DB.sendDataToDataBase(req.body)
    .then (res.send('all good'));
   }
+
+  API.getEachUserCdnData = function(req,res){
+    DB.eachUserCdnData(req.query, req.params.user_id)
+    .then (res.send('all good'));
+  }
+
+
   module.exports = API;

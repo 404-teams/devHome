@@ -24,11 +24,17 @@ DB.addUser = function(userInput){
 DB.sendDataToDataBase = function(data){
     let {name,latest,version,description,author,filename,user_id} = data;
     let SQL='INSERT INTO cdns (name,latest,version,description,author,filename,user_id) VALUES ($1,$2,$3,$4,$5,$6,$7);';
-    let safeValues = [name,latest,version,description,author,filename,user_id];
+    let safeValues = [name,latest,version,description,author,filename,Number(user_id)];
   return client.query(SQL,safeValues);
 }
 
 
+DB.eachUserCdnData = function(data,id){
+  let {name,latest,version,description,author,filename} = data;
+  let SQL='SELECT * FROM cdns SET name=$1 ,latest=$2 ,version=$3 ,description=$4,author=$5,filename=$6 WHERE user_id=$7;';
+  let safeValues = [name,latest,version,description,author,filename,Number(id)];
+  return client.query(SQL,safeValues);
+}
 
 client
   .connect()
