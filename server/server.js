@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3030;
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
  
-// parse application/json
+// parse application/json 
 app.use(bodyParser.json())
 
 app.use(express.static('./public'));
@@ -28,13 +28,25 @@ app.use(methodOverride('_method'));
 
 app.set('view engine', 'ejs');
 
+
 // routs :-
 app.get('/questions',queFunctions.getAllQue)
 app.get('/question',queFunctions.getQue)
 app.get('/addQue',queFunctions.addQue)
 app.post('/addNewQ',queFunctions.addNewQ)
 app.post('/addAns:id',queFunctions.addAns)
-app.use((req, res, next) => {
-  res.status(404).send("Sorry can't find that!");
-});
+
+
+app.get('/cdns',API.cdnFunction);
+app.get('/cdns/search' , API.searchOfCdn);
+app.post('/cdns/save' , API.saveDataForCdnToDataBase);
+app.get('/cdns/user/:user_id' , API.getEachUserCdnData);
+app.post('/signup',API.signup)
+
+
+app.get('/login/create',API.login)
+
+
+app.use(API.error);
+
 app.listen(PORT, () => console.log('hear from port: ' + PORT));
