@@ -1,24 +1,28 @@
 const jwt = require('jsonwebtoken');
-const Auth = {};
-Auth.makeToken = function (user) {
-  return jwt.sign({ user ,expiresIn:'30s' }, 'devhome'); 
+
+/// this function to verify the user token
+module.exports = (req, res, next) => {
+  try {
+    // take the baerer auth from the header
+    const bearerHeader = req.headers.authorization;
+    // check if there is a value
+    if (typeof bearerHeader !== 'undefined') {
+      /// take the token from the header
+      let decodedToken = bearerHeader.split(' ');
+      let token = decodedToken[1];
+      ///// verify the token that its not expired and take the id user from it
+      const userData = jwt.verify(token, 'devhome');
+      //// check if the user is the same for the request
+      if (userData.id === Number(req.params.id)) {
+        //// allow the process
+        next();
+      } else {
+        res.send('not the same user');
+      }
+    }
+  } catch {
+    res.status(401).json({
+      error: new Error('Invalid request!')
+    });
+  }
 };
-
-// module.exports = (req, res, next) => {
-//   try {
-//     const token = req.headers.authorization.split(' ')[1];
-//     const decodedToken = jwt.verify(token, 'RANDOM_TOKEN_SECRET');
-//     const userId = decodedToken.userId;
-//     if (req.body.userId && req.body.userId !== userId) {
-//       throw 'Invalid user ID';
-//     } else {
-//       next();
-//     }
-//   } catch {
-//     res.status(401).json({
-//       error: new Error('Invalid request!')
-//     });
-//   }
-// };
-
-module.exports = Auth;

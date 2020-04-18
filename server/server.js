@@ -34,7 +34,7 @@ app.get('/',API.homePage);
 app.get('/jobs/search',API.goToSearchPage);
 app.get('/jobs',API.searchJobResult);
 app.post('/jobs/save',API.savedJobs);
-app.get('/jobs/user/:user_id',API.eachUserJob);
+app.get('/jobs/user/:id',API.eachUserJob);
 
 // -------------end of jobs route------------------
 
@@ -49,7 +49,7 @@ app.post('/addAns:id',queFunctions.addAns)
 app.get('/cdns',API.cdnFunction);
 app.get('/cdns/search' , API.searchOfCdn);
 app.post('/cdns/save' , API.saveDataForCdnToDataBase);
-app.get('/cdns/user/:user_id' , API.getEachUserCdnData);
+app.get('/cdns/user/:id' , API.getEachUserCdnData);
 app.post('/signup',API.signup)
 
 
