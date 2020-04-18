@@ -26,7 +26,12 @@ app.use(methodOverride('_method'));
 
 app.set('view engine', 'ejs');
 
+
+app.get('/cdns',API.cdnFunction);
+app.get('/cdns/search' , API.searchOfCdn)
+
 app.post('/signup',API.signup)
+
 
 app.use(API.error);
 app.listen(PORT, () => console.log('hear from port: ' + PORT));
