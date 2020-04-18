@@ -30,6 +30,7 @@ DB.sendDataToDataBase = function(data){
 
 
 
+
 client
   .connect()
   .then(() => console.log('connected'))
