@@ -1,5 +1,18 @@
 const Object = {};
 
+
+
+Object.Cdn = function (val){
+    this.name= val.name;
+    this.latest = val.latest;
+    this.version=val.version;
+    this.description=val.description;
+    this.author=val.author;
+    this.filename=val.filename;
+    this.keywords=val.keywords;
+}
+
+
 Object.user = function(obj){
     this.username=obj.username;
     this.email=obj.email;
@@ -11,3 +24,4 @@ Object.user = function(obj){
 
 
 module.exports = Object;
+
