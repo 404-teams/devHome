@@ -21,6 +21,32 @@ DB.addUser = function(userInput){
       
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 client
   .connect()
   .then(() => console.log('connected'))
