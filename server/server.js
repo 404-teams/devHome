@@ -14,8 +14,9 @@ const queFunctions = require('./queFunctions')
 const PORT = process.env.PORT || 3030;
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
- 
+
 // parse application/json 
+
 app.use(bodyParser.json())
 
 app.use(express.static('./public'));
@@ -28,6 +29,14 @@ app.use(methodOverride('_method'));
 
 app.set('view engine', 'ejs');
 
+//------------------ jobs route ------------------
+app.get('/',API.homePage);
+app.get('/jobs/search',API.goToSearchPage);
+app.get('/jobs',API.searchJobResult);
+app.post('/jobs/save',API.savedJobs);
+app.get('/jobs/user/:user_id',API.eachUserJob);
+
+// -------------end of jobs route------------------
 
 // routs :-
 app.get('/questions',queFunctions.getAllQue)
