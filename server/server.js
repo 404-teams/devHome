@@ -27,7 +27,9 @@ app.use(methodOverride('_method'));
 app.set('view engine', 'ejs');
 
 app.get('/cdns',API.cdnFunction);
-app.get('/cdns/search' , API.searchOfCdn)
+app.get('/cdns/search' , API.searchOfCdn);
+app.post('/cdns/save' , API.saveDataForCdnToDataBase);
+
 
 app.use((req, res, next) => {
   res.status(404).send("Sorry can't find that!");

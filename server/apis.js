@@ -38,3 +38,8 @@ function searchResult(search){
     })
 })
 }
+
+API.saveDataForCdnToDataBase = function(req,res){
+    DB.sendDataToDataBase(req.body)
+   .then (res.send('all good'));
+  }
