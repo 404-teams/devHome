@@ -96,7 +96,7 @@ API.saveDataForCdnToDataBase = function(req,res){
   }
 
   API.getEachUserCdnData = function(req,res){
-    DB.eachUserCdnData(req.query, req.params.user_id)
+    DB.eachUserCdnData(req.query, req.params.id)
     .then (res.send('all good'));
   }
 
@@ -148,7 +148,7 @@ API.savedJobs=function(req,res){
 
 // function to show the saved jibs for each user 
 API.eachUserJob =function(req,res){
-  DB.getEachUserJobFromDb( req.params.user_id)
+  DB.getEachUserJobFromDb( req.params.id)
     .then((data) => {
         res.send(data);
     }) 
