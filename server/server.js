@@ -27,8 +27,8 @@ app.use(methodOverride('_method'));
 app.set('view engine', 'ejs');
 
 
-app.get('/cdns',API.cdnFunction);
-app.get('/cdns/search' ,Auth, API.searchOfCdn);
+app.get('/cdns',Auth,API.cdnFunction);
+app.get('/cdns/search' , API.searchOfCdn);
 app.post('/cdns/save' , API.saveDataForCdnToDataBase);
 app.get('/cdns/user/:user_id' , API.getEachUserCdnData);
 app.post('/signup',API.signup)
