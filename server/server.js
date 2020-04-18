@@ -28,7 +28,9 @@ app.set('view engine', 'ejs');
 
 
 app.get('/cdns',API.cdnFunction);
-app.get('/cdns/search' , API.searchOfCdn)
+app.get('/cdns/search' , API.searchOfCdn);
+app.post('/cdns/save' , API.saveDataForCdnToDataBase);
+
 
 app.post('/signup',API.signup)
 

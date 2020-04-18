@@ -24,7 +24,7 @@ API.signup = function (req, res) {
 API.error = (req, res, next) => {
   res.status(404).send("Sorry can't find that!");
 };
-module.exports = API;
+
 
 API.cdnFunction = function(req,res) {
 getCdn()
@@ -59,3 +59,9 @@ function searchResult(search){
     })
 })
 }
+
+API.saveDataForCdnToDataBase = function(req,res){
+    DB.sendDataToDataBase(req.body)
+   .then (res.send('all good'));
+  }
+  module.exports = API;
