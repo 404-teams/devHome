@@ -1,26 +1,28 @@
 const jwt = require('jsonwebtoken');
 
+/// this function to verify the user token
 module.exports = (req, res, next) => {
   try {
+    // take the baerer auth from the header
     const bearerHeader = req.headers.authorization;
+    // check if there is a value
     if (typeof bearerHeader !== 'undefined') {
+      /// take the token from the header
       let decodedToken = bearerHeader.split(' ');
       let token = decodedToken[1];
+      ///// verify the token that its not expired and take the id user from it
       const userData = jwt.verify(token, 'devhome');
-      res.send({ userData, key: 'jfdslkj' });
+      //// check if the user is the same for the request
+      if (userData.id === Number(req.params.id)) {
+        //// allow the process
+        next();
+      } else {
+        res.send('not the same user');
+      }
     }
-    //   const userId = decodedToken.userId;
-    //   if (req.body.userId && req.body.userId !== userId) {
-    //     throw 'Invalid user ID';
-    //   } else {
-    //     next();
-    //   }
   } catch {
     res.status(401).json({
-      error: new Error('Invalid request!'),
-      jkdlsjf: 'kdsjfkj',
+      error: new Error('Invalid request!')
     });
   }
 };
-
-// module.exports = Auth;
