@@ -1,11 +1,20 @@
 'use strict';
 require('dotenv').config();
 const express = require('express');
+const bodyParser = require('body-parser');
 const cors = require('cors');
 const methodOverride = require('method-override');
 const app = express();
-const client = require('./database');
+const DB = require('./database');
+const API = require('./apis')
+const Obj = require('./constructor')
+const Auth = require('./authorization')
 const PORT = process.env.PORT || 3030;
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+ 
+// parse application/json
+app.use(bodyParser.json())
 
 app.use(express.static('./public'));
 
@@ -16,17 +25,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
 app.set('view engine', 'ejs');
-function x(req,res,next){
-  console.log(req.query,'dsfds')
-  next()
-}
-app.get('/', x,(req, res) => {
-  console.log(req.query.token)
-  res.render('layout/header',{data:JSON.stringify([{'h':1},{'h':1}])});
-});
-
-
-
 
 
 app.use((req, res, next) => {
