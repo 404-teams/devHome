@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+
+<body>
+    
+    <h2>Search Results</h2>
+    <% job.forEach((val)=> { %>
+    <div >
+        <img  src=<%=val.company_logo %><br>
+        <p >type : <%=val.type %></p>
+        <p >company : <%=val.company %></p>
+        <p >company_url : <%=val.company_url %></p>
+        <p >location : <%=val.location %></p>
+        <p >title : <%=val.title %></p>
+        <p >job Description  : <%= val.description %></p>
+        
+    </div>
+    <% }); %>
+    
+
+</body>
+
+</html>
