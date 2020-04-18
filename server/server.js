@@ -31,7 +31,7 @@ app.set('view engine', 'ejs');
 
 //------------------ jobs route ------------------
 app.get('/',API.homePage);
-app.get('/jobs/search',API.goToSearchPage);
+app.get('/jobs/search',API.goToSearchPage); ///////////// rework on it
 app.get('/jobs',API.searchJobResult);
 app.post('/jobs/save',API.savedJobs);
 app.get('/jobs/user/:id',API.eachUserJob);

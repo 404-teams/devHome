@@ -30,9 +30,9 @@ DB.sendDataToDataBase = function(data){
 
 
 DB.eachUserCdnData = function(data,id){
-  let {name,latest,version,description,author,filename} = data;
-  let SQL='SELECT * FROM cdns SET name=$1 ,latest=$2 ,version=$3 ,description=$4,author=$5,filename=$6 WHERE user_id=$7;';
-  let safeValues = [name,latest,version,description,author,filename,Number(id)];
+  // let {name,latest,version,description,author,filename} = data;
+  let SQL='SELECT * FROM cdns  WHERE user_id=$1;';
+  let safeValues = [Number(id)];
   return client.query(SQL,safeValues);
 }
 
