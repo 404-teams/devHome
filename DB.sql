@@ -9,7 +9,7 @@ CREATE TABLE users
 (
     id SERIAL PRIMARY KEY,
     name VARCHAR(55),
-    email VARCHAR(255),
+    email VARCHAR(255) UNIQUE,
     password VARCHAR(255),
     image VARCHAR(255),
     status VARCHAR(255),

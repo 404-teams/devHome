@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3030;
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
  
-// parse application/json
+// parse application/json 
 app.use(bodyParser.json())
 
 app.use(express.static('./public'));
@@ -26,12 +26,14 @@ app.use(methodOverride('_method'));
 
 app.set('view engine', 'ejs');
 
+
 app.get('/cdns',API.cdnFunction);
 app.get('/cdns/search' , API.searchOfCdn);
 app.post('/cdns/save' , API.saveDataForCdnToDataBase);
 
 
-app.use((req, res, next) => {
-  res.status(404).send("Sorry can't find that!");
-});
+app.post('/signup',API.signup)
+
+
+app.use(API.error);
 app.listen(PORT, () => console.log('hear from port: ' + PORT));
