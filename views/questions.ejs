@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <form action="/questions">
+            <input type="text" name="search">
+            <input type="text" name="filter">
+            <button type="submit">Search</button>
+        </form>
+        <a href="/addQue"><button>Add Question</button></a>
+        <ul>
+                <%queData.forEach((ele)=>{%>
+                <a href="/question?id=<%=ele.id%>"><li><p>title: <%=ele.title%></p></li></a>
+            <%})%>
+        </ul>
+    </main>
+</body>
+</html>
