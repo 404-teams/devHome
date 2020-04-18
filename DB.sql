@@ -15,7 +15,17 @@ CREATE TABLE users
     status VARCHAR(255),
     rank INTEGER
 );
+-- INSERT INTO users (name,email,password,image,status,rank) VALUES ('Abdallah','Abdalla@gmail.com','123456789','url','true',999);
 
+CREATE TABLE tags
+(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(55),
+    description TEXT
+);
+-- INSERT INTO tags (name,description) VALUES ('HTML','Page Structure');
+-- INSERT INTO tags (name,description) VALUES ('Css','Page Design');
+-- INSERT INTO tags (name,description) VALUES ('JS','Page Logic');
 
 CREATE TABLE questions
 (
@@ -23,11 +33,13 @@ CREATE TABLE questions
     user_id INT,
     title VARCHAR(255),
     description TEXT,
-    tags VARCHAR(255),
+    tags VARCHAR(55),
     code TEXT,
     rank INTEGER,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
+
+-- INSERT INTO questions (user_id,title,description,tags,code,rank) VALUES (1,'ask2','hard one','HTML','var=aasdas',999);
 
 CREATE TABLE answers
 (
@@ -42,6 +54,8 @@ CREATE TABLE answers
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE
 );
+
+-- INSERT INTO answers (user_id,question_id,answer,description,code,rank,approved) VALUES (2,1,'hard one','1','var=aasdas',999,true);
 
 
 CREATE TABLE jobs
