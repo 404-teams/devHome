@@ -3,34 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/question.css">
+
     <title>Document</title>
 </head>
 <body>
+    <%- include ('../views/layout/header.ejs') %>
     <main>
         <form action="/question?id=<%=queData[0].que_id%>">
-            <div> 
-                <h1>Question</h1>
-                <p>Title: <%=queData[0].title%></p>
-                <p>Description: <%=queData[0].que_description%></p>
-                <p>Code: <%=queData[0].que_code%></p>
+            <div class="div"> 
+                <h1>Question:</h1>
+                <p id="title" >Title: <%=queData[0].title%></p>
+                <p id="description">Description: <%=queData[0].que_description%></p>
+                <pre id="code">Code: <%=queData[0].que_code%></pre>
             </div>
-            <h1>Answers</h1>
+            
             <% if (queData[0].answer !== null){ %>
-            <div>
+            <div class="div">
+                <h1>Ansers:</h1>
                 <%queData.forEach((ele)=>{%>
-                <p>Answer: <%=ele.answer%></p>
-                <p>Description: <%=ele.ans_description%></p>
-                <p>Code: <%=ele.ans_code%></p>
-                <p>Approved: <%=ele.approved%></p>
-                <p>Rank: <%=ele.ans_rank%></p>
+                <p id="title">Answer: <%=ele.answer%></p>
+                <p id="description">Description: <%=ele.ans_description%></p>
+                <pre id="code">Code: <%=ele.ans_code%></pre>
+                <p id="approved">Approved: <%=ele.approved%></p>
+                <p id="rank">Rank: <%=ele.ans_rank%></p>
                 <%});%>
             </div>
             <%}%>
         </form>
-        <form action="/addAns<%=queData[0].que_id%>" method="POST">
-            <input type="text" name="answer" >
-            <textarea  rows="4" cols="50" name="description" placeholder="description"></textarea>
-            <textarea  rows="4" cols="50" name="code" placeholder="code"></textarea>
+        <form id="form" action="/addAns<%=queData[0].que_id%>" method="POST">
+            <input type="text" name="answer" placeholder="Ansers title" >
+            <textarea  rows="4" cols="50" name="description" placeholder="Description"></textarea>
+            <textarea  rows="4" cols="50" name="code" placeholder="Code"></textarea>
             <button>Add answer</button>
         </form>
             

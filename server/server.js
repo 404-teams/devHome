@@ -39,6 +39,7 @@ app.get('/jobs/user/:id',API.eachUserJob);
 // -------------end of jobs route------------------
 
 // routs :-
+app.get('/',API.homePage);
 app.get('/questions',queFunctions.getAllQue)
 app.get('/question',queFunctions.getQue)
 app.get('/addQue',queFunctions.addQue)
