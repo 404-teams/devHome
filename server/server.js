@@ -39,23 +39,33 @@ app.get('/jobs/user/:id',API.eachUserJob);
 // -------------end of jobs route------------------
 
 // routs :-
+app.get('/',API.homePage);
 app.get('/questions',queFunctions.getAllQue)
 app.get('/question',queFunctions.getQue)
 app.get('/addQue',queFunctions.addQue)
 app.post('/addNewQ',queFunctions.addNewQ)
 app.post('/addAns:id',queFunctions.addAns)
 
+//------------------ CDN route ------------------
 
 app.get('/cdns/search' , API.searchOfCdn);
 app.post('/cdns/save' , API.saveDataForCdnToDataBase);
 app.get('/cdns/user/:id' , API.getEachUserCdnData);
-app.post('/signup',API.signup)
-// app.get('/cdns/:id',Auth,API.cdnFunction);
 
+app.get('/cdns/:id',Auth,API.cdnFunction);
+
+app.post('/signup',API.signup);
+app.get('/signupNewUser', API.creatNewUser);
+
+// -------------end of CDN route------------------
 
 app.post('/login/create',API.login)
 
+
 app.get('/blog',API.blog)
+
+app.get('/login',API.logintest)
+
 
 
 app.use(API.error);

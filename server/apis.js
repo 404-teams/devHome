@@ -9,6 +9,10 @@ const superagent = require('superagent')
 
 const API = {};
 
+API.creatNewUser= function(req,res){
+  res.render('signup');
+}
+
 // this function to signup the new users
 API.signup = function (req, res) {
   let userInput = new Obj.user(req.body);
@@ -55,7 +59,7 @@ API.error = (req, res, next) => {
   res.status(404).send("Sorry can't find that!");
 };
 
-
+// the function that return the data from API server ------------------------------- 
 API.cdnFunction = function(req,res) {
 getCdn()
 .then( results => {
@@ -63,10 +67,12 @@ getCdn()
     // res.render('views/cdns', {cdns:results});
 })
 }
+
+// function to get data from API server ----------------------------------------------
 function getCdn(){
     let url = `https://api.cdnjs.com/libraries?fields=version,description,author,filename,keywords`;
     return superagent.get(url)
-.then(cdnData => {
+    .then(cdnData => {
     return cdnData.body.results.map( val =>{
     return new Obj.Cdn(val) ;
     })
@@ -146,7 +152,7 @@ API.savedJobs=function(req,res){
     })
 }
 
-// function to show the saved jibs for each user 
+// function to show the saved jobs for each user 
 API.eachUserJob =function(req,res){
   DB.getEachUserJobFromDb( req.params.id)
     .then((data) => {
@@ -154,6 +160,10 @@ API.eachUserJob =function(req,res){
     }) 
 }
 
+// function to render the login page 
+API.logintest=function(req,res){
+  res.render('login')
+}
 
 API.blog = function(req,res){
   res.render('pages/blogs')

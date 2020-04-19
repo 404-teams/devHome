@@ -4,19 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+
     <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div>
-                <a href="/jobs/search">search job</a>
+ 
+      <%- include ('../views/layout/header.ejs') %>
 
+    <img class="mainpic" src="https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2019/06/lenguaje-programacion.jpg" alt="">
+
+    <footer>
+        <div class="footer-content">
+
+            <div class="footer-section links">
+                
+                <p id="follow">تابعنا على </p>
+                <div id="links">
+                    <a class="slinks" href="https://web.facebook.com/jo.craft.73"><i class="fab fa-facebook-f"></i></a>
+                    <a class="slinks" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="slinks" href="https://www.instagram.com/jocraft6/"><i class="fab fa-instagram"></i></a>
+                    <a class="slinks" href="#"><i class="fab fa-youtube"></i></a>
+                    <a class="slinks" href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
-        </nav>
+            <div class="footer-section contact-form">
+                <p id="email">
+                    شاركنا برأيك  
+                </p>
+                <br>
+                <form action="" class="newsletter-form">
+                    <input type="submit" class="btn" value="أرسل">
+                    <input type="text" class="txtb" placeholder="أدخل تعليقك">
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            جميع الحقوق محفوظه &copy; | طور بواسطة فريق  404
+        </div>
+    </footer>
 
-    </header>
+
+  
+
 </body>
 
 </html>
