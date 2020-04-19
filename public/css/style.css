@@ -1,10 +1,11 @@
 
 img.logo {
+
+    position: absolute;
+    width: 21%;
+    display: flex;
+    right: 17px;
     height: 20%;
-    width: 23%;
-    /* display: flex; */
-    float: right;
-    margin-right: -3%;
     margin-top: -3.4%;
 }
 a.nav {
@@ -32,7 +33,9 @@ a.navspe:hover {
 }
 header {
     background-color: #123030;
-    padding: 4%;
+
+    padding: 3%;
+
 }
 
 img.unknown {
