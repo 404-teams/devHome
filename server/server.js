@@ -45,13 +45,16 @@ app.get('/addQue',queFunctions.addQue)
 app.post('/addNewQ',queFunctions.addNewQ)
 app.post('/addAns:id',queFunctions.addAns)
 
+//------------------ CDN route ------------------
 
 app.get('/cdns',API.cdnFunction);
 app.get('/cdns/search' , API.searchOfCdn);
 app.post('/cdns/save' , API.saveDataForCdnToDataBase);
 app.get('/cdns/user/:id' , API.getEachUserCdnData);
-app.post('/signup',API.signup)
+app.post('/signup',API.signup);
+app.get('/signupNewUser', API.creatNewUser);
 
+// -------------end of CDN route------------------
 
 app.get('/login/create',API.login)
 
