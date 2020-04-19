@@ -9,6 +9,10 @@ const superagent = require('superagent')
 
 const API = {};
 
+API.creatNewUser= function(req,res){
+  res.render('signup');
+}
+
 // this function to signup the new users
 API.signup = function (req, res) {
   let userInput = new Obj.user(req.body);
@@ -55,7 +59,7 @@ API.error = (req, res, next) => {
   res.status(404).send("Sorry can't find that!");
 };
 
-
+// the function that return the data from API server ------------------------------- 
 API.cdnFunction = function(req,res) {
 getCdn()
 .then( results => {
@@ -63,10 +67,12 @@ getCdn()
     // res.render('views/cdns', {cdns:results});
 })
 }
+
+// function to get data from API server ----------------------------------------------
 function getCdn(){
     let url = `https://api.cdnjs.com/libraries?fields=version,description,author,filename,keywords`;
     return superagent.get(url)
-.then(cdnData => {
+    .then(cdnData => {
     return cdnData.body.results.map( val =>{
     return new Obj.Cdn(val) ;
     })

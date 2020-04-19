@@ -1,0 +1,94 @@
+
+img.logo {
+    height: 20%;
+    width: 23%;
+    /* display: flex; */
+    float: right;
+    margin-right: -3%;
+    margin-top: -3.4%;
+}
+a.nav {
+    color: white;
+    float: left;
+    padding: 1%;
+    text-decoration: none;
+    margin-top: -1%;
+}
+a.navspe {
+    color: white;
+    float: left;
+    padding: 1%;
+    text-decoration: none;
+    margin-top: -1%;
+}
+a.nav:hover {
+    color: white;
+    background-color:  #e2ae8a;;
+}
+
+a.navspe:hover {
+    color: white;
+    background-color:  #e2ae8a;;
+}
+header {
+    background-color: #123030;
+    padding: 4%;
+}
+
+img.unknown {
+    border-radius: 74%;
+    width: 3.5%;
+    float: left;
+    margin-top: -1%;
+}
+h1.mainhed {
+    color: white;
+    font-family: 'Aref Ruqaa', serif;
+    float: right;
+    font-size: 187%;
+    margin-top: -1%;
+}
+
+img.mainpic {
+    height: 407px;
+    width: 100%;
+    margin-top: -1.5%;
+}
+form.signupform {
+    background-color: #123030;
+    width: 20%;
+    padding: 9%;
+    border-radius: 8%;
+    margin-left: 33%;
+    margin-top: 8%;
+}
+
+label.signuplable {
+    float: right;
+    color: white;
+    font-size: 137%;
+    margin: 2% -29% 2% 20%;
+}
+
+input.signupinput {
+    padding: 8%;
+    width: 137%;
+    margin: 5% -25%;
+}
+
+button.signupbutton {
+    width: 105%;
+    padding: 11%;
+    border-radius: 54%;
+    /* height: 91%; */
+    box-shadow: none;
+    border: none;
+    background-color: #3b7c70;
+    color: white;
+    margin-top: 18%;
+    font-size: 171%;
+}
+button.signupbutton:hover{
+    background-color:white ;
+    color: #3b7c70;
+}

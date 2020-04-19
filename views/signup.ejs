@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <%- include ('../views/layout/header.ejs') %>
+    <form class="signupform" action="/signup">
+        <label class="signuplable" for="e-mail">: البريد الإلكتروني</label><br>
+        <input class="signupinput" type="text" name="e-mail" placeholder="أدخل اسمك" required>
+        <label class="signuplable" for="username">: اسم المستخدم</label><br>
+        <input class="signupinput" type="text" name="username" placeholder="أدخل اسمك" required>
+        <label class="signuplable" for="password" >: كلمة المرور</label><br>
+        <input class="signupinput" type="text" name="password" placeholder=" أدخل كلمة المرور" required>
+        <label class="signuplable" for="profileImg" >: صورة شخصية</label><br>
+        <input class="signupinput" type="url" name="profileImg" placeholder="  حمل صورة لك " required>
+        <button class="signupbutton">تسجيل</button>
+    </form>
+</body>
+</html>
