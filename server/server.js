@@ -53,7 +53,8 @@ app.get('/cdns/user/:id' , API.getEachUserCdnData);
 app.post('/signup',API.signup)
 
 
-app.get('/login/create',API.login)
+app.post('/login/create',API.login)
+app.get('/login',API.logintest)
 
 
 app.use(API.error);
