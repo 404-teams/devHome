@@ -152,7 +152,7 @@ API.savedJobs=function(req,res){
     })
 }
 
-// function to show the saved jibs for each user 
+// function to show the saved jobs for each user 
 API.eachUserJob =function(req,res){
   DB.getEachUserJobFromDb( req.params.id)
     .then((data) => {
@@ -160,6 +160,10 @@ API.eachUserJob =function(req,res){
     }) 
 }
 
+// function to render the login page 
+API.logintest=function(req,res){
+  res.render('login')
+}
 
   module.exports = API;
 
