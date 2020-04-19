@@ -41,7 +41,7 @@ API.login = function (req, res) {
         /// create a token for the uer with expires in 1 min and send it back to the clinet side
         let token = jwt.sign(
           { id, email },
-          'devhome',{ expiresIn: 60 }
+          'devhome',{ expiresIn: 120 }
         );
         return res.send(token);
         //// if the user input the wrong password 
@@ -163,6 +163,10 @@ API.eachUserJob =function(req,res){
 // function to render the login page 
 API.logintest=function(req,res){
   res.render('login')
+}
+
+API.blog = function(req,res){
+  res.render('pages/blogs')
 }
 
   module.exports = API;
