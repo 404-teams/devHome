@@ -18,9 +18,13 @@ DB.addUser = function(userInput){
   let SQL = 'INSERT INTO users (name,email,password,image,status,rank) VALUES ($1,$2,$3,$4,$5,$6) RETURNING *'
       let safeValues = [username,email,password,img,status,rank]
      return DB.client.query(SQL,safeValues)
-      
-}
 
+} 
+
+
+//********************************************CDN*******************************************
+
+// this function will add CDN to the DB -------------------------
 DB.sendDataToDataBase = function(data){
     let {name,latest,version,description,author,filename,user_id} = data;
     let SQL='INSERT INTO cdns (name,latest,version,description,author,filename,user_id) VALUES ($1,$2,$3,$4,$5,$6,$7);';
@@ -28,13 +32,14 @@ DB.sendDataToDataBase = function(data){
   return client.query(SQL,safeValues);
 }
 
-
+// this function will get CDN from DB for each user -------------------------
 DB.eachUserCdnData = function(data,id){
   // let {name,latest,version,description,author,filename} = data;
   let SQL='SELECT * FROM cdns  WHERE user_id=$1;';
   let safeValues = [Number(id)];
   return client.query(SQL,safeValues);
 }
+//**********************************************END******************************************
 
 
 // function to add the jobs to database 
