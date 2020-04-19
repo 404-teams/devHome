@@ -1,28 +1,30 @@
 
 img.logo {
     height: 20%;
-    width: 23%;
+    width: 19%;
     /* display: flex; */
     float: right;
     margin-right: -3%;
     margin-top: -3.4%;
 }
 a.nav {
-    color: white;
+    color: #e9e9e9;
     float: left;
     padding: 1%;
     text-decoration: none;
-    margin-top: -1%;
+    margin-top: -2%;
+    font-size: 121%;
 }
 a.navspe {
-    color: white;
+    color: #e9e9e9;
     float: left;
     padding: 1%;
     text-decoration: none;
-    margin-top: -1%;
+    margin-top: -2%;
+    font-size: 121%;
 }
 a.nav:hover {
-    color: white;
+    color: #e9e9e9;
     background-color:  #e2ae8a;;
 }
 
@@ -31,15 +33,15 @@ a.navspe:hover {
     background-color:  #e2ae8a;;
 }
 header {
-    background-color: #123030;
-    padding: 4%;
+    background-color: #560505;
+    padding: 3%;
 }
 
 img.unknown {
     border-radius: 74%;
     width: 3.5%;
     float: left;
-    margin-top: -1%;
+    margin-top: -2%;
 }
 h1.mainhed {
     color: white;
@@ -50,45 +52,71 @@ h1.mainhed {
 }
 
 img.mainpic {
-    height: 407px;
+    height: 528px;
     width: 100%;
     margin-top: -1.5%;
+    opacity: .86;
+    box-shadow: 0px 15px 25px rgba(83, 72, 72, 0.699);
 }
 form.signupform {
     background-color: #123030;
     width: 20%;
-    padding: 9%;
+    padding: 7%;
     border-radius: 8%;
     margin-left: 33%;
-    margin-top: 8%;
+    margin-top: 3%;
+    height: 416px;
 }
-
 label.signuplable {
     float: right;
     color: white;
     font-size: 137%;
-    margin: 2% -29% 2% 20%;
+    margin: 2% -17% -2% 20%;
 }
 
 input.signupinput {
-    padding: 8%;
+    padding: 2%;
     width: 137%;
     margin: 5% -25%;
 }
 
 button.signupbutton {
-    width: 105%;
+    width: 77%;
     padding: 11%;
     border-radius: 54%;
-    /* height: 91%; */
     box-shadow: none;
     border: none;
     background-color: #3b7c70;
     color: white;
-    margin-top: 18%;
+    margin-top: 2%;
     font-size: 171%;
+    margin-left: 11%;
 }
 button.signupbutton:hover{
     background-color:white ;
     color: #3b7c70;
+}
+h2.itroheader {
+    font-size: 265%;
+    color: #777777;
+    margin-top: 13%;
+    margin-bottom: 2%;
+    margin-left: 30%;
+}
+
+div.homeDev {
+    padding: 1%;
+    background-image: url(https://getfreepoint.com/wp-content/uploads/2018/06/Questions-2017_09_28-19_17_30-UTC.jpg);
+    height: 571px;
+    height: 806px;
+    background-size: cover;
+}
+.paragra {
+    width: 60%;
+}
+p.introp {
+    font-size: 168%;
+    text-align: right;
+    color: #777777;
+    padding: 1%;
 }
