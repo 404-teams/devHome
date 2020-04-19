@@ -46,14 +46,16 @@ app.post('/addNewQ',queFunctions.addNewQ)
 app.post('/addAns:id',queFunctions.addAns)
 
 
-app.get('/cdns',API.cdnFunction);
 app.get('/cdns/search' , API.searchOfCdn);
 app.post('/cdns/save' , API.saveDataForCdnToDataBase);
 app.get('/cdns/user/:id' , API.getEachUserCdnData);
 app.post('/signup',API.signup)
+// app.get('/cdns/:id',Auth,API.cdnFunction);
 
 
-app.get('/login/create',API.login)
+app.post('/login/create',API.login)
+
+app.get('/blog',API.blog)
 
 
 app.use(API.error);
