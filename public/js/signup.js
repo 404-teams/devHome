@@ -13,10 +13,21 @@ $("#signupform").submit(function(event){
             alert("هذا المستخدم مُسَجَل")
         }
         else{
-            window.location.assign("http://localhost:3000/");
+            window.location.assign("/");
         }
     })
 
     // console.log(event);
     // console.log( event.target.email.value);
+})
+
+$("#searchs").submit(function(event){
+    event.preventDefault();
+    let search_query = event.target.search.value;
+    $.get("/cdns/search",{search_query},function(results){
+         console.log(results);
+    })
+
+    console.log(event);
+    console.log( event.target.search.value);
 })

@@ -10,19 +10,24 @@
 </head>
 <body>
     <%- include ('../views/layout/header.ejs') %>
+    <main id="signup">
     <form class="signupform" id="signupform">
-        <label class="signuplable" id="email" for="email">: البريد الإلكتروني</label><br>
-        <input class="signupinput" id="email" type="text" name="email" placeholder="أدخل بريدك الإلكتروني" required>
-        <label class="signuplable" id="username" for="username">: اسم المستخدم</label><br>
-        <input class="signupinput" id="username" type="text" name="username" placeholder="أدخل اسمك" required>
-        <label class="signuplable" id="password" for="password" >: كلمة المرور</label><br>
-        <input class="signupinput" id="password" type="password" name="password" placeholder=" أدخل كلمة المرور" required>
-        <label class="signuplable" id="img" for="img" >: صورة شخصية</label><br>
-        <input class="signupinput" id="img" type="url" name="status" placeholder=" حمل صورة لك " >
-        <label class="signuplable" id="status" for="img" >:  الحالة</label><br>
-        <input class="signupinput" id="status" type="url" name="status" placeholder="    الحالة " >
+        <div id="divforform">
+            <label class="signuplable" id="email" for="email">: البريد الإلكتروني</label><br>
+            <input class="signupinput" id="email" type="text" name="email" placeholder="أدخل بريدك الإلكتروني" required>
+            <label class="signuplable" id="username" for="username">: اسم المستخدم</label><br>
+            <input class="signupinput" id="username" type="text" name="username" placeholder="أدخل اسمك" required>
+            <label class="signuplable" id="password" for="password" >: كلمة المرور</label><br>
+            <input class="signupinput" id="password" type="password" name="password" placeholder=" أدخل كلمة المرور" required>
+            <label class="signuplable" id="img" for="img" >: صورة شخصية</label><br>
+            <input class="signupinput" id="img" type="url" name="status" placeholder=" حمل صورة لك " >
+            <label class="signuplable" id="status" for="img" >:  الحالة</label><br>
+            <input class="signupinput" id="status" type="url" name="status" placeholder="    الحالة " >
+        </div>
+        
         <button class="signupbutton">تسجيل</button>
     </form>
+</main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
  <script src="./js/signup.js"></script>
 </body>

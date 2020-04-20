@@ -63,7 +63,7 @@ API.error = (req, res, next) => {
 API.cdnFunction = function(req,res) {
 getCdn()
 .then( results => {
-    res.send({cdns:results});
+    res.render('CDN/cdn',{cdns:results.slice(0,10)});
     // res.render('views/cdns', {cdns:results});
 })
 }
@@ -82,7 +82,7 @@ API.searchOfCdn = function(req,res){
     const search = req.query.search_query;
     searchResult(search)
     .then(results => {
-        res.send({searchCdn:results});
+        res.send({results});
     })
 }
 
