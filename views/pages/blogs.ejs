@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html style="height: 100%;" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/60a3d0faa7.js" crossorigin="anonymous"></script>
+    <style>
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            border-radius: 40px;
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: black;
+            padding: 10px 12px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .navbar a:hover,
+        .dropdown:hover .dropbtn,
+        .dropbtn:focus {
+            background-color: red;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .dropdown1 {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown1 .dropbtn1 {
+            border-radius: 40px;
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: black;
+            padding: 10px 12px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .navbar1 a:hover,
+        .dropdown1:hover .dropbtn1,
+        .dropbtn1:focus {
+            background-color: red;
+        }
+
+        .dropdown-content1 {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content1 a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content1 a:hover {
+            background-color: #ddd;
+        }
+
+        .show1 {
+            display: block;
+        }
+    </style>
+
+    <script id="fontplace" type="x-tmpl-mustache">
+        <form name="place">
+            <select onchange="plChange(event)" >
+                <option value="center">المنتصف</option>
+                <option value="right">يمين</option>
+                <option value="left">يسار</option>
+              </select>
+         <button onclick="finshPlace()">تم</button>   
+    </form>   
+    </script>
+    <script id="position" type="x-tmpl-mustache">
+        <form name="position">
+            <input type="number" name="top"  style="width:50px" onkeyup="elementPostion(event)" onchange="elementPostion(event)" value={{top}} />
+            <label for="">بالطول </label>
+            <input type="number" name="left"  style="width:50px" onkeyup="elementPostion(event)" onchange="elementPostion(event)" value={{left}} />
+            <label for="">بالعرض </label>
+         <button onclick="finshposition()">تم</button>   
+    </form>   
+    </script>
+    <script id="display" type="x-tmpl-mustache">
+        <form name="display">
+            <select onchange="diChange(event)" >
+                <option value="inline-block">كتلة مضمنة</option>
+                <option value="block">كتلة</option>
+                <option value="position">الموقع</option>
+              </select>
+         <button onclick="finshblock()">تم</button>   
+    </form>   
+    </script>
+    <script id="imgsize" type="x-tmpl-mustache">
+        <form name="size">
+            <input type="number" name="width"  style="width:50px" onkeyup="sizechimg(event)" onchange="sizechimg(event)" value={{wsize}} />
+            <label for="">العرض </label>
+            <input type="number" name="height"  style="width:50px" onkeyup="sizechimg(event)" onchange="sizechimg(event)" value={{hsize}} />
+            <label for="">الطول </label>
+         <button onclick="finshSize()">تم</button>   
+    </form>   
+    </script>
+    <script id="fontsize" type="x-tmpl-mustache">
+        <form name="size">
+        <input type="number"  style="width:50px" onkeyup="sizech(event)" onchange="sizech(event)" value={{size}} />
+         <button onclick="finshSize()">تم</button>   
+    </form>   
+    </script>
+    <script id="h1" type="x-tmpl-mustache">
+        <h1 id='{{ids}}' contenteditable="true" style="display: inline-block;width:100%;text-align: right;">.... النص</h1>
+      </script>
+    <script id="img" type="x-tmpl-mustache">
+        <img id='{{ids}}' src="{{img}}"  alt="{{alt}}" style="display: inline-block;width:200px;height:200px">
+      </script>
+    <script id="p" type="x-tmpl-mustache">
+        <p id='{{ids}}' contenteditable="true" style="display: inline-block;width:100%;text-align: right;">.... النص</p>
+      </script>
+    <script id="addimg" type="x-tmpl-mustache">
+        <div id='addItem' class="addItem" style="position:absolute;left=40px">
+            <i onclick="remove()" class="fas fa-skull"></i>
+            <div>
+                <input id="imgurl" onkeypress="return finshImg(event)" type="text" placeholder="url here ....">
+            </div>
+        </div>
+      </script>
+    <script id="colorform" type="x-tmpl-mustache">
+        <form id='formc' style="
+        display: flex;
+        flex-direction: column;
+        width: 5%;
+        position: absolute;
+        top: 125px;
+        left: 33px;
+        background: grey;">
+            <input type="color" id="color" style="background: none; border: 0;"/> 
+            <button>done</button>
+        </form>
+    </script>
+</head>
+
+<body style="height: 100%;">
+
+    <section id="blog" style="background: #ffffff ; min-height: 100%; width: 80%; margin: auto; padding: 5px 0 5px 0 ;">
+        <h1 id="0" class="item" name="text" contenteditable="true" style="font-size: 50px; text-align: center; display: inline-block; width: 100%;">....العنوان</h1>
+        <div name="div" style="width: 200px;">
+        <div id="test" class="dropdown test" style="display: block ! important;">
+            <button class="dropbtn" onclick="myFunction()">
+                <!-- <i class="fa fa-caret-down"></i> -->
+                <i id="" class="fas fa-plus"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+                <a href="#" onclick="addItem('img')">أضف صورة</a>
+                <a href="#" onclick="addItem('p')">أضف نص</a>
+                <a href="#" onclick="addItem('h1')">أضف عنوان</a>
+            </div>
+        </div>
+        <div  class="dropdown1 test">
+            <button class="dropbtn1" onclick="myFunction1()">
+                <!-- <i class="fa fa-caret-down"></i> -->
+                <i class="fas fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content1" id="myDropdown1">
+                <a href="#" onclick="changeColor()">تغير اللون</a>
+                <a href="#" onclick="changeFontSize()"> تغير الحجم الخط</a>
+                <a href="#" onclick="changeAlign()"> تغير التجاه</a>
+                <a href="#" onclick="changeImage()"> حجم الصورة</a>
+                <a href="#" onclick="changeDisplay()">نوع الكتلة</a>
+            </div>
+        </div>
+    </div>
+    </section>
+
+
+
+
+    <!-- <h1>jsfdkljfksdjfkljdfkljkldfsj</h1> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
+    <script src="https://unpkg.com/mustache@latest"></script>
+    <script src="js/blog.js"></script>
+</body>
+
+</html>

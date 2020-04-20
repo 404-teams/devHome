@@ -10,16 +10,25 @@
 </head>
 <body>
     <%- include ('../views/layout/header.ejs') %>
-    <form class="signupform" action="/signup">
-        <label class="signuplable" for="e-mail">: البريد الإلكتروني</label><br>
-        <input class="signupinput" type="text" name="e-mail" placeholder="أدخل اسمك" required>
-        <label class="signuplable" for="username">: اسم المستخدم</label><br>
-        <input class="signupinput" type="text" name="username" placeholder="أدخل اسمك" required>
-        <label class="signuplable" for="password" >: كلمة المرور</label><br>
-        <input class="signupinput" type="text" name="password" placeholder=" أدخل كلمة المرور" required>
-        <label class="signuplable" for="profileImg" >: صورة شخصية</label><br>
-        <input class="signupinput" type="url" name="profileImg" placeholder="  حمل صورة لك " required>
+    <main id="signup">
+    <form class="signupform" id="signupform">
+        <div id="divforform">
+            <label class="signuplable" id="email" for="email">: البريد الإلكتروني</label><br>
+            <input class="signupinput" id="email" type="text" name="email" placeholder="أدخل بريدك الإلكتروني" required>
+            <label class="signuplable" id="username" for="username">: اسم المستخدم</label><br>
+            <input class="signupinput" id="username" type="text" name="username" placeholder="أدخل اسمك" required>
+            <label class="signuplable" id="password" for="password" >: كلمة المرور</label><br>
+            <input class="signupinput" id="password" type="password" name="password" placeholder=" أدخل كلمة المرور" required>
+            <label class="signuplable" id="img" for="img" >: صورة شخصية</label><br>
+            <input class="signupinput" id="img" type="url" name="status" placeholder=" حمل صورة لك " >
+            <label class="signuplable" id="status" for="img" >:  الحالة</label><br>
+            <input class="signupinput" id="status" type="url" name="status" placeholder="    الحالة " >
+        </div>
+        
         <button class="signupbutton">تسجيل</button>
     </form>
+</main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
+ <script src="./js/signup.js"></script>
 </body>
 </html>
