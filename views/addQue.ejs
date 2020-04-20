@@ -5,27 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/questions.css">
     <link rel="stylesheet" href="./css/addQue.css">
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <%- include ('../views/layout/header.ejs') %>
-
-
     <main>
-        <form action="/addNewQ" method="POST">
+        <h1>My Questions</h1>
+        <ul id = 'ul'>
+            <%queData.forEach((ele)=>{%>
+                <a href="/question?id=<%=ele.que_id%>" class="a"><li><p id="p">Title: <%=ele.title%></p></li></a>
+            <%})%>
+        </ul>
+        <h1>Add Question</h1>
+        <form id = 'addQue'>
             <div id="div"> 
-             <input type="text" name="title" placeholder="Title">
-             <input type="text" name="add-tage"placeholder='Add-tage  "Html-Css-JS-NodeJs etc..."'>
+             <input type="text" name="title" placeholder="Title" required>
+             <input type="text" list="tags" name="add-tage"placeholder='Add-tage  "Html-Css-JS-NodeJs etc..."'>
+                <datalist id="tags">
+                    <option value="html">
+                    <option value="css">
+                    <option value="Js">
+                    <option value="Python">
+                    <option value="C#">
+                    <option value="C++">
+                    <option value="Java">
+                    <option value="Ts">
+                    <option value="PHP">
+                </datalist>
              <!-- <input type="textare" name="description"> -->
-             <textarea  rows="4" cols="50" name="description" placeholder="Description"></textarea>
-             <textarea  rows="4" cols="50" name="code" placeholder="Code"></textarea>
-             <button>Add now</button>
-
+             <textarea  rows="4" cols="50" name="description" placeholder="Description" required></textarea>
+             <textarea  rows="4" cols="50" name="code" placeholder="Code" required></textarea>
+             <input type="submit" value="Add now">
             </div>
         </form> 
-            
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
+        <script src="js/addQue.js"></script>
     </main>
 </body>
 </html>
