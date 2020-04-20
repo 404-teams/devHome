@@ -203,7 +203,7 @@ form#searchs {
     transform: scale(1);
     filter: grayscale(0%); */
      transition: 0.7s ease-in-out; 
-    margin: 8% 2% 10% 3%;
+    margin: 8% 1% 10% 3%;
     
 }
 section{
@@ -255,3 +255,11 @@ img.up {
   font-size: 1.2em;
 }
 
+img#rrrr {
+    width: 17%;
+    margin-left: -176px;}
+img#rrr {
+width: 17%;
+margin-right: -184px;
+transform: scaleX(-1);
+}
