@@ -58,7 +58,7 @@ div#links {
     font-size: 27px;
   }
   .slinks:hover{
-    color: rgb(218, 177, 124);
+    color: rgb(130, 138, 175);
   }
   
 
@@ -102,8 +102,8 @@ p#email {
     padding: 8px 30px;
     font-size: 16px;
     color: #f1f1f1;
-    background: #dca48aa1;
-        border: none;
+    background: #7681a9;
+    border: none;
     font-weight: 700;
     outline: none;
     border-radius: 8px;
