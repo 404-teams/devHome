@@ -13,7 +13,7 @@ $("#signupform").submit(function(event){
             alert("هذا المستخدم مُسَجَل")
         }
         else{
-            window.location.assign("http://localhost:3000/");
+            window.location.assign("/");
         }
     })
 
