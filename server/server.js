@@ -48,17 +48,22 @@ app.post('/addAns:id',queFunctions.addAns)
 
 //------------------ CDN route ------------------
 
-app.get('/cdns',API.cdnFunction);
 app.get('/cdns/search' , API.searchOfCdn);
 app.post('/cdns/save' , API.saveDataForCdnToDataBase);
 app.get('/cdns/user/:id' , API.getEachUserCdnData);
+app.get('/cdns',API.cdnFunction);
 app.post('/signup',API.signup);
 app.get('/signupNewUser', API.creatNewUser);
 
 // -------------end of CDN route------------------
 
 app.post('/login/create',API.login)
+
+
+app.get('/blog',API.blog)
+
 app.get('/login',API.logintest)
+
 
 
 app.use(API.error);
