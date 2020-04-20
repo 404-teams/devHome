@@ -15,7 +15,7 @@ CREATE TABLE users
     status VARCHAR(255),
     rank INTEGER
 );
--- INSERT INTO users (name,email,password,image,status,rank) VALUES ('Abdallah','Abdalla@gmail.com','123456789','url','true',999);
+INSERT INTO users (name,email,password,image,status,rank) VALUES ('Abdallah','Abdalla@gmail.com','123456789','url','true',999);
 
 CREATE TABLE tags
 (
@@ -23,9 +23,9 @@ CREATE TABLE tags
     name VARCHAR(55),
     description TEXT
 );
--- INSERT INTO tags (name,description) VALUES ('HTML','Page Structure');
--- INSERT INTO tags (name,description) VALUES ('Css','Page Design');
--- INSERT INTO tags (name,description) VALUES ('JS','Page Logic');
+INSERT INTO tags (name,description) VALUES ('HTML','Page Structure');
+INSERT INTO tags (name,description) VALUES ('Css','Page Design');
+INSERT INTO tags (name,description) VALUES ('JS','Page Logic');
 
 CREATE TABLE questions
 (
@@ -85,4 +85,14 @@ CREATE TABLE cdns
     user_id INT,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
+
+CREATE TABLE blogs 
+(
+    id SERIAL PRIMARY KEY,
+    tittle VARCHAR(255),
+    blog TEXT,
+    user_id INT,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+
+)
 
