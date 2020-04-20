@@ -63,7 +63,7 @@ API.error = (req, res, next) => {
 API.cdnFunction = function(req,res) {
 getCdn()
 .then( results => {
-    res.send({cdns:results});
+    res.render('CDN/cdn',{cdns:results.slice(0,10)});
     // res.render('views/cdns', {cdns:results});
 })
 }
@@ -82,7 +82,7 @@ API.searchOfCdn = function(req,res){
     const search = req.query.search_query;
     searchResult(search)
     .then(results => {
-        res.send({searchCdn:results});
+        res.send({results});
     })
 }
 
@@ -120,23 +120,22 @@ API.goToSearchPage=function(req,res){
 
 // function to show the result of the jobs
 API.searchJobResult = function (req, res) {
-  // console.log('rrrrrrrrrrrr',req.body);
-  // let url = `https://jobs.github.com/positions.json?description=${req.body.description}&location=${req.body.location}&full_time=`;
+  let url = `https://jobs.github.com/positions.json?description=${req.body.description}&location=${req.body.location}&full_time=`;
   // console.log('ssssssssssss',url);
 
-  // if (req.body.type === 'on') {
-  //   url += `true`;
+  if (req.body.type === 'on') {
+    url += `true`;
 
-  // }
-  let url = `https://jobs.github.com/positions.json`;
+  }
+  // let url = `https://jobs.github.com/positions.json`;
   superagent.get(url)
     .then(data => {
       let result = data.body.map(val => {
         return new Obj.Job(val);
       })
       // console.log('rrrrrrrrrrrrrrrrrrr',result);
-      // res.render('jobs/job.ejs', { job: result });
-      res.send(result );
+      res.render('jobs/job.ejs', { job: result.splice(1,10) });
+      // res.send(result.splice(1,10) );
 
 
     })
@@ -148,7 +147,7 @@ API.savedJobs=function(req,res){
   DB.addJobsToDataBase(req.body)
   
     .then((data) => {
-        res.send(data);
+      res.send('done');
     })
 }
 
@@ -159,6 +158,7 @@ API.eachUserJob =function(req,res){
         res.send(data);
     }) 
 }
+
 
 // function to render the login page 
 API.logintest=function(req,res){

@@ -32,7 +32,7 @@ app.set('view engine', 'ejs');
 //------------------ jobs route ------------------
 app.get('/',API.homePage);
 app.get('/jobs/search',API.goToSearchPage); ///////////// rework on it
-app.get('/jobs',API.searchJobResult);
+app.post('/jobs',API.searchJobResult);
 app.post('/jobs/save',API.savedJobs);
 app.get('/jobs/user/:id',API.eachUserJob);
 
@@ -51,9 +51,7 @@ app.post('/addAns:id',queFunctions.addAns)
 app.get('/cdns/search' , API.searchOfCdn);
 app.post('/cdns/save' , API.saveDataForCdnToDataBase);
 app.get('/cdns/user/:id' , API.getEachUserCdnData);
-
-app.get('/cdns/:id',Auth,API.cdnFunction);
-
+app.get('/cdns',API.cdnFunction);
 app.post('/signup',API.signup);
 app.get('/signupNewUser', API.creatNewUser);
 
