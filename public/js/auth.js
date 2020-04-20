@@ -1,4 +1,4 @@
-alert('auth rrrrrrrrrrr');
+
 var newLogin = document.getElementById('login');
 newLogin.addEventListener('submit', function(event){
     event.preventDefault();
@@ -19,3 +19,7 @@ newLogin.addEventListener('submit', function(event){
     
   
    });
+   $('form').submit(function(event){
+    //    event.preventDefault();
+    alert('hi');
+});
