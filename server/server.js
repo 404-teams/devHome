@@ -60,12 +60,14 @@ app.get('/signupNewUser', API.creatNewUser);
 app.post('/login/create',API.login)
 
 
-app.get('/blog',API.blog)
-
+app.get('/blogs',API.showBlogs)
+app.get('/blog/create/:id',API.blog)
 app.get('/login',API.logintest)
 
-
+app.post('/blog/create',API.addBlog)
+app.get('/blog',API.showBlog)
 
 app.use(API.error);
 
 app.listen(PORT, () => console.log('hear from port: ' + PORT));
+ 

@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS questions;
 DROP TABLE IF EXISTS answers;
 DROP TABLE IF EXISTS cdns;
 DROP TABLE IF EXISTS jobs;
+DROP TABLE IF EXISTS blogs;
 
 
 CREATE TABLE users
@@ -91,6 +92,7 @@ CREATE TABLE blogs
     id SERIAL PRIMARY KEY,
     tittle VARCHAR(255),
     blog TEXT,
+    img TEXT,
     user_id INT,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 
