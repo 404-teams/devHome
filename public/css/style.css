@@ -124,8 +124,8 @@ form.signupform {
     width: 20%;
     padding: 9%;
     border-radius: 8%;
-    margin-left: 33%;
-    margin-top: 8%;
+    margin-left: 31%;
+    margin-top: 2%;
 }
 
 label.signuplable {
@@ -136,25 +136,81 @@ label.signuplable {
 }
 
 input.signupinput {
-    padding: 8%;
-    width: 137%;
+    padding: 3%;
+    width: 147%;
     margin: 5% -25%;
 }
 
 button.signupbutton {
     width: 105%;
-    padding: 11%;
+    padding: 3%;
     border-radius: 54%;
-    /* height: 91%; */
     box-shadow: none;
     border: none;
     background-color: #3b7c70;
     color: white;
-    margin-top: 18%;
+    margin-top: 12%;
     font-size: 171%;
+    margin-left: 1%;
 }
 button.signupbutton:hover{
     background-color:white ;
     color: #3b7c70;
 
+}
+
+div#divforform {
+    margin-top: -27%;
+}
+
+.name{
+    padding: 2%;
+    background-color: wheat;
+    margin: 2% 20% 0% 20%;
+    border: 1px solid;
+    border-radius: 60px;
+}
+
+p.cdn {
+    text-align: left;
+    padding: 1%;
+    color: teal;
+    font-size: 117%;
+
+}
+h2.cdn {
+    font-size: 234%;
+    text-align: center;
+    margin-bottom: 2%;
+    color: teal;
+    font-weight: bold;
+}
+.save{  
+    margin-left: 32%;
+    margin-top: 5%;
+    padding: 1%;
+    width: 37%;
+    box-shadow: none;
+    border: 1px solid brown;
+    border-radius: 38px;
+    color: white;
+    background-color: teal;
+    font-size: 112%;
+}
+
+input#search {
+    padding: 2%;
+    width: 67%;
+}
+
+button.searchbutton {
+    width: 21%;
+    padding: 1%;
+    border: solid .5px darkred;
+    border-radius: 24px;
+    font-size: 110%;
+}
+form#searchs {
+    margin: 2% 25% 2% 29%;
+    padding: 2%;
 }

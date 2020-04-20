@@ -51,9 +51,7 @@ app.post('/addAns:id',queFunctions.addAns)
 app.get('/cdns/search' , API.searchOfCdn);
 app.post('/cdns/save' , API.saveDataForCdnToDataBase);
 app.get('/cdns/user/:id' , API.getEachUserCdnData);
-
-app.get('/cdns/:id',Auth,API.cdnFunction);
-
+app.get('/cdns',API.cdnFunction);
 app.post('/signup',API.signup);
 app.get('/signupNewUser', API.creatNewUser);
 
