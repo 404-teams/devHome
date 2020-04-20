@@ -234,7 +234,6 @@ img.up {
   content:attr(data-text);
   transition: 0.7s ease-in-out;
   border-radius: 25px;
-  padding-top: 130px;
 }
 .profile:hover:after{
   top: 0;
