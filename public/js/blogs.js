@@ -14,28 +14,26 @@ $(function () {
     $(rendered).appendTo('.containrbtn');
   }
   for (let i = 0; i < 10; i++) {
+    console.log(blogs[i])
     var template = document.getElementById('blog').innerHTML;
     var rendered = Mustache.render(template, {
       img: blogs[i].img,
       tittle: blogs[i].tittle,
       name: blogs[i].name,
       id: blogs[i].id,
+      des:blogs[i].des
     });
     $('.containrbtn').before(rendered);
   }
 });
 function chengeblogs(i) {
-  console.log('sfdsf');
   $('.containr').remove();
   i *= 10;
   let end = i + 10;
   for (; i < end; i++) {
-    console.log(blogs[i].id);
     if (blogs[i] === undefined) {
-      console.log('dsfds');
       // break;
     } else {
-      console.log('sfdjlkj');
       var template = document.getElementById('blog').innerHTML;
       var rendered = Mustache.render(template, {
         img: blogs[i].img,
@@ -51,11 +49,43 @@ function chengeblogs(i) {
 
 function clicked(id) {
   console.log(typeof id);
-  window.location.href = '/blog?id=' + id;
+  window.location.href = '/blog?id=' + 10;
 }
 
 function addBlog() {
-  console.log('sdlkfjlkdsjf');
+    $.ajax({
+        url: '/blog/create/'+1,
+        // data: { signature: authHeader },
+        type: "GET",
+        headers:{ 'authorization' : `bearer ${localStorage.token}` },
+        success: function(data) {
+          if(data === 'not the same user'){
+            alert('not the same user')
+          }
+          else if(data === 'please login or singup'){
+            alert('login please')
+          }else{
+
+            window.location.href ='/blog/create/jj'
+          }
+          },
+          error:function(err){
+            console.log(err)
+          }
+          
+     });
+    // $.ajaxSetup({
+    //     headers:{
+    //        'Authorization': "Bearer "+localStorage.token
+    //     }
+    //  });
+    // $.get('/blog/create/'+10,function(data){
+    //     console.log('jskfljdskfljdksljflk')
+    //     if(data === true){
+    //         window.location.href ='/blog/create/true'
+    //     }
+    // })
 }
 
 localStorage.id = 1;
+console.log(localStorage.token)

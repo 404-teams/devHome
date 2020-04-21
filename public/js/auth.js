@@ -18,6 +18,7 @@ newLogin.addEventListener('submit', function(event){
     
   
    });
+
    function myFunction() {
     var x = document.getElementById("Password");
     if (x.type === "password") {

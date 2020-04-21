@@ -1,5 +1,4 @@
 'use strict';
-
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 let ids = 1;
@@ -21,12 +20,12 @@ window.addEventListener('click', function (e) {
 });
 // Close the dropdown if the user clicks outside of it
 window.onclick = function (e) {
-  if (!e.target.matches('.dropbtn')) {
-    var myDropdown = document.getElementById('myDropdown');
-    if (myDropdown.classList.contains('show')) {
-      myDropdown.classList.remove('show');
-    }
-  }
+  // if (!e.target.matches('.dropbtn')) {
+  //   var myDropdown = document.getElementById('myDropdown');
+  //   if (myDropdown.classList.contains('show')) {
+  //     myDropdown.classList.remove('show');
+  //   }
+  // }
 };
 function myFunction1() {
   document.getElementById('myDropdown1').classList.toggle('show1');
@@ -173,16 +172,17 @@ function done() {
   $('#blog').find('*[contenteditable]').attr('contenteditable', 'false');
   $('button[name="doneall"]').remove();
   $('div').remove();
- let blog =  $('#blog')[0].outerHTML;
+  let blog = $('#blog')[0].outerHTML;
   let tittle = $('#blog').find('h1')[0].textContent;
-
-  let img = $('#blog').find('img').length > 0
-    ? $('#blog').find('img')[0].src
-    : 'https://www.knstek.com/wp-content/uploads/2012/12/default_blog_large.png';
-    $.post('/blog/create',{blog,tittle,img,id:1},function(s){
-        window.location.href = "/blog?id="+s.id
-    })
-
+  let des =
+    $('#blog').find('p').length > 0 ? $('#blog').find('p')[0].textContent : '';
+  let img =
+    $('#blog').find('img').length > 0
+      ? $('#blog').find('img')[0].src
+      : 'https://www.knstek.com/wp-content/uploads/2012/12/default_blog_large.png';
+  $.post('/blog/create', { blog, tittle, img, des, id: 1 }, function (s) {
+    window.location.href = '/blog?id=' + s.id;
+  });
 }
 var menu = document.getElementById('menu').innerHTML;
 $(menu).appendTo('#blog');
