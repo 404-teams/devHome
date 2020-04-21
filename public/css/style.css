@@ -74,6 +74,21 @@ img.mainpic {
     opacity: .86;
     box-shadow: 0px 15px 25px rgba(83, 72, 72, 0.699);
 }
+h2.itroheader {
+    font-size: 265%;
+    color: #777777;
+    margin-top: 13%;
+    margin-bottom: 2%;
+    margin-left: 30%;
+}
+
+div.homeDev {
+    padding: 1%;
+    background-image: url(https://getfreepoint.com/wp-content/uploads/2018/06/Questions-2017_09_28-19_17_30-UTC.jpg);
+    height: 571px;
+    height: 806px;
+    background-size: cover;
+}
 /* form.signupform {
     background-color: #123030;
     width: 20%;
@@ -115,20 +130,8 @@ button.signupbutton:hover{
     background-color:white ;
     color: #3B7C70;
 }
-h2.itroheader {
-    font-size: 265%;
-    color: #777777;
-    margin-top: 13%;
-    margin-bottom: 2%;
-    margin-left: 30%;
-}
-div.homeDev {
-    padding: 1%;
-    background-image: url(https://getfreepoint.com/wp-content/uploads/2018/06/Questions-2017_09_28-19_17_30-UTC.jpg);
-    height: 571px;
-    height: 806px;
-    background-size: cover;
-}
+
+
 .paragra {
     width: 60%;
 }
