@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/cdn.css">
+    <link rel="stylesheet" href="./css/footer.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
   
 </head>
@@ -29,13 +30,14 @@
                         <div class="flex-row">
                             <div class="flex-col">
                                 <%cdns.forEach((val)=>{ %>
-                                <div class="card-view" style="border: 1px solid var(--theme-color1);">
+                                <div class="card-view"  style="border: 1px solid var(--theme-color1);">
                                     <div class="r-layout">
                                        
                                         <div class="r-content">
-                                          <div class="s-tag"><%=val.version%></div>
-                                       
-                                          <h4 class="title"><%= val.name%></h4>
+                                         <div class="nameOfCards">
+                                            <h4 class="title"><%= val.name%></h4>
+                                         </div>
+                                          
                                 
                                           <p>
                                             <%=val.latest%>
@@ -58,11 +60,19 @@
                                           <p class="color-text">
                                             <%=val.author%>
                                           </p>
+                                         
+                                          <div class="s-tag"><%=val.version%></div>
+
                                           
-                                          
+                                      
                                         </div>
+                                        <div class="buttdiv">
+                                            <button class="save">حفظ</button>
+                                          </div>
+                                          
                                     </div>
-                                    <button class="save">حفظ</button>
+                                   
+                                    
                                 </div>
                                
                                 <%})%> 
@@ -76,6 +86,37 @@
     
         </main>
     </div>
+ 
+        <footer>
+            <div class="footer-content">
+    
+                <div class="footer-section links">
+                    
+                    <p id="follow">تابعنا على </p>
+                    <div id="links">
+                        <a class="slinks" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="slinks" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="slinks" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="slinks" href="#"><i class="fab fa-youtube"></i></a>
+                        <a class="slinks" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section contact-form">
+                    <p id="email">
+                        شاركنا برأيك  
+                    </p>
+                    <br>
+                    <form action="" class="newsletter-form">
+                        <input type="submit" class="btn" value="أرسل">
+                        <input type="text" class="txtb" placeholder="أدخل تعليقك">
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                جميع الحقوق محفوظة &copy; | طور بواسطة فريق  404
+            </div>
+        </footer>
+ 
  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
     <script src="./js/signup.js"></script>

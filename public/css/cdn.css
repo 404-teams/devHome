@@ -29,14 +29,32 @@ position: relative;
 z-index: 1;
 }
 
-.card-view {
--webkit-box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05);
-box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05);
-border-radius: 4px;
-padding: 22px;
-margin-bottom: 20px;
-background: #fff;
 
+.card-view {
+    -webkit-box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    padding: 22px;
+    margin-bottom: 20px;
+    background: #fff;
+    width: 479px;
+    height: 324px;
+    box-shadow: 0px 2px 6px #535b75;
+    display: inline-flex;
+    margin: 1% 4%;
+    top: 0;
+}
+
+.nameOfCards {
+    /* background-color: #e89a3d; */
+    padding: 1%;
+    text-align: center;
+    background-size: cover;
+    width: 513px;
+    margin-top: -22px;
+    margin-left: -22px;
+    border-block-end: solid 1px #e89a3d;
+    border-radius: 3px;
 }
 .flex-row {
 display: -webkit-box;
@@ -94,53 +112,57 @@ border-radius: 3px;
 object-fit: cover;
 }
 .r-layout .s-tag {
-position: absolute;
-top: 0;
-right: 0;
-font-weight: 500;
-margin-right: 0;
+    position: absolute;
+    font-weight: 500;
+    margin-right: 0;
 }
 .s-tag {
     width: 57px;
-height: 36px;
-background: transparent;
-color: #092646;
-border-radius: 3px;
-background: var(--theme-color1);
-text-align: center;
-display: -webkit-box;
-display: -ms-flexbox;
-display: flex;
--webkit-box-align: center;
--ms-flex-align: center;
-align-items: center;
--webkit-box-pack: center;
--ms-flex-pack: center;
-justify-content: center;
-font-weight: bold;
-margin-right: 20px;
+    height: 36px;
+    background: transparent;
+    color: #666666;
+    border-radius: 3px;
+    background: #e4e4e4;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 20px;
 }
 .card-sm-content .r-layout .r-content .title {
 font-size: 17px;
 }
 
 .r-layout .r-content .title {
-    font-size: 22px;
     font-weight: 600;
     color: #092646;
-    padding: 0%;
     margin-bottom: 4%;
+    padding-top: 3%;
+    text-align: center;
+}
+button.save:hover {
+    background-color: #acb0bd;
 }
 .title {
 font-size: 28px;
 font-weight: bold;
 margin: 0;
 }
+
+
 .r-layout .r-content p {
-font-size: 14px;
-color: #666666;
-margin: 0;
-margin-bottom: 10px;
+    font-size: 14px;
+    color: #666666;
+    margin: 0;
+    margin-bottom: 10px;
+    margin-top: 14px;
 }
 .taglist {
 display: -webkit-box;
@@ -172,21 +194,10 @@ align-items: center;
 justify-content: center;
 text-align: center;
 }
-.r-layout .r-content p {
-font-size: 14px;
-color: #666666;
-margin: 0;
-margin-bottom: 10px;
-}
+
 .r-layout .r-content .color-text {
 font-weight: 600;
 color: #00796b;
-}
-.r-layout .r-content p {
-font-size: 14px;
-color: #666666;
-margin: 0;
-margin-bottom: 10px;
 }
 
 
@@ -195,7 +206,7 @@ margin-bottom: 10px;
     font-weight: 600;
     color: #092646;
     margin-top: 30px;
-    margin-bottom: 15px;
+    margin-bottom: 43px;
     text-align: center;
 }
 
@@ -289,7 +300,7 @@ a {
 }   
   
 .form-wrapper button:hover{		
-    background: #092646;
+    background: #293252;
 }	
   
 .form-wrapper button:active,
@@ -308,7 +319,7 @@ a {
 }
 
 .form-wrapper button:hover:before{
-    border-right-color: #092646;
+    border-right-color: #293252;
 }
 
 .form-wrapper button:focus:before{
@@ -339,6 +350,13 @@ button.save {
     font-weight: bold;
     box-shadow: none;
     border: none;
-    margin-top: 4%;
-    margin-left: 45%;
+    margin-top: 296%;
+    margin-left: -291%;
+}
+
+.card-view:hover,
+.card-view:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+  box-shadow: 0px 2px 6px #e89a3d;
 }
