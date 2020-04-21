@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS questions;
 DROP TABLE IF EXISTS answers;
 DROP TABLE IF EXISTS cdns;
 DROP TABLE IF EXISTS jobs;
+DROP TABLE IF EXISTS blogs;
 
 
 CREATE TABLE users
@@ -17,15 +18,6 @@ CREATE TABLE users
 );
 INSERT INTO users (name,email,password,image,status,rank) VALUES ('Abdallah','Abdalla@gmail.com','123456789','url','true',999);
 
-CREATE TABLE tags
-(
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(55),
-    description TEXT
-);
-INSERT INTO tags (name,description) VALUES ('HTML','Page Structure');
-INSERT INTO tags (name,description) VALUES ('Css','Page Design');
-INSERT INTO tags (name,description) VALUES ('JS','Page Logic');
 
 CREATE TABLE questions
 (
@@ -57,6 +49,19 @@ CREATE TABLE answers
 
 -- INSERT INTO answers (user_id,question_id,answer,description,code,rank,approved) VALUES (2,1,'hard one','1','var=aasdas',999,true);
 
+CREATE TABLE replies
+(
+    id SERIAL PRIMARY KEY,
+    user_id INT,
+    answer_id INT,
+    reply TEXT,
+    description TEXT,
+    code TEXT,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (answer_id) REFERENCES answers(id) ON DELETE CASCADE
+);
+
+-- INSERT INTO replies (user_id,answer_id,reply,description,code,rank,approved) VALUES (2,1,'hard one','1','var=aasdas',999,true);
 
 CREATE TABLE jobs
 (
@@ -91,6 +96,7 @@ CREATE TABLE blogs
     id SERIAL PRIMARY KEY,
     tittle VARCHAR(255),
     blog TEXT,
+    img TEXT,
     user_id INT,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 

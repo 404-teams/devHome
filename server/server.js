@@ -6,11 +6,16 @@ const superagent =require('superagent')
 const cors = require('cors');
 const methodOverride = require('method-override');
 const app = express();
+
+//------------------ Import ------------------
 const DB = require('./database');
 const API = require('./apis')
 const Obj = require('./constructor')
 const Auth = require('./authorization')
 const queFunctions = require('./queFunctions')
+//------------------ End of Import ------------------
+
+
 const PORT = process.env.PORT || 3030;
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -38,13 +43,20 @@ app.get('/jobs/user/:id',API.eachUserJob);
 
 // -------------end of jobs route------------------
 
-// routs :-
+
+// -------------Ask/Solve routes------------------
 app.get('/',API.homePage);
 app.get('/questions',queFunctions.getAllQue)
 app.get('/question',queFunctions.getQue)
-app.get('/addQue',queFunctions.addQue)
-app.post('/addNewQ',queFunctions.addNewQ)
-app.post('/addAns:id',queFunctions.addAns)
+app.get('/myQue',Auth,queFunctions.myQue)
+app.post('/addNewQ',Auth,queFunctions.addNewQ)
+app.post('/addAns:id',Auth,queFunctions.addAns)
+app.post('/addRep:id',Auth,queFunctions.addRep)
+app.put('/rankAns',queFunctions.rankAns)
+app.put('/ans_approved',Auth,queFunctions.ans_approved)
+
+// -------------endAsk/Solve routes------------------
+
 
 //------------------ CDN route ------------------
 
@@ -60,12 +72,14 @@ app.get('/signupNewUser', API.creatNewUser);
 app.post('/login/create',API.login)
 
 
-app.get('/blog',API.blog)
-
+app.get('/blogs',API.showBlogs)
+app.get('/blog/create/:id',API.blog)
 app.get('/login',API.logintest)
 
-
+app.post('/blog/create',API.addBlog)
+app.get('/blog',API.showBlog)
 
 app.use(API.error);
 
 app.listen(PORT, () => console.log('hear from port: ' + PORT));
+ 

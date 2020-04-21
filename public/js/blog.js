@@ -46,13 +46,14 @@ function addItem(type) {
   if (type === 'img') {
     addimgbtn();
   } else {
-    var x = $('div[name="div"]');
+    var menu = document.getElementById('menu').innerHTML;
+
     $('div[name="div"]').remove();
     $('.addItem').remove();
     var template = document.getElementById(type).innerHTML;
     var rendered = Mustache.render(template, { ids });
     $('#blog').append(rendered);
-    $(x).appendTo('#blog');
+    $(menu).appendTo('#blog');
     ids++;
   }
 }
@@ -74,10 +75,10 @@ function finshImg(event) {
     var template = document.getElementById('img').innerHTML;
     var rendered = Mustache.render(template, { img: url, ids });
     $('.addItem').remove();
-    var x = $('div[name="div"]');
+    var menu = document.getElementById('menu').innerHTML;
     $('div[name="div"]').remove();
     $(rendered).appendTo('#blog');
-    $(x).appendTo('#blog');
+    $(menu).appendTo('#blog');
     ids++;
   }
 }
@@ -167,3 +168,21 @@ function elementPostion(e) {
   let tag = document.getElementById(userId + '');
   tag.style[e.target.name] = e.target.value + 'px';
 }
+
+function done() {
+  $('#blog').find('*[contenteditable]').attr('contenteditable', 'false');
+  $('button[name="doneall"]').remove();
+  $('div').remove();
+ let blog =  $('#blog')[0].outerHTML;
+  let tittle = $('#blog').find('h1')[0].textContent;
+
+  let img = $('#blog').find('img').length > 0
+    ? $('#blog').find('img')[0].src
+    : 'https://www.knstek.com/wp-content/uploads/2012/12/default_blog_large.png';
+    $.post('/blog/create',{blog,tittle,img,id:1},function(s){
+        window.location.href = "/blog?id="+s.id
+    })
+
+}
+var menu = document.getElementById('menu').innerHTML;
+$(menu).appendTo('#blog');
