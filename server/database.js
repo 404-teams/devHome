@@ -43,8 +43,8 @@ DB.eachUserCdnData = function(data,id){
 
 
 // function to add the jobs to database 
-DB.addJobsToDataBase=function(data){
-  let { type, company, company_url, location,title,description,company_logo,user_id }=data;
+DB.addJobsToDataBase=function(data,user_id){
+  let { type, company, company_url, location,title,description,company_logo }=data;
   let SQL = 'INSERT INTO jobs (type,company,company_url,location,title,description,company_logo,user_id) VALUES ($1,$2,$3,$4,$5,$6,$7,$8);';
   
   let safeValues = [type,company,company_url,location,title,description,company_logo,Number(user_id)];
@@ -60,7 +60,7 @@ DB.getEachUserJobFromDb=function(id){
 }
 
 DB.addBlog = function(safeValues){
-  let SQL = 'INSERT INTO blogs (tittle,blog,img,user_id) VALUES ($1,$2,$3,$4) RETURNING id'
+  let SQL = 'INSERT INTO blogs (tittle,blog,img,user_id,des) VALUES ($1,$2,$3,$4,$5) RETURNING id'
  return client.query(SQL,safeValues).then(data=>data.rows)
 }
 
@@ -71,7 +71,7 @@ DB.showBlog = function(safeValues){
 }
 
 DB.showBlogs = function(){
-  let SQL = 'SELECT b.tittle,b.img,b.id,u.id as userid,u.name FROM blogs b INNER JOIN users u ON u.id=b.user_id ORDER BY b.id DESC'
+  let SQL = 'SELECT b.des, b.tittle,b.img,b.id,u.id as userid,u.name FROM blogs b INNER JOIN users u ON u.id=b.user_id ORDER BY b.id DESC'
   return client.query(SQL)
 }
 

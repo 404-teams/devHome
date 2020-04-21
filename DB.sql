@@ -97,8 +97,8 @@ CREATE TABLE blogs
     tittle VARCHAR(255),
     blog TEXT,
     img TEXT,
+    des Text,
     user_id INT,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
-
 )
 
