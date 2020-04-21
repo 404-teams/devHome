@@ -14,14 +14,14 @@ $(function () {
     $(rendered).appendTo('.containrbtn');
   }
   for (let i = 0; i < 10; i++) {
-    console.log(blogs[i])
+    console.log(blogs[i]);
     var template = document.getElementById('blog').innerHTML;
     var rendered = Mustache.render(template, {
       img: blogs[i].img,
       tittle: blogs[i].tittle,
       name: blogs[i].name,
       id: blogs[i].id,
-      des:blogs[i].des
+      des: blogs[i].des,
     });
     $('.containrbtn').before(rendered);
   }
@@ -53,39 +53,36 @@ function clicked(id) {
 }
 
 function addBlog() {
-    $.ajax({
-        url: '/blog/create/'+1,
-        // data: { signature: authHeader },
-        type: "GET",
-        headers:{ 'authorization' : `bearer ${localStorage.token}` },
-        success: function(data) {
-          if(data === 'not the same user'){
-            alert('not the same user')
-          }
-          else if(data === 'please login or singup'){
-            alert('login please')
-          }else{
-
-            window.location.href ='/blog/create/jj'
-          }
-          },
-          error:function(err){
-            console.log(err)
-          }
-          
-     });
-    // $.ajaxSetup({
-    //     headers:{
-    //        'Authorization': "Bearer "+localStorage.token
-    //     }
-    //  });
-    // $.get('/blog/create/'+10,function(data){
-    //     console.log('jskfljdskfljdksljflk')
-    //     if(data === true){
-    //         window.location.href ='/blog/create/true'
-    //     }
-    // })
+  $.ajax({
+    url: '/blog/create/' + 1,
+    // data: { signature: authHeader },
+    type: 'GET',
+    headers: { authorization: `bearer ${localStorage.token}` },
+    success: function (data) {
+      if (data === 'not the same user') {
+        alert('not the same user');
+      } else if (data === 'please login or singup') {
+        alert('login please');
+      } else {
+        window.location.href = '/blog/create/jj';
+      }
+    },
+    error: function (err) {
+      console.log(err);
+    },
+  });
+  // $.ajaxSetup({
+  //     headers:{
+  //        'Authorization': "Bearer "+localStorage.token
+  //     }
+  //  });
+  // $.get('/blog/create/'+10,function(data){
+  //     console.log('jskfljdskfljdksljflk')
+  //     if(data === true){
+  //         window.location.href ='/blog/create/true'
+  //     }
+  // })
 }
 
 localStorage.id = 1;
-console.log(localStorage.token)
+console.log(localStorage.token);

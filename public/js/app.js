@@ -59,18 +59,18 @@ $(function () {
     });
     $(rendered).appendTo('.containrbtn');
   }
-  for (let i = 0; i < 10; i++) {
-    console.log(data[i]);
-    var template = document.getElementById('blog').innerHTML;
-    var rendered = Mustache.render(template, {
-      img: data[i].img,
-      tittle: data[i].tittle,
-      name: data[i].name,
-      id: data[i].id,
-      des: data[i].des,
-    });
-    $('.containrbtn').before(rendered);
-  }
+  //   for (let i = 0; i < 10; i++) {
+  //     console.log(data[i]);
+  //     var template = document.getElementById('blog').innerHTML;
+  //     var rendered = Mustache.render(template, {
+  //       img: data[i].img,
+  //       tittle: data[i].tittle,
+  //       name: data[i].name,
+  //       id: data[i].id,
+  //       des: data[i].des,
+  //     });
+  //     $('.containrbtn').before(rendered);
+  //   }
 });
 
 console.log(data);

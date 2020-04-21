@@ -37,10 +37,7 @@ API.login = function (req, res) {
       /// check if the user have the right password or not
       if (req.body.password === data.rows[0].password) {
         /// create a token for the uer with expires in 1 min and send it back to the clinet side
-        let token = jwt.sign(
-          { id, email },
-          'devhome',{ expiresIn: 1000000 }
-        );
+        let token = jwt.sign({ id, email }, 'devhome', { expiresIn: 1000000 });
         return res.send(token);
         //// if the user input the wrong password
       } else {
@@ -106,7 +103,7 @@ API.homePage = function (req, res) {
 
 // function to go to the search page
 API.goToSearchPage = function (req, res) {
-  let url = `https://jobs.github.com/positions.json`
+  let url = `https://jobs.github.com/positions.json`;
   superagent.get(url).then((data) => {
     let result = data.body.map((val) => {
       return new Obj.Job(val);
@@ -136,8 +133,7 @@ API.searchJobResult = function (req, res) {
 };
 // function to  save specific job
 API.savedJobs = function (req, res) {
-  DB.addJobsToDataBase(req.body, req.params.id)
-  .then((data) => {
+  DB.addJobsToDataBase(req.body, req.params.id).then((data) => {
     console.log(data);
     res.send('done');
   });

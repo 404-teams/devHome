@@ -1,52 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Document</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/questions.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
+  <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/questions.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <%- include ('../views/layout/header.ejs') %>
-    <main id="main">
-        <div id="div">
-        <form action="/questions">
-            <input type="text" name="search" list="title" placeholder="What do you want to search for (:" id="css-search">
-                <datalist id="title">
-                    <%queData.forEach((ele)=>{%>
-                        <option value="<%=ele.title%>" >
-                    <%})%>
-                </datalist>
-            <input type="text" list="tags" name="filter" placeholder="In witch category" id="css-filter">
-                <datalist id="tags">
-                    <option value="html">
-                    <option value="css">
-                    <option value="Js">
-                    <option value="Python">
-                    <option value="C#">
-                    <option value="C++">
-                    <option value="Java">
-                    <option value="Ts">
-                    <option value="PHP">
-                </datalist>
-            <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300&display=swap" rel="stylesheet">
-            <button type="submit" id="search">Search</button>
-        </form>
-        <form id = "myQue">
-            <input id="addButton" type="submit" value="My Questions">
-        </form>
-        </div>
-        <ul>
-            <%queData.forEach((ele)=>{%>
-                <p><%=ele.username%></p>
-                <a href="/question?id=<%=ele.id%>" class="a"><li><p id="p">Title: <%=ele.title%></p></li></a>
+  <%- include ('../views/layout/header.ejs') %>
+  <main id="main">
+    <div id="div">
+      <form action="/questions">
+        <input type="text" name="search" list="title" placeholder="What do you want to search for (:" id="css-search">
+        <datalist id="title">
+          <%queData.forEach((ele)=>{%>
+          <option value="<%=ele.title%>">
             <%})%>
-        </ul>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
-        <script src="js/myQue.js"></script>
-    </main>
+        </datalist>
+        <input type="text" list="tags" name="filter" placeholder="In witch category" id="css-filter">
+        <datalist id="tags">
+          <option value="html">
+          <option value="css">
+          <option value="Js">
+          <option value="Python">
+          <option value="C#">
+          <option value="C++">
+          <option value="Java">
+          <option value="Ts">
+          <option value="PHP">
+        </datalist>
+        <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300&display=swap" rel="stylesheet">
+        <button type="submit" id="search">Search</button>
+      </form>
+      <form id="myQue">
+        <input id="addButton" type="submit" value="My Questions">
+      </form>
+    </div>
+    <ul>
+      <%queData.forEach((ele)=>{%>
+      <p><%=ele.username%></p>
+      <a href="/question?id=<%=ele.id%>" class="a">
+        <li>
+          <p id="p">Title: <%=ele.title%></p>
+        </li>
+      </a>
+      <%})%>
+    </ul>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
+    <script src="js/myQue.js"></script>
+  </main>
 </body>
+
 </html>

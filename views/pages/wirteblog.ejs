@@ -2,115 +2,113 @@
 <html style="height: 100%;" lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://kit.fontawesome.com/60a3d0faa7.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-    <style>
-        .dropdown {
-            float: left;
-            overflow: hidden;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/60a3d0faa7.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <style>
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
 
-        .dropdown .dropbtn {
-            border-radius: 40px;
-            cursor: pointer;
-            font-size: 16px;
-            border: none;
-            outline: none;
-            color: black;
-            padding: 10px 12px;
-            background-color: inherit;
-            font-family: inherit;
-            margin: 0;
-        }
+    .dropdown .dropbtn {
+      border-radius: 40px;
+      cursor: pointer;
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: black;
+      padding: 10px 12px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+    }
 
-        .navbar a:hover,
-        .dropdown:hover .dropbtn,
-        .dropbtn:focus {
-            background-color: red;
-        }
+    .navbar a:hover,
+    .dropdown:hover .dropbtn,
+    .dropbtn:focus {
+      background-color: red;
+    }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
 
-        .dropdown-content a {
-            float: none;
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-        }
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
 
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
 
-        .show {
-            display: block;
-        }
+    .show {
+      display: block;
+    }
 
-        .dropdown1 {
-            float: left;
-            overflow: hidden;
-        }
+    .dropdown1 {
+      float: left;
+      overflow: hidden;
+    }
 
-        .dropdown1 .dropbtn1 {
-            border-radius: 40px;
-            cursor: pointer;
-            font-size: 16px;
-            border: none;
-            outline: none;
-            color: black;
-            padding: 10px 12px;
-            background-color: inherit;
-            font-family: inherit;
-            margin: 0;
-        }
+    .dropdown1 .dropbtn1 {
+      border-radius: 40px;
+      cursor: pointer;
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: black;
+      padding: 10px 12px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+    }
 
-        .navbar1 a:hover,
-        .dropdown1:hover .dropbtn1,
-        .dropbtn1:focus {
-            background-color: red;
-        }
+    .navbar1 a:hover,
+    .dropdown1:hover .dropbtn1,
+    .dropbtn1:focus {
+      background-color: red;
+    }
 
-        .dropdown-content1 {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
+    .dropdown-content1 {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
 
-        .dropdown-content1 a {
-            float: none;
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-        }
+    .dropdown-content1 a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
 
-        .dropdown-content1 a:hover {
-            background-color: #ddd;
-        }
+    .dropdown-content1 a:hover {
+      background-color: #ddd;
+    }
 
-        .show1 {
-            display: block;
-        }
-        
-    </style>
-
-    <script id="menu" type="x-tmpl-mustache">
+    .show1 {
+      display: block;
+    }
+  </style>
+  <script id="menu" type="x-tmpl-mustache">
         <div class="bounce" name="div" style="width: 200px;">
             <div id="test" class="dropdown test" style="display: block ! important;">
                 <button class="dropbtn" onclick="myFunction()">
@@ -135,7 +133,7 @@
                 </div>
             </div>
         </div>   </script>
-    <script id="fontplace" type="x-tmpl-mustache">
+  <script id="fontplace" type="x-tmpl-mustache">
         <div>
         <form name="place">
             <select onchange="plChange(event)" >
@@ -147,7 +145,7 @@
     </form>  
 </div> 
     </script>
-    <script id="position" type="x-tmpl-mustache">
+  <script id="position" type="x-tmpl-mustache">
       <div>
         <form name="position">
             <input type="number" name="top"  style="width:50px" onkeyup="elementPostion(event)" onchange="elementPostion(event)" value={{top}} />
@@ -158,7 +156,7 @@
     </form>
 </div>   
     </script>
-    <script id="display" type="x-tmpl-mustache">
+  <script id="display" type="x-tmpl-mustache">
       <div>
         <form name="display">
             <select onchange="diChange(event)" >
@@ -170,7 +168,7 @@
     </form>
 </div>   
     </script>
-    <script id="imgsize" type="x-tmpl-mustache">
+  <script id="imgsize" type="x-tmpl-mustache">
       <div>
         <form name="size">
             <input type="number" name="width"  style="width:50px" onkeyup="sizechimg(event)" onchange="sizechimg(event)" value={{wsize}} />
@@ -181,7 +179,7 @@
     </form>
 </div>   
     </script>
-    <script id="fontsize" type="x-tmpl-mustache">
+  <script id="fontsize" type="x-tmpl-mustache">
       <div>
         <form name="size">
         <input type="number"  style="width:50px" onkeyup="sizech(event)" onchange="sizech(event)" value={{size}} />
@@ -189,16 +187,16 @@
     </form>
 </div>   
     </script>
-    <script id="h1" type="x-tmpl-mustache">
+  <script id="h1" type="x-tmpl-mustache">
         <h1 id='{{ids}}' contenteditable="true" style="display: inline-block;width:100%;text-align: right;">.... النص</h1>
       </script>
-    <script id="img" type="x-tmpl-mustache">
+  <script id="img" type="x-tmpl-mustache">
         <img id='{{ids}}' src="{{img}}"  alt="{{alt}}" style="display: inline-block;width:200px;height:200px">
       </script>
-    <script id="p" type="x-tmpl-mustache">
+  <script id="p" type="x-tmpl-mustache">
         <p id='{{ids}}' contenteditable="true" style="display: inline-block;width:100%;text-align: right;">.... النص</p>
       </script>
-    <script id="addimg" type="x-tmpl-mustache">
+  <script id="addimg" type="x-tmpl-mustache">
        <div>
         <div id='addItem' class="addItem" style="position:absolute;left=40px">
             <i onclick="remove()" class="fas fa-skull"></i>
@@ -208,7 +206,7 @@
         </div>
     </div>
       </script>
-    <script id="colorform" type="x-tmpl-mustache">
+  <script id="colorform" type="x-tmpl-mustache">
         <div>
         <form id='formc' style="
         display: flex;
@@ -226,214 +224,17 @@
 </head>
 
 <body style="height: 100%;">
-
-    <section id="blog" style="background: #ffffff ; min-height: 100%; width: 80%; margin: auto; padding: 5px 0 50px 0 ;">
-        <h1 id="0" class="item" name="text" contenteditable="true" style="font-size: 50px; text-align: center; display: inline-block; width: 100%;">....العنوان</h1>
-       
+  <section id="blog" style="background: #ffffff ; min-height: 100%; width: 80%; margin: auto; padding: 5px 0 50px 0 ;">
+    <h1 id="0" class="item" name="text" contenteditable="true"
+      style="font-size: 50px; text-align: center; display: inline-block; width: 100%;">....العنوان</h1>
     <button name="doneall" style="
     position: fixed;
     top: 33px;
     left: 1107px;" onclick="done()">DONE</button>
-    </section>
-
-
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
-    <script src="https://unpkg.com/mustache@latest"></script>
-    <script src="../../js/blog.js"></script>
-    <!-- <script>
-        'use strict';
-// alert('dfsfdf')
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-let ids = 1;
-let userId = 0;
-function myFunction() {
-  document.getElementById('myDropdown').classList.toggle('show');
-}
-window.addEventListener('click', function (e) {
-  console.log(e.target.id,ids,userId)
-  let s = e.target.id;
-  if (s !== 'blog' && s !== 'color' && s !== 'test') {
-    userId = s || userId;
-  }
-  // if (!e.target.matches('.dropbtn')) {
-  //     var myDropdown = document.getElementById('myDropdown');
-  //     if (myDropdown.classList.contains('show')) {
-  //       myDropdown.classList.remove('show');
-  //     }
-  //   }
-});
-// Close the dropdown if the user clicks outside of it
-window.onclick = function (e) {
-  if (!e.target.matches('.dropbtn')) {
-    var myDropdown = document.getElementById('myDropdown');
-    if (myDropdown.classList.contains('show')) {
-      myDropdown.classList.remove('show');
-    }
-  }
-};
-function myFunction1() {
-  document.getElementById('myDropdown1').classList.toggle('show1');
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function (e) {
-  if (!e.target.matches('.dropbtn1')) {
-    var myDropdown = document.getElementById('myDropdown1');
-    if (myDropdown.classList.contains('show1')) {
-      myDropdown.classList.remove('show1');
-    }
-  }
-};
-
-function addItem(type) {
-  if (type === 'img') {
-    addimgbtn();
-  } else {
-    var menu = document.getElementById('menu').innerHTML;
-
-    $('div[name="div"]').remove();
-    $('.addItem').remove();
-    var template = document.getElementById(type).innerHTML;
-    var rendered = Mustache.render(template, { ids });
-    $('#blog').append(rendered);
-    $(menu).appendTo('#blog');
-    ids++;
-  }
-}
-
-function addimgbtn() {
-  $('.addItem').remove();
-  var template = document.getElementById('addimg').innerHTML;
-  var rendered = Mustache.render(template, { ids });
-  $('#test').append(rendered);
-}
-
-function remove() {
-  $('.addItem').remove();
-}
-
-function finshImg(event) {
-  if (event.keyCode == 13) {
-    let url = document.getElementById('imgurl').value;
-    var template = document.getElementById('img').innerHTML;
-    var rendered = Mustache.render(template, { img: url, ids });
-    $('.addItem').remove();
-    var menu = document.getElementById('menu').innerHTML;
-    $('div[name="div"]').remove();
-    $(rendered).appendTo('#blog');
-    $(menu).appendTo('#blog');
-    ids++;
-  }
-}
-
-function changeColor() {
-  var template = document.getElementById('colorform').innerHTML;
-  $(template).appendTo('#blog');
-  $('#formc').submit(changeColorForm);
-}
-function changeColorForm(e) {
-  let tag = document.getElementById(userId + '');
-  tag.style.color = e.target.color.value;
-  $('#formc').remove();
-}
-
-function changeFontSize() {
-  var template = document.getElementById('fontsize').innerHTML;
-  let size = document.getElementById(userId + '').style.fontSize.split('p')[0];
-  var rendered = Mustache.render(template, { size });
-  $(rendered).appendTo('#blog');
-}
-function sizech(e) {
-  let tag = document.getElementById(userId + '');
-  tag.style.fontSize = e.target.value + 'px';
-}
-function finshSize() {
-  $('form[name="size"]').remove();
-}
-
-function changeAlign() {
-  var template = document.getElementById('fontplace').innerHTML;
-  $(template).appendTo('#blog');
-}
-function plChange(e) {
-  let tag = document.getElementById(userId + '');
-  tag.style.textAlign = e.target.value;
-}
-
-function finshPlace() {
-  $('form[name="place"]').remove();
-}
-
-function changeImage() {
-  var template = document.getElementById('imgsize').innerHTML;
-  let wsize = document.getElementById(userId + '').style.width.split('p')[0];
-  let hsize = document.getElementById(userId + '').style.height.split('p')[0];
-  var rendered = Mustache.render(template, { wsize, hsize });
-  $(rendered).appendTo('#blog');
-}
-function sizechimg(e) {
-  let tag = document.getElementById(userId + '');
-  tag.style[e.target.name] = e.target.value + 'px';
-}
-
-function changeDisplay() {
-  var template = document.getElementById('display').innerHTML;
-  var rendered = Mustache.render(template);
-  $(rendered).appendTo('#blog');
-}
-function finshblock() {
-  $('form[name="display"]').remove();
-}
-
-function diChange(e) {
-  if (e.target.value !== 'position') {
-    let tag = document.getElementById(userId + '');
-    tag.style.display = e.target.value;
-    document.getElementById(userId + '').style.position = 'unset';
-    $("form[name='position']").remove();
-  } else {
-    var template = document.getElementById('position').innerHTML;
-    let tag = document.getElementById(userId + '');
-    var rendered = Mustache.render(template, {
-      top: tag.clientTop,
-      left: tag.clientLeft,
-    });
-    document.getElementById(userId + '').style.position = 'relative';
-    $(rendered).appendTo('form[name="display"]');
-  }
-}
-
-function finshposition() {
-  $("form[name='position']").remove();
-}
-
-function elementPostion(e) {
-  let tag = document.getElementById(userId + '');
-  tag.style[e.target.name] = e.target.value + 'px';
-}
-
-function done() {
-  $('#blog').find('*[contenteditable]').attr('contenteditable', 'false');
-  $('button[name="doneall"]').remove();
-  $('div').remove();
-  let blog = $('#blog')[0].outerHTML;
-  let tittle = $('#blog').find('h1')[0].textContent;
-  let des = $('#blog').find('p')[0].textContent;
-  let img =
-    $('#blog').find('img').length > 0
-      ? $('#blog').find('img')[0].src
-      : 'https://www.knstek.com/wp-content/uploads/2012/12/default_blog_large.png';
-  $.post('/blog/create', { blog, tittle, img, des,id: 1 }, function (s) {
-    window.location.href = '/blog?id=' + s.id;
-  });
-}
-var menu = document.getElementById('menu').innerHTML;
-$(menu).appendTo('#blog');
-
-    </script> -->
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
+  <script src="https://unpkg.com/mustache@latest"></script>
+  <script src="../../js/blog.js"></script>
 </body>
 
 </html>

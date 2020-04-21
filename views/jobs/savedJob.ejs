@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
+
 <body>
-    <h2>Saved Jobs</h2>
-    <section>
-
-        <% job.forEach(job => { %>
-        <div >
-            <h4> <img src="<%= job.company_logo  %>"></h4>
-            <h3>النوع: <%= job.type %></h3>
-            <h3> الشركة: <%= job.company %></h3>
-            <h3> رابط الشركة: <%= job.company_url %></h3>
-            <h3> الموقع: <%= job.location %></h3>
-            <h3> اسم الوظيفة: <%= job.title %></h3>
-            <h3> تفاصيل الوظيفة: <%= job.description %></h3>
-
-          
-        </div>
-        <% }) %>
-
-    </section>
+  <h2>Saved Jobs</h2>
+  <section>
+    <% job.forEach(job => { %>
+    <div>
+      <h4> <img src="<%= job.company_logo  %>"></h4>
+      <h3>النوع: <%= job.type %></h3>
+      <h3> الشركة: <%= job.company %></h3>
+      <h3> رابط الشركة: <%= job.company_url %></h3>
+      <h3> الموقع: <%= job.location %></h3>
+      <h3> اسم الوظيفة: <%= job.title %></h3>
+      <h3> تفاصيل الوظيفة: <%= job.description %></h3>
+    </div>
+    <% }) %>
+  </section>
 </body>
+
 </html>

@@ -1,132 +1,124 @@
+body {
+  overflow-x: hidden;
 
-body{
-    overflow-x: hidden;
-
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 h4 {
-    overflow: hidden;
-    font-size: 28px;
-    color: #E89A3D;
-    margin: 2% 44%;
+  overflow: hidden;
+  font-size: 28px;
+  color: #e89a3d;
+  margin: 2% 44%;
 }
 
-.bigdiv{
-    box-sizing: border-box;
+.bigdiv {
+  box-sizing: border-box;
 }
 img.jobimage {
-    width: 20%;
-    padding: 1%;
+  width: 20%;
+  padding: 1%;
 }
 .jf {
-    
-    display: inline-block;
-    width: 30%;
-    border: 2px solid #ecae61;
-    background: whitesmoke;
-    border-radius: 13px;
-    padding: 1%;
+  display: inline-block;
+  width: 30%;
+  border: 2px solid #ecae61;
+  background: whitesmoke;
+  border-radius: 13px;
+  padding: 1%;
 }
 #secj {
-    clear: both;
-    text-align: center;
-    display: block;
-    margin: 2%;
-    direction: rtl;
-   }
-   .jf {
-    box-sizing: border-box;
-    justify-content: space-around;
-    display: inline-grid;
-    font-size: 18px;
-    width: 41%;
-    border: 1px solid #ecae61;
-    background: whitesmoke;
-    border-radius: 13px;
-    padding: 1%;
-    margin-bottom: 2%;
-    margin-left: 6%;
-    direction: rtl;
-  
+  clear: both;
+  text-align: center;
+  display: block;
+  margin: 2%;
+  direction: rtl;
 }
-.jf:hover{
-    animation-name: pulse;
-    animation-duration: 2s;
-    box-shadow: 3px 3px 3px 3px rgba(250, 185, 45, 0.897);
-
+.jf {
+  box-sizing: border-box;
+  justify-content: space-around;
+  display: inline-grid;
+  font-size: 18px;
+  width: 41%;
+  border: 1px solid #ecae61;
+  background: whitesmoke;
+  border-radius: 13px;
+  padding: 1%;
+  margin-bottom: 2%;
+  margin-left: 6%;
+  direction: rtl;
+}
+.jf:hover {
+  animation-name: pulse;
+  animation-duration: 2s;
+  box-shadow: 3px 3px 3px 3px rgba(250, 185, 45, 0.897);
 }
 section#sec2 {
-    margin-top: 4%;
-    margin-bottom: 2%;
-    display: flex;
-    flex-wrap: wrap;
+  margin-top: 4%;
+  margin-bottom: 2%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 button#search-btn {
-    border-radius: 5px;
-    width: 6%;
-    height: 29px;
+  border-radius: 5px;
+  width: 6%;
+  height: 29px;
 }
 
 .jbtn {
-    border-radius: 13px;
-    width: 178px;
-    height: 39px;
-    background: #e89a3d;
-    font-size: 15px;
-    font-weight: 700;
-    color: white;
-    word-spacing: 1px;
-    letter-spacing: 1px;
+  border-radius: 13px;
+  width: 178px;
+  height: 39px;
+  background: #e89a3d;
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+  word-spacing: 1px;
+  letter-spacing: 1px;
 }
 div#btn {
-    text-align: center;
-    margin-top: 2%;
+  text-align: center;
+  margin-top: 2%;
 }
 div#bn {
-    text-align: center;
-    margin-top: 2%;
-
+  text-align: center;
+  margin-top: 2%;
 }
 button.savebtn {
-    border-radius: 5px;
-    font-size: 15px;
-    color: #535b75;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #535b75;
 }
 
 p.jobp {
-    padding-bottom: 14px;
+  padding-bottom: 14px;
 }
 input.in {
-    height: 27px;
-    border-radius: 8px;
-    padding: 4px;
-    color: #535b75;
-    font-size: 16px;
+  height: 27px;
+  border-radius: 8px;
+  padding: 4px;
+  color: #535b75;
+  font-size: 16px;
 }
 
-
-
 @keyframes pulse {
-    from {
-      -webkit-transform: scale3d(1, 1, 1);
-      transform: scale3d(1, 1, 1);
-    }
-  
-    50% {
-      -webkit-transform: scale3d(1.05, 1.05, 1.05);
-      transform: scale3d(1.05, 1.05, 1.05);
-    }
-  
-    to {
-      -webkit-transform: scale3d(1, 1, 1);
-      transform: scale3d(1, 1, 1);
-    }
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
   }
-  
-  .pulse {
-    -webkit-animation-name: pulse;
-    animation-name: pulse;
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
   }
-  
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}

@@ -1,2 +1,1 @@
-
-console.log($($.parseHTML($('#data')[0].textContent)).appendTo('body'))
+console.log($($.parseHTML($('#data')[0].textContent)).appendTo('body'));
