@@ -117,8 +117,15 @@ API.homePage=function(req,res){
 
 // function to go to the search page 
 API.goToSearchPage=function(req,res){
-  res.render('jobs/search.ejs');
-}
+  let url = `https://jobs.github.com/positions.json`;
+  superagent.get(url)
+    .then(data => {
+      let result = data.body.map(val => {
+        return new Obj.Job(val);
+      })
+     res.render('jobs/search.ejs',{job:result.splice(1,10)});
+    }
+    )}
 
 // function to show the result of the jobs
 API.searchJobResult = function (req, res) {
