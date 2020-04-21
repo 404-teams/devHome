@@ -4,31 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/reset.css">
+
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+    crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lateef&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lateef&family=Rakkas&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Lateef&family=Rakkas&display=swap" rel="stylesheet">
 </head>
 <body>
-    <%- include ('../views/layout/header.ejs') %>
+
+
+
     <main id="signup">
-    <form class="signupform" id="signupform">
-        <div id="divforform">
-            <label class="signuplable" id="email" for="email">: البريد الإلكتروني</label><br>
-            <input class="signupinput" id="email" type="text" name="email" placeholder="أدخل بريدك الإلكتروني" required>
-            <label class="signuplable" id="username" for="username">: اسم المستخدم</label><br>
-            <input class="signupinput" id="username" type="text" name="username" placeholder="أدخل اسمك" required>
-            <label class="signuplable" id="password" for="password" >: كلمة المرور</label><br>
-            <input class="signupinput" id="password" type="password" name="password" placeholder=" أدخل كلمة المرور" required>
-            <label class="signuplable" id="img" for="img" >: صورة شخصية</label><br>
-            <input class="signupinput" id="img" type="url" name="status" placeholder=" حمل صورة لك " >
-            <label class="signuplable" id="status" for="img" >:  الحالة</label><br>
-            <input class="signupinput" id="status" type="url" name="status" placeholder="    الحالة " >
+<div class="container" id="container">
+       
+        <div class="form-container sign-in-container">
+            <form class="signupform" id="signupform">
+                <h1>إنضم لعائلتنا </h1>
+                <label id="email" for="email">: البريد الإلكتروني</label><br>
+            <input  id="email" type="text" name="email" placeholder="أدخل بريدك الإلكتروني" required>
+            <label  id="username" for="username">: اسم المستخدم</label><br>
+            <input  id="username" type="text" name="username" placeholder="أدخل اسمك" required>
+            <label  id="password" for="password" >: كلمة المرور</label><br>
+            <input id="password" type="password" name="password" placeholder=" أدخل كلمة المرور" required>
+            <label id="img" for="img" >: صورة شخصية</label><br>
+            <input  id="img" type="url" name="status" placeholder=" حمل صورة لك " >
+            <label id="status" for="img" >:  الحالة</label><br>
+            <input  id="status" type="url" name="status" placeholder="    الحالة " >
+                <button>تسجيل </button>
+            </form>
         </div>
-        
-        <button class="signupbutton">تسجيل</button>
-    </form>
+        <div class="overlay-container">
+            <div class="overlay">
+               
+                <div class="overlay-panel overlay-right">
+                    <h1>أهلا بك</h1>
+                    <p>أدخل معلوماتك المطلوبة في الحقول المجاورة لتكون فرد من عائلتنا </p>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
  <script src="./js/signup.js"></script>
 </body>
 </html>

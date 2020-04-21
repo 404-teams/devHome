@@ -37,7 +37,10 @@ API.login = function (req, res) {
       /// check if the user have the right password or not
       if (req.body.password === data.rows[0].password) {
         /// create a token for the uer with expires in 1 min and send it back to the clinet side
-        let token = jwt.sign({ id, email }, 'devhome', { expiresIn: 9000 });
+        let token = jwt.sign(
+          { id, email },
+          'devhome',{ expiresIn: 1000000 }
+        );
         return res.send(token);
         //// if the user input the wrong password
       } else {

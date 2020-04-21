@@ -5,38 +5,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <script id="btn" type="x-tmpl-mustache">
-
-<button onclick="chengeblogs({{index}})">{{number}}</button>
-</script>
-
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/searchJob.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <main>
-        <h2>Search</h2>
-        <form action="/jobs" method="post">
-            <label>
-                <input type="text" name="description" placeholder="Enter software languages type" required> </label>
-            <label>
-                <label>
-                    <input type="text" name="location" placeholder="Enter job location"> </label>
-                <label>
-                    <span>Full Time</span>
-                    <input type="checkbox" name="type">
-                </label>
-
-                <button id="search-btn">Search job !</button>
-        </form>
-        <p id="serverJobs" style="display: none;"><%=job%></p>
-        <div id="jobs">
+    <header>
+     
+        <img class = "logo" src="../IMG/home.png" alt="">
+        <img class = "name" src="../IMG/name.png" alt="">
+   
+        <nav>
+           <div>
+              
+              
+            <img class="unknown" src="https://emanong-ph.com/api/people/avatar/0" alt="">
+             
+               <a class="navspe" href="/login"> تسجيل الدخول  </a>
+               <a class="navspe" href="/signupNewUser"> إنشاء حساب  </a>
+               <a class="nav" href="/cdns">CDN </a>
+               <a class="nav" href="/questions">اسألني</a>
+               <a class="nav" href="/jobs/search">وظائف</a>
+               <a class="nav" href="/">الصفحة الرئيسية </a>
 
         </div>
-        <div class="containrbtn"></div>
+
+        </nav>
+    </header>
+    <main class="mainj">
+        <div class="bigdiv">
+            <section id="secj">
+                <h4>ابحث عن وظيفة</h4>
+                <form class="jobfm" action="/jobs" method="post">
+                    <label class="joblab">
+                        <input class="in" type="text" name="description" placeholder="ادخل نوع لغة البرمجة" required> </label>
+                    <label>
+                        <label class="joblab">
+                            <input class="in" type="text" name="location" placeholder="ادخل موقع الوظيفة المطلوبة"> </label>
+                        <label class="joblab">
+                            <span>دوام كامل </span>
+                            <input type="checkbox" name="type">
+                        </label>
+        
+                        <button id="search-btn">ابحث</button>
+                </form>
+            </section>
+            <section id="sec2">
+                <% job.forEach((val ,indx)=> { %>
+                    <div class="jf">
+                        <img class="jobimage" src=<%=val.company_logo %><br>
+                        <p class="jobp">النوع: <%=val.type %></p>
+                        <p class="jobp">الشركة : <%=val.company %></p>
+                        <p class="jobp">رابط الشركة : <%=val.company_url %></p>
+                        <p class="jobp">الموقع : <%=val.location %></p>
+                        <p class="jobp">وصف الوظيفة : <%=val.title %></p>
+                        <div id="btn">
+                            <button onclick="show('<%=indx%>')" name="detSec<%=indx%>" id="detbtn<%=indx%>" class="jbtn"> عرض التفاصيل</button>
+                        </div>
+                        <section id="detSec<%=indx%>">
+                            <p id='jobDes<%=indx%>'>تفاصيل الوظيفة : <%= val.description %></p>
+                        </section>
+                        <form onsubmit="return false">
+                            <input class="jobf" type="hidden" name="company_logo" value="<%=val.company_logo  %>">
+                            <input class="jobf" type="hidden" name="type" value="<%=val.type %>">
+                            <input class="jobf" type="hidden" name="company" value="<%=val.company %>">
+                            <input class="jobf" type="hidden" name="company_url" value="<%= val.company_url %>">
+                            <input class="jobf" type="hidden" name="location" value="<%= val.location %>">
+                            <input  class="jobf" type="hidden" name="title" value="<%= val.title %>">
+                            <input class="jobf" type="hidden" name="description" value="<%= val.description %>">
+                            <div id="bn"> 
+                                <button class="savebtn" >اضف الى المحفوظات</button>
+
+                            </div>
+                        </form>
+                    </div>
+                    <% }); %> 
+            </section>
+          
+        </div>
+       
+        <%- include ('../../views/layout/footer.ejs') %>
     </main>
-    <script src="https://unpkg.com/mustache@latest"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+
     <script src="/js/app.js"></script>
 </body>
 

@@ -1,4 +1,3 @@
-
 var newLogin = document.getElementById('login');
 newLogin.addEventListener('submit', function(event){
     event.preventDefault();
@@ -19,3 +18,12 @@ newLogin.addEventListener('submit', function(event){
     
   
    });
+
+   function myFunction() {
+    var x = document.getElementById("Password");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
