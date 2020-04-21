@@ -48,6 +48,7 @@ header {
     z-index: 999999;
     top: 0;
     opacity: .8;
+    width: 100%;
 }
 
 img.unknown {
@@ -73,7 +74,7 @@ img.mainpic {
     opacity: .86;
     box-shadow: 0px 15px 25px rgba(83, 72, 72, 0.699);
 }
-form.signupform {
+/* form.signupform {
     background-color: #123030;
     width: 20%;
     padding: 7%;
@@ -144,62 +145,6 @@ label.signuplable {
     color: white;
     font-size: 137%;
     margin: 2% -29% 2% 20%;
-}
-
-
-
-/* div#divforform {
-    margin-top: -27%;
-}
-
-.name{
-    padding: 2%;
-    background-color: wheat;
-    margin: 2% 20% 0% 20%;
-    border: 1px solid;
-    border-radius: 60px;
 } */
 
-/* p.cdn {
-    text-align: left;
-    padding: 1%;
-    color: teal;
-    font-size: 117%;
 
-}
-h2.cdn {
-    font-size: 234%;
-    text-align: center;
-    margin-bottom: 2%;
-    color: teal;
-    font-weight: bold;
-}
-.save{  
-    margin-left: 32%;
-    margin-top: 5%;
-    padding: 1%;
-    width: 37%;
-    box-shadow: none;
-    border: 1px solid brown;
-    border-radius: 38px;
-    color: white;
-    background-color: teal;
-    font-size: 112%;
-} */
-
-/* input#search {
-    padding: 2%;
-    width: 67%;
-}
-
-button.searchbutton {
-    width: 21%;
-    padding: 1%;
-    border: solid .5px darkred;
-    border-radius: 24px;
-    font-size: 110%;
-}
-form#searchs {
-    margin: 2% 25% 2% 29%;
-    padding: 2%;
-} */
