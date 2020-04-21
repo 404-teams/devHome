@@ -1,5 +1,5 @@
 img.logo {
-    width: 15%;
+    width: 200px;
     float: right;
     margin-right: -5%;
     margin-top: -61px;
@@ -44,8 +44,12 @@ a.navspe:hover {
 header {
     background-color: #293252;
     padding: 3%;
-    
+    position: sticky;
+    z-index: 999999;
+    top: 0;
+    opacity: .8;
 }
+
 img.unknown {
     border-radius: 74%;
     width: 3.5%;
