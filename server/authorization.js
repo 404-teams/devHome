@@ -6,7 +6,7 @@ module.exports = (req, res, next) => {
     // take the baerer auth from the header
     const bearerHeader = req.headers.authorization;
     // check if there is a value
-    if (typeof bearerHeader !== 'undefined') {
+    if ( bearerHeader !== 'bearer undefined') {
       /// take the token from the header
       let decodedToken = bearerHeader.split(' ');
       let token = decodedToken[1];
@@ -19,6 +19,8 @@ module.exports = (req, res, next) => {
       } else {
         res.send('not the same user');
       }
+    }else{
+      res.send('please login or singup')
     }
   } catch {
     res.status(401).json({

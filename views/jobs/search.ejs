@@ -1,26 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <script id="btn" type="x-tmpl-mustache">
+
+<button onclick="chengeblogs({{index}})">{{number}}</button>
+</script>
+
 </head>
+
 <body>
     <main>
         <h2>Search</h2>
-        <form  action="/jobs" method="post">
+        <form action="/jobs" method="post">
             <label>
-                <input  type="text" name="description" placeholder="Enter software languages type" required> </label>
-            <label >
+                <input type="text" name="description" placeholder="Enter software languages type" required> </label>
             <label>
-                <input  type="text" name="location" placeholder="Enter job location" > </label>
-            <label >
-                <span>Full Time</span>
-                <input type="checkbox" name="type">
-            </label>
-           
-            <button  id="search-btn">Search job !</button>
+                <label>
+                    <input type="text" name="location" placeholder="Enter job location"> </label>
+                <label>
+                    <span>Full Time</span>
+                    <input type="checkbox" name="type">
+                </label>
+
+                <button id="search-btn">Search job !</button>
         </form>
+        <p id="serverJobs" style="display: none;"><%=job%></p>
+        <div id="jobs">
+
+        </div>
+        <div class="containrbtn"></div>
     </main>
+    <script src="https://unpkg.com/mustache@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
+    <script src="/js/app.js"></script>
 </body>
+
 </html>

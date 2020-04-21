@@ -15,7 +15,7 @@ $("#signupform").submit(function(event){
         else{
             window.location.assign("/");
         }
-    })
+    })  
 
     // console.log(event);
     // console.log( event.target.email.value);

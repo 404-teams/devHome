@@ -19,7 +19,3 @@ newLogin.addEventListener('submit', function(event){
     
   
    });
-   $('form').submit(function(event){
-    //    event.preventDefault();
-    alert('hi');
-});

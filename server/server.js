@@ -33,7 +33,7 @@ app.set('view engine', 'ejs');
 app.get('/',API.homePage);
 app.get('/jobs/search',API.goToSearchPage); ///////////// rework on it
 app.post('/jobs',API.searchJobResult);
-app.post('/jobs/save',API.savedJobs);
+app.post('/jobs/save/:id',Auth,API.savedJobs);
 app.get('/jobs/user/:id',API.eachUserJob);
 
 // -------------end of jobs route------------------
@@ -61,7 +61,8 @@ app.post('/login/create',API.login)
 
 
 app.get('/blogs',API.showBlogs)
-app.get('/blog/create/:id',API.blog)
+app.get('/blog/create/jj',API.addblog)
+app.get('/blog/create/:id',Auth,API.blog)
 app.get('/login',API.logintest)
 
 app.post('/blog/create',API.addBlog)
