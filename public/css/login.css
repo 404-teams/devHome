@@ -1,50 +1,65 @@
-h2#log {
-    padding-top: 10%;
-    font-size: 39px;
-    display: flex;
-    justify-content: center;
-    font-family: cursive;
-    color: #7accc4;
+legend#log {
+    font-size: 28px;
+    color: #E89A3D;
+    font-weight: 600;
+    text-align: end;
+    padding: 16px 21px;
 }
-
+div#logpage {
+    width: 50%;
+    position: relative;
+    top: 143px;
+    margin: 0% 22%;
+}
 form#login {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    margin-left: 26%;
+    width: 75%;
+    margin-left: 12%;
     border: 2px solid;
-    border-radius: 7px;
-    color: #7accc4;
+    border-radius: 4px;
+    color: #266490;
     margin-top: 1%;
-    background: beige;
+    background: white;
 }
 label {
-    background: beige;
+    background: white;
     font-size: 24px;
     display: flex;
     flex-direction: row-reverse;
-    /* padding-right: 18px; */
     padding: 7px 20px;
     letter-spacing: 2px;
     word-spacing: 2px;
 }
-
-.inputs{
+.inputs {
     height: 40px;
-    border-radius: 40px;
+    border-radius: 8px;
     margin: 17px;
-    padding: 7px ; 
-    
+    padding: 7px;
     font-size: 17px;
-   }
-input[type="submit"] {
+    
+}
+   button{
     height: 61px;
     margin-top: 28px;
     border: 1px solid;
-    color: #79cbc3;
+    color: white;
     border-radius: 6px;
     font-size: 23px;
+    background: #293252;
 }
-input[type="submit"]:hover{
+button:hover{
     color:gray;
+}
+hr {
+    border: 1px solid;
+    width: 99%;
+    color: whitesmoke;
+}
+div#check {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    margin-right: 14px;
+    color: orange;
 }

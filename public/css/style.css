@@ -10,7 +10,7 @@ a.nav {
     color: white;
     padding: 1%;
     text-decoration: none;
-    margin-top: -1%;
+    margin-top: 0%;
     font-size: 18px;
 }
 
@@ -19,14 +19,14 @@ a.navspe {
     float: left;
     padding: 1%;
     text-decoration: none;
-    margin-top: -1%;
+    margin-top: 0%;
     font-size: 18px;
 
 
 }
 
 a.navspe:hover{
-    background-color: rgba(175, 101, 76, 0.541);
+    background-color: rgba(123, 149, 167, 0.541);
     transition: 0.5s;
     border-radius: 10px;
 
@@ -34,26 +34,28 @@ a.navspe:hover{
 
 a.nav:hover {
     color: #E9E9E9;
-     background-color: rgba(175, 101, 76, 0.541);
+    background-color: rgba(123, 149, 167, 0.541);
     transition: 0.5s;
     border-radius: 10px;
 }
 
 header {
-   
     position: fixed;
     width: 100%;
-    background-color: #303036;
+    background-color: #293252;
     opacity: .85;
-    padding: 2%;
-    margin-bottom: 116px;
-    box-shadow: 0px 15px 25px rgba(83, 72, 72, 1);
+    padding: 1.5%;
+    margin-bottom: 2px;
+    z-index: 9999;
+    box-shadow: 0px 5px 5px rgba(83, 72, 72, 1);
 }
 img.unknown {
     border-radius: 74%;
     width: 3.5%;
     float: left;
-    margin-top: -1%;
+    margin-top: 0%;
+    padding-right: 7px;
+
     }
 
 h1.mainhed {
@@ -61,16 +63,16 @@ h1.mainhed {
     font-family: 'Aref Ruqaa', serif;
     float: right;
     font-size: 187%;
-    margin-top: -1%;
+    margin-top:0%;
 
     
 }
 img.mainpic {
     height: 528px;
     width: 100%;
-    margin-top: 7%;
+    margin-top: 6.5%;
     opacity: .86;
-    box-shadow: 0px 15px 25px rgba(83, 72, 72, 0.699);
+    box-shadow: 0px 5px 5px rgba(83, 72, 72, 0.699);
 }
 form.signupform {
     background-color: #123030;
@@ -115,25 +117,29 @@ button.signupbutton:hover{
 }
 h2.itroheader {
     font-size: 265%;
-    color: #777777;
-    margin-top: 13%;
-    margin-bottom: 2%;
-    margin-left: 30%;
+    color: #439a8d;
+    margin-top: 5%;
+    text-align: center;
+    padding-bottom: 19px;
 }
 div.homeDev {
     padding: 1%;
     background-image: url(https://getfreepoint.com/wp-content/uploads/2018/06/Questions-2017_09_28-19_17_30-UTC.jpg);
-    height: 571px;
-    height: 806px;
+    height: 562px;
     background-size: cover;
+    width: 55%;
+    margin-left: 16%;
+    border: 1px solid bisque;
+    border-radius: 19px;
+    margin-top: 58px;
 }
 .paragra {
     width: 60%;
 }
 p.introp {
-    font-size: 168%;
+    font-size: 149%;
     text-align: right;
-    color: #777777;
+    color: #365e58;
     padding: 1%;
 }
 
@@ -253,13 +259,4 @@ img.up {
   color: #ffffff;
   font-weight: bolder;
   font-size: 1.2em;
-}
-
-img#rrrr {
-    width: 17%;
-    margin-left: -176px;}
-img#rrr {
-width: 17%;
-margin-right: -184px;
-transform: scaleX(-1);
 }

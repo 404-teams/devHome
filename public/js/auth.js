@@ -19,7 +19,14 @@ newLogin.addEventListener('submit', function(event){
     
   
    });
-   $('form').submit(function(event){
-    //    event.preventDefault();
-    alert('hi');
-});
+   function myFunction() {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+
+
+ 
