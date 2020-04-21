@@ -11,20 +11,23 @@ img.name {
     margin-top: -50px;
 }
 a.nav {
-    color: #e9e9e9;
     float: left;
+    color: white;
     padding: 1%;
     text-decoration: none;
-    margin-top: -2%;
-    font-size: 121%;
+    margin-top: -1%;
+    font-size: 18px;
 }
+
 a.navspe {
     color: #e9e9e9;
     float: left;
     padding: 1%;
     text-decoration: none;
-    margin-top: -2%;
-    font-size: 121%;
+    margin-top: -1%;
+    font-size: 18px;
+
+
 }
 a.nav:hover {
     color: #e9e9e9;
@@ -37,12 +40,12 @@ a.navspe:hover {
     background-color: rgba(123, 149, 167, 0.541);
     border-radius: 5px;
 }
+
 header {
     background-color: #293252;
     padding: 3%;
     
 }
-
 img.unknown {
     border-radius: 74%;
     width: 3.5%;
@@ -56,12 +59,13 @@ h1.mainhed {
     float: right;
     font-size: 187%;
     margin-top: -1%;
-}
 
+    
+}
 img.mainpic {
     height: 528px;
     width: 100%;
-    margin-top: -1.5%;
+    margin-top: 7%;
     opacity: .86;
     box-shadow: 0px 15px 25px rgba(83, 72, 72, 0.699);
 }
@@ -80,28 +84,31 @@ label.signuplable {
     font-size: 137%;
     margin: 2% -17% -2% 20%;
 }
-
 input.signupinput {
+
     padding: 2%;
     width: 137%;
+
     margin: 5% -25%;
 }
-
 button.signupbutton {
+
     width: 77%;
     padding: 11%;
+
     border-radius: 54%;
     box-shadow: none;
     border: none;
-    background-color: #3b7c70;
+    background-color: #3B7C70;
     color: white;
+
     margin-top: 2%;
     font-size: 171%;
     margin-left: 11%;
 }
 button.signupbutton:hover{
     background-color:white ;
-    color: #3b7c70;
+    color: #3B7C70;
 }
 h2.itroheader {
     font-size: 265%;
@@ -110,7 +117,6 @@ h2.itroheader {
     margin-bottom: 2%;
     margin-left: 30%;
 }
-
 div.homeDev {
     padding: 1%;
     background-image: url(https://getfreepoint.com/wp-content/uploads/2018/06/Questions-2017_09_28-19_17_30-UTC.jpg);
@@ -136,29 +142,7 @@ label.signuplable {
     margin: 2% -29% 2% 20%;
 }
 
-input.signupinput {
-    padding: 3%;
-    width: 147%;
-    margin: 5% -25%;
-}
 
-button.signupbutton {
-    width: 105%;
-    padding: 3%;
-    border-radius: 54%;
-    box-shadow: none;
-    border: none;
-    background-color: #3b7c70;
-    color: white;
-    margin-top: 12%;
-    font-size: 171%;
-    margin-left: 1%;
-}
-button.signupbutton:hover{
-    background-color:white ;
-    color: #3b7c70;
-
-}
 
 /* div#divforform {
     margin-top: -27%;
