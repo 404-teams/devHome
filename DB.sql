@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS questions;
 DROP TABLE IF EXISTS answers;
 DROP TABLE IF EXISTS cdns;
 DROP TABLE IF EXISTS jobs;
+DROP TABLE IF EXISTS blogs;
 
 
 CREATE TABLE users
@@ -15,7 +16,8 @@ CREATE TABLE users
     status VARCHAR(255),
     rank INTEGER
 );
--- INSERT INTO users (name,email,password,image,status,rank) VALUES ('Abdallah','Abdalla@gmail.com','123456789','url','true',999);
+INSERT INTO users (name,email,password,image,status,rank) VALUES ('Abdallah','Abdalla@gmail.com','123456789','url','true',999);
+
 
 CREATE TABLE questions
 (
@@ -88,4 +90,15 @@ CREATE TABLE cdns
     user_id INT,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
+
+CREATE TABLE blogs 
+(
+    id SERIAL PRIMARY KEY,
+    tittle VARCHAR(255),
+    blog TEXT,
+    img TEXT,
+    user_id INT,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+
+)
 

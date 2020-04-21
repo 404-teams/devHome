@@ -37,7 +37,7 @@ app.set('view engine', 'ejs');
 //------------------ jobs route ------------------
 app.get('/',API.homePage);
 app.get('/jobs/search',API.goToSearchPage); ///////////// rework on it
-app.get('/jobs',API.searchJobResult);
+app.post('/jobs',API.searchJobResult);
 app.post('/jobs/save',API.savedJobs);
 app.get('/jobs/user/:id',API.eachUserJob);
 
@@ -60,19 +60,26 @@ app.put('/ans_approved',Auth,queFunctions.ans_approved)
 
 //------------------ CDN route ------------------
 
-app.get('/cdns',API.cdnFunction);
 app.get('/cdns/search' , API.searchOfCdn);
 app.post('/cdns/save' , API.saveDataForCdnToDataBase);
 app.get('/cdns/user/:id' , API.getEachUserCdnData);
+app.get('/cdns',API.cdnFunction);
 app.post('/signup',API.signup);
 app.get('/signupNewUser', API.creatNewUser);
 
 // -------------end of CDN route------------------
 
 app.post('/login/create',API.login)
+
+
+app.get('/blogs',API.showBlogs)
+app.get('/blog/create/:id',API.blog)
 app.get('/login',API.logintest)
 
+app.post('/blog/create',API.addBlog)
+app.get('/blog',API.showBlog)
 
 app.use(API.error);
 
 app.listen(PORT, () => console.log('hear from port: ' + PORT));
+ 

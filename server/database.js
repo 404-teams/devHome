@@ -59,13 +59,39 @@ DB.getEachUserJobFromDb=function(id){
 
 }
 
+DB.addBlog = function(safeValues){
+  let SQL = 'INSERT INTO blogs (tittle,blog,img,user_id) VALUES ($1,$2,$3,$4) RETURNING id'
+ return client.query(SQL,safeValues).then(data=>data.rows)
+}
+
+
+DB.showBlog = function(safeValues){
+  let SQL = 'SELECT * FROM blogs WHERE id=$1'
+ return client.query(SQL,safeValues)
+}
+
+DB.showBlogs = function(){
+  let SQL = 'SELECT b.tittle,b.img,b.id,u.id as userid,u.name FROM blogs b INNER JOIN users u ON u.id=b.user_id ORDER BY b.id DESC'
+  return client.query(SQL)
+}
+
+
+
+
+
+
+
+
+
+
+
+
 client
   .connect()
   .then(() => console.log('connected'))
   .catch((err) => console.error(err.stack));
 
  
-
 
 
 module.exports = DB;

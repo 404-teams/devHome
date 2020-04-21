@@ -5,25 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
- 
+
 
 <body>
-    
+
     <h2>Search Results</h2>
-    <% job.forEach((val)=> { %>
-    <div >
-        <img  src=<%=val.company_logo %><br>
-        <p >type : <%=val.type %></p>
-        <p >company : <%=val.company %></p>
-        <p >company_url : <%=val.company_url %></p>
-        <p >location : <%=val.location %></p>
-        <p >title : <%=val.title %></p>
-        <p >job Description  : <%= val.description %></p>
-        
+
+    <% job.forEach((val ,indx)=> { %>
+    <div>
+        <img src=<%=val.company_logo %><br>
+        <p>النوع: <%=val.type %></p>
+        <p>الشركة : <%=val.company %></p>
+        <p>رابط الشركة : <%=val.company_url %></p>
+        <p>الموقع : <%=val.location %></p>
+        <p>العنوان : <%=val.title %></p>
+
+       <button onclick="show('<%=indx%>')" name="detSec<%=indx%>" id="detbtn<%=indx%>"> عرض التفاصيل</button>
+        <section id="detSec<%=indx%>">
+            <p id='jobDes<%=indx%>'>تفاصيل الوظيفة : <%= val.description %></p>
+        </section>
+
+        <form onsubmit="return false" >
+            <input type="hidden" name="company_logo" value="<%=val.company_logo  %>">
+            <input type="hidden" name="type" value="<%=val.type %>">
+            <input type="hidden" name="company" value="<%=val.company %>">
+            <input type="hidden" name="company_url" value="<%= val.company_url %>">
+            <input type="hidden" name="location" value="<%= val.location %>">
+            <input type="hidden" name="title" value="<%= val.title %>">
+            <input type="hidden" name="description" value="<%= val.description %>">
+
+
+            <button>اضف الى المحفوظات</button>
+        </form>
     </div>
     <% }); %>
-    
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="/js/auth.js"></script>
 
+    <script src="/js/app.js"></script>
 </body>
 
 </html>

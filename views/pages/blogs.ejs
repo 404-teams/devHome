@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <script id="blog" type="x-tmpl-mustache">
+        <div class="containr" onclick="clicked({{id}})">
+            <div >
+                <img class="imgblog" src="{{img}}" alt="">
+            </div>
+            <div class="containr2">
+                <div>
+                    <p>{{tittle}}</p>
+                </div>
+                <div>
+                    <p>                 
+                        كتبة بواسطة :{{name}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script id="btn" type="x-tmpl-mustache">
+
+        <button onclick="chengeblogs({{index}})">{{number}}</button>
+    </script>
+
+</head>
+
+<body>
+    <button onclick="addBlog()">صنع محتوى</button>
+    <p id="blogs" style="display: none;"><%=blogs%></p>
+    <!-- <div class="containr">
+        <div >
+            <img class="imgblog" src="https://www.knstek.com/wp-content/uploads/2012/12/default_blog_large.png" alt="">
+        </div>
+        <div class="containr2">
+            <div>
+                <p>تستبنمتيسبمنتسنيمsdfdsfdsfdsfdsffdsبمنيستبنيستبنمتيسب</p>
+            </div>
+            <div>
+                <p>                 
+                    كتبة بواسطة :يزن الوليد
+                </p>
+            </div>
+        </div>
+    </div> -->
+    <div class="containrbtn">
+    </div>
+    <script src="https://unpkg.com/mustache@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
+    <script src="js/blogs.js"></script>
+</body>
+
+</html>
