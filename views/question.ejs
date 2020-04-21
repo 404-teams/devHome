@@ -5,45 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/question.css">
-
     <title>Document</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
    
 </head>
 <body>
     <%- include ('../views/layout/header.ejs') %>
-
     <main>
-        <form action="/question?id=<%=queData[0].que_id%>">
-            <div class="div"> 
-                <h1>Question:</h1>
-                <p id="title" >Title: <%=queData[0].title%></p>
-                <p id="description">Description: <%=queData[0].que_description%></p>
-                <pre id="code">Code: <%=queData[0].que_code%></pre>
-            </div>
-            
-            <% if (queData[0].answer !== null){ %>
-            <div class="div">
-                <h1>Ansers:</h1>
-                <%queData.forEach((ele)=>{%>
-                <p id="title">Answer: <%=ele.answer%></p>
-                <p id="description">Description: <%=ele.ans_description%></p>
-                <pre id="code">Code: <%=ele.ans_code%></pre>
-                <p id="approved">Approved: <%=ele.approved%></p>
-                <p id="rank">Rank: <%=ele.ans_rank%></p>
+        <h1>Question:</h1>
+        <div class="div"> 
+            <p id="title" >Title: <%=queData[0].title%></p>
+            <p id="username" >Asked by: <%=queData[0].username%></p>
+            <p id="description">Description: <%=queData[0].que_description%></p>
+            <pre id="code">Code: <%=queData[0].que_code%></pre>
+        </div>
+            <h1>Answers:</h1>
+            <% if (ansData.length !== 0){ %>
+                <%ansData.forEach((ele)=>{%>
+                <div class="div">
+                <div>
+                    <label class="switch">
+                        <input type="checkbox" onchange='approved(this, "<%=queData[0].q_user_id%>", "<%=ele.ans_id%>");' checked ='<%=ele.approved%>' >
+                        <span class="slider round"></span>
+                      </label>
+                    <button type="button" onclick="PlusMinus('<%=ele.ans_id%>','<%=ele.ans_user_id%>',1)">Plus</button>
+                    <button type="button" onclick="PlusMinus('<%=ele.ans_id%>','<%=ele.ans_user_id%>',-1)">Minus</button>
+                    <p id="title">Answer: <%=ele.answer%></p>
+                    <p id="username" >name: <%=ele.username%></p>
+                    <p id="description">Description: <%=ele.ans_description%></p>
+                    <pre id="code">Code: <%=ele.ans_code%></pre>
+                    <p id="approved">Approved: <%=ele.approved%></p>
+                    <p id='rank<%=ele.ans_id%>'><%=ele.ans_rank%></p>
+                </div>
+                <%ansData.forEach((rep)=>{%>
+                    <% if (rep.reply != null && rep.rep_answer_id === ele.ans_id){ %>
+                        <section class="section">
+                            <p id="title">reply: <%=ele.reply%></p>
+                            <p id="description">Description: <%=ele.rep_description%></p>
+                            <pre id="code">Code: <%=ele.rep_code%></pre>
+                        </section>
+                    <%}%>
                 <%});%>
-            </div>
+                        <form  class="reply" id ='reply'>
+                            <input type="text" name="reply" placeholder="reply" required>
+                            <input type="text" name="repId" value="<%=ele.ans_id%>" style="display: none;" required>
+                            <textarea  rows="4" cols="50" name="description" placeholder="Description" required></textarea>
+                            <textarea  rows="4" cols="50" name="code" placeholder="Code" required></textarea>
+                            <input id="add" type="submit" value="Add reply">
+                        </form>
+                    </div>
+                <%});%>
             <%}%>
+        <form id="form">
+            <input type="text" name="answer" placeholder="Ansers title" required>
+            <input type="text" name="queId" value="<%=queData[0].que_id%>" style="display: none;" required>
+            <textarea  rows="4" cols="50" name="description" placeholder="Description" required></textarea>
+            <textarea  rows="4" cols="50" name="code" placeholder="Code" required></textarea>
+            <input id="add" type="submit" value="Add answer">
         </form>
-        <form id="form" action="/addAns<%=queData[0].que_id%>" method="POST">
-            <input type="text" name="answer" placeholder="Ansers title" >
-            <textarea  rows="4" cols="50" name="description" placeholder="Description"></textarea>
-            <textarea  rows="4" cols="50" name="code" placeholder="Code"></textarea>
-            <button>Add answer</button>
-        </form>
-            
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
+        <script src="js/addAns.js"></script>
+        <script src="js/ansRank.js"></script>
+        <script src="js/addReply.js"></script>
     </main>
 </body>
 </html>

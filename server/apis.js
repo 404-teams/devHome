@@ -41,7 +41,9 @@ API.login = function (req, res) {
         /// create a token for the uer with expires in 1 min and send it back to the clinet side
         let token = jwt.sign(
           { id, email },
-          'devhome',{ expiresIn: 120 }
+
+          'devhome',{ expiresIn: 1000000 }
+
         );
         return res.send(token);
         //// if the user input the wrong password 
@@ -166,8 +168,24 @@ API.logintest=function(req,res){
 }
 
 API.blog = function(req,res){
-  res.render('pages/blogs')
+  res.render('pages/wirteblog')
 }
 
+
+
+API.addBlog = function(req,res){
+  let {tittle,blog,img,id} = req.body;
+  DB.addBlog([tittle,blog,img,id]).then(blog=>res.send(blog[0]))
+}
+
+API.showBlog= function(req,res){
+  DB.showBlog([req.query.id]).then(blog=>res.render('pages/blog',{blog:blog.rows[0].blog}))
+  console.log(req.query,'sdfdfs')
+}
+
+
+API.showBlogs = function(req,res){
+  DB.showBlogs().then(blogs=>res.render('pages/blogs',{blogs:JSON.stringify(blogs.rows)}))
+}
   module.exports = API;
 
