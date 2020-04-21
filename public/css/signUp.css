@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 @import url('https://fonts.googleapis.com/css2?family=Lateef&family=Rakkas&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Amiri&family=Lateef&family=Rakkas&display=swap');
+
+
 * {
     box-sizing: border-box;
 }
+
 main#signup {
     margin-top: 75px;
 }
@@ -135,13 +138,22 @@ button.ghost {
     transition: all .6s ease-in-out;
 }
 
+.sign-up-container {
+    left: 0;
+    width: 50%;
+    z-index: 1;
+    opacity: 0;
+}
+
 .sign-in-container {
     left: 0;
     width: 50%;
     z-index: 2;
 }
 
-
+label {
+    cursor:default;
+}
 
 .overlay-container {
     position: absolute;
@@ -190,12 +202,48 @@ button.ghost {
     transform: translateY(-20%);
 }
 
+/* Move signin to right */
+.container.right-panel-active .sign-in-container {
+    transform: translateY(100%);
+}
+
+/* Move overlay to left */
+.container.right-panel-active .overlay-container {
+    transform: translateX(-100%);
+}
+
+/* Bring signup over signin */
+.container.right-panel-active .sign-up-container {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+}
+
+/* Move overlay back to right */
+.container.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+
+/* Bring back the text to center */
+.container.right-panel-active .overlay-left {
+    transform: translateY(0);
+}
+
+/* Same effect for right */
+.container.right-panel-active .overlay-right {
+    transform: translateY(20%);
+}
 
 
 
 
-
-
+.icons {
+	display: flex;
+	width: 30px;
+	height: 30px;
+	letter-spacing: 15px;
+	align-items: center;
+}
 
 
 

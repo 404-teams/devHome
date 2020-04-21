@@ -7,10 +7,13 @@ $("#signupform").submit(function(event){
     let password= event.target.password.value;
     let img = event.target.img.value;
     let status= event.target.status.value;
+    let errorNombre = document.getElementById("signupform")
     $.post("/signup",{email , username ,password ,img ,status},function(result){
         // console.log(result);
         if (result ==='this user is here'){
-            alert("هذا المستخدم مُسَجَل")
+        //     errorNombre.innerHTML = "<font  color='#0f2352'  > أنت من عائلتنا منذ زمن ! <br> هل تود تسجيل الدخول ؟</font>";
+        // return false;
+        alert(' أنت من عائلتنا منذ زمن !  هل تود تسجيل الدخول ؟')
         }
         else{
             window.location.assign("/");
