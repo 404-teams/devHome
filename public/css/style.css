@@ -1,10 +1,14 @@
 img.logo {
-    height: 20%;
-    width: 19%;
-    /* display: flex; */
+    width: 15%;
     float: right;
-    margin-right: -3%;
-    margin-top: -3.4%;
+    margin-right: -5%;
+    margin-top: -61px;
+}
+img.name {
+    width: 19%;
+    float: right;
+    margin-right: -4%;
+    margin-top: -50px;
 }
 a.nav {
     color: #e9e9e9;
@@ -24,16 +28,19 @@ a.navspe {
 }
 a.nav:hover {
     color: #e9e9e9;
-    background-color:  #e2ae8a;;
+    background-color: rgba(123, 149, 167, 0.541);
+    border-radius: 5px;
 }
 
 a.navspe:hover {
-    color: white;
-    background-color:  #e2ae8a;;
+    color: #e9e9e9;
+    background-color: rgba(123, 149, 167, 0.541);
+    border-radius: 5px;
 }
 header {
-    background-color: #560505;
+    background-color: #293252;
     padding: 3%;
+    
 }
 
 img.unknown {
@@ -41,6 +48,7 @@ img.unknown {
     width: 3.5%;
     float: left;
     margin-top: -2%;
+    padding-right: 6px;
 }
 h1.mainhed {
     color: white;
@@ -152,7 +160,7 @@ button.signupbutton:hover{
 
 }
 
-div#divforform {
+/* div#divforform {
     margin-top: -27%;
 }
 
@@ -162,9 +170,9 @@ div#divforform {
     margin: 2% 20% 0% 20%;
     border: 1px solid;
     border-radius: 60px;
-}
+} */
 
-p.cdn {
+/* p.cdn {
     text-align: left;
     padding: 1%;
     color: teal;
@@ -189,9 +197,9 @@ h2.cdn {
     color: white;
     background-color: teal;
     font-size: 112%;
-}
+} */
 
-input#search {
+/* input#search {
     padding: 2%;
     width: 67%;
 }
@@ -206,4 +214,4 @@ button.searchbutton {
 form#searchs {
     margin: 2% 25% 2% 29%;
     padding: 2%;
-}
+} */
