@@ -15,9 +15,10 @@
     <img class="name" src="./IMG/name.png" alt="">
     <nav>
       <div>
-        <img class="unknown" src="https://emanong-ph.com/api/people/avatar/0" alt="">
-        <a class="navspe" href="/login"> تسجيل الدخول </a>
-        <a class="navspe" href="/signupNewUser"> إنشاء حساب </a>
+        <img id="userimg" class="unknown" src="https://emanong-ph.com/api/people/avatar/0" alt="">
+        <a id="login" class="navspe" href="/login"> تسجيل الدخول </a>
+        <a id="signup" class="navspe" href="/signupNewUser"> إنشاء حساب </a>
+        <a id="logout"  class="navspe" href="javascript:logout()">تسجيل خروج</a>
         <a class="nav" href="/cdns">CDN </a>
         <a class="nav" href="/questions">اسألني</a>
         <a class="nav" href="/jobs/search">وظائف</a>
@@ -25,4 +26,6 @@
       </div>
     </nav>
   </header>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
+  <script src="js/header.js"></script>
 </body>
