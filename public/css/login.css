@@ -4,7 +4,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Amiri&family=Lateef&family=Rakkas&display=swap');
 * {
     box-sizing: border-box;
-    overflow: hidden;
 }
 main#signup {
     margin-top: 75px;
@@ -18,7 +17,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: -20px 0 50px;
+    margin: 0 0 50px;
         margin-top: 20px;
 }
 h1 {
