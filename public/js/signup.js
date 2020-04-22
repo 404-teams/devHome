@@ -25,13 +25,3 @@ $('#signupform').submit(function (event) {
   // console.log( event.target.email.value);
 });
 
-$('#searchs').submit(function (event) {
-  event.preventDefault();
-  let search_query = event.target.search.value;
-  $.get('/cdns/search', { search_query }, function (results) {
-    console.log(results);
-  });
-
-  console.log(event);
-  console.log(event.target.search.value);
-});

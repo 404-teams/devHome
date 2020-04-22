@@ -25,6 +25,7 @@ $(function () {
       title: data[i].title,
       indx: i,
       number: i + 1,
+      description:data[i].description
     });
     $(rendered).appendTo('#sec2');
  }
@@ -42,11 +43,11 @@ function hide(i) {
     $(`#detSec${i}`).hide();
   }
 }
-// console.log(data);
-// alert('dsffsdf');
+
 function addForm() {
   $('form[name="addjob"]').each(function (i, e) {
     $(this).submit(function (event) {
+      console.log(event.target.description.value)
       $.ajax({
         url: '/jobs/save/' + localStorage.id,
         data: {
@@ -56,7 +57,8 @@ function addForm() {
           company_url: event.target.company_url.value,
           location: event.target.location.value,
           title: event.target.title.value,
-          description: event.target.description.value,
+          description: JSON.stringify(event.target.description.value)
+          ,
         },
         type: 'POST',
         headers: { authorization: `bearer ${localStorage.token}` },
@@ -77,7 +79,6 @@ function addForm() {
   });
 }
 function chengeJobs(i) {
-  console.log(i, 'fist');
   $('#sec2').empty();
   if (i < 100) {
     i *= 20;
@@ -87,7 +88,7 @@ function chengeJobs(i) {
   let end = i + 20;
   for (; i < end; i++) {
     if (data[i] === undefined) {
-      // break;
+      break;
     } else {
       var template = document.getElementById('job').innerHTML;
       var rendered = Mustache.render(template, {
@@ -115,13 +116,9 @@ $('#searchjob').submit(function (event) {
     data = resulte;
     chengeJobs(0);
   });
-  // console.log(event.target);
 });
 
 function savedjobs() {
-  // $.get('/jobs/user/'+localStorage.id).then(data=>{
-  //   console.log(data)
-  // })
   $.ajax({
     type: 'GET',
     headers: {
@@ -129,19 +126,16 @@ function savedjobs() {
     },
     url: '/jobs/user/' + localStorage.id,
     success: function (msg) {
-      console.log(msg.rows)
-      data = msg.rows
-      chengeJobs(0);
+      if(msg === 'not the same user'){
+        alert(msg)
+      }else if(msg ==='please login or singup' ){
+        alert(msg)
+      }else{
+        data = msg.rows
+        chengeJobs(0);
+        console.log(msg.rows)
+      }
     },
   });
-  // $.ajax({
-  //   type: "GET",
-  //   beforeSend: function(request) {
-  //     request.setRequestHeader("Authority", `bearer ${localStorage.token}`);
-  //   },
-  //   url: '/jobs/user/'+localStorage.id,
-  //   success: function(msg) {
-  //    console.log(msh)
-  //   }
-  // });
 }
+
