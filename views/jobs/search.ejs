@@ -47,24 +47,9 @@
 </head>
 
 <body>
-  
-  <header id="headerHeader">
-    <img class="logo" src="../IMG/home.png" alt="">
-    <img class="name" src="../IMG/name.png" alt="">
-    <nav>
-      <div>
-        <img id="userimg" class="unknown" src="https://emanong-ph.com/api/people/avatar/0" alt="">
-        <a id="login" class="navspe" href="/login"> تسجيل الدخول </a>
-        <a id="signup" class="navspe" href="/signupNewUser"> إنشاء حساب </a>
-        <a id="logout"  class="navspe" href="javascript:logout()">تسجيل خروج</a>
-        <a class="nav" href="/cdns">CDN </a>
-        <a class="nav" href="/questions">اسألني</a>
-        <a class="nav" href="/jobs/search">وظائف</a>
-        <a class="nav" href="/">الصفحة الرئيسية </a>
-      </div>
-    </nav>
-  </header>
-  <button id="jobb" onclick="savedjobs()"  >الوظائف المحفوظة</button>
+
+  <%- include ('../layout/header.ejs') %>
+
   <main class="mainj">
     <p id="serverJobs" style="display: none;"><%=job%></p>
     <div  class="bigdiv">
