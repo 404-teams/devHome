@@ -1,14 +1,35 @@
+
+body{
+  overflow-x: hidden;
+
+}
+main {
+  width: 100%;
+  box-sizing: border-box;
+}
+header {
+  background-color: #293252;
+  padding: 3%;
+  position: sticky;
+  z-index: 999999;
+  top: 0;
+  opacity: 0.8;
+  width: 100%;
+  box-shadow: 0px 5px 6px rgba(83, 72, 72, 0.699);
+
+}
+
 img.logo {
-  width: 200px;
+  width: 192px;
   float: right;
-  margin-right: -5%;
+  margin-right: 1%;
   margin-top: -61px;
 }
 img.name {
-  width: 19%;
+  width: 17%;
   float: right;
   margin-right: -4%;
-  margin-top: -50px;
+  margin-top: -53px;
 }
 a.nav {
   float: left;
@@ -39,15 +60,6 @@ a.navspe:hover {
   border-radius: 5px;
 }
 
-header {
-  background-color: #293252;
-  padding: 3%;
-  position: sticky;
-  z-index: 999999;
-  top: 0;
-  opacity: 0.8;
-  width: 100%;
-}
 
 img.unknown {
   border-radius: 74%;
@@ -66,9 +78,9 @@ h1.mainhed {
 img.mainpic {
   height: 528px;
   width: 100%;
-  margin-top: 7%;
+  margin-top: -1.6%;
   opacity: 0.86;
-  box-shadow: 0px 15px 25px rgba(83, 72, 72, 0.699);
+  box-shadow: 0px 5px 6px rgba(83, 72, 72, 0.699);
 }
 h2.itroheader {
   font-size: 265%;
@@ -85,66 +97,7 @@ div.homeDev {
   height: 806px;
   background-size: cover;
 }
-/* form.signupform {
-    background-color: #123030;
-    width: 20%;
-    padding: 7%;
-    border-radius: 8%;
-    margin-left: 33%;
-    margin-top: 3%;
-    height: 416px;
-}
-label.signuplable {
-    float: right;
-    color: white;
-    font-size: 137%;
-    margin: 2% -17% -2% 20%;
-}
-input.signupinput {
 
-    padding: 2%;
-    width: 137%;
-
-    margin: 5% -25%;
-}
-button.signupbutton {
-
-    width: 77%;
-    padding: 11%;
-
-    border-radius: 54%;
-    box-shadow: none;
-    border: none;
-    background-color: #3B7C70;
-    color: white;
-
-    margin-top: 2%;
-    font-size: 171%;
-    margin-left: 11%;
-}
-button.signupbutton:hover{
-    background-color:white ;
-    color: #3B7C70;
-}
-
-
-.paragra {
-    width: 60%;
-}
-p.introp {
-    font-size: 168%;
-    text-align: right;
-    color: #777777;
-    padding: 1%;
-}
-
-
-label.signuplable {
-    float: right;
-    color: white;
-    font-size: 137%;
-    margin: 2% -29% 2% 20%;
-} */
 
 button.searchbutton {
   width: 21%;
@@ -214,12 +167,4 @@ img.up {
   font-size: 1.2em;
 }
 
-img#rrrr {
-  width: 17%;
-  margin-left: -176px;
-}
-img#rrr {
-  width: 17%;
-  margin-right: -184px;
-  transform: scaleX(-1);
-}
+

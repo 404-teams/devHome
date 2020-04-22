@@ -108,7 +108,9 @@ API.goToSearchPage = function (req, res) {
     let result = data.body.map((val) => {
       return new Obj.Job(val);
     });
-    res.render('jobs/search.ejs', { job: JSON.stringify(result) });
+    res.render('jobs/search.ejs', { job: result.splice(1,20)});
+
+    // res.render('jobs/search.ejs', { job: JSON.stringify(result) });
   });
   // res.render('jobs/search.ejs');
 };
@@ -127,7 +129,7 @@ API.searchJobResult = function (req, res) {
       return new Obj.Job(val);
     });
     // console.log('rrrrrrrrrrrrrrrrrrr',result);
-    res.render('jobs/job.ejs', { job: result.splice(1, 10) });
+    res.render('jobs/job.ejs', { job: result.splice(1, 20) });
     // res.send(result.splice(1,10) );
   });
 };

@@ -1,50 +1,52 @@
-// function show(indx) {
-//   $(`#detSec${indx}`).toggle();
-// }
+function show(indx) {
+  $(`#detSec${indx}`).toggle();
+}
 
-// $(document).ready(function () {
-//   for (var i = 0; i < 10; i++) {
-//     $(`#detSec${i}`).hide();
-//   }
-// });
+$(document).ready(function () {
+  for (var i = 0; i < 20; i++) {
+    $(`#detSec${i}`).hide();
+  }
+});
 
-// for (var i = 0; i < 10; i++) {
-//   var str = $(`#jobDes${i}`).text();
-//   $(`#jobDes${i}`).html(str);
-// }
-// $('form').each(function (i, e) {
-//   $(this).submit(function (event) {
+for (var i = 0; i < 20; i++) {
+  var str = $(`#jobDes${i}`).text();
+  $(`#jobDes${i}`).html(str);
+}
+$('form').each(function (i, e) {
+  $(this).submit(function (event) {
 
-//     $.ajax({
-//       url: '/jobs/save/'+localStorage.id,
-//       data: {
-//         type: event.target.type.value,
-//         company_logo: event.target.company_logo.value,
-//         company: event.target.company.value,
-//         company_url: event.target.company_url.value,
-//         location: event.target.location.value,
-//         title: event.target.title.value,
-//         description: event.target.description.value,
-//       },
-//       type: 'POST',
-//       headers: { authorization: `bearer ${localStorage.token}` },
-//       success: function (data) {
-//         if (data === 'not the same user') {
-//           alert('not the same user');
-//         } else if (data === 'please login or singup') {
-//           alert('login please');
-//         } else {
-//             alert('done')
-//         }
-//       },
-//       error: function (err) {
-//         console.log(err);
-//       },
-//     });
-//     console.log('jsfdsfjkl');
-//   });
+    $.ajax({
+      url: '/jobs/save/'+localStorage.id,
+      data: {
+        type: event.target.type.value,
+        company_logo: event.target.company_logo.value,
+        company: event.target.company.value,
+        company_url: event.target.company_url.value,
+        location: event.target.location.value,
+        title: event.target.title.value,
+        description: event.target.description.value,
+      },
+      type: 'POST',
+      headers: { authorization: `bearer ${localStorage.token}` },
+      success: function (data) {
+        if (data === 'not the same user') {
+          alert('not the same user');
+        } else if (data === 'please login or singup') {
+          alert('login please');
+        } else {
+            alert('done')
+        }
+      },
+      error: function (err) {
+        console.log(err);
+      },
+    });
+    console.log('jsfdsfjkl');
+  });
 
-// });
+});
+
+// ------------------------------------
 let data;
 $(function () {
   data = $('#serverJobs').text();
@@ -80,6 +82,7 @@ $(function () {
   // });
   console.log(data);
 });
+
 function show(indx) {
   $(`#detSec${indx}`).toggle();
 }
@@ -155,3 +158,4 @@ function chengeJobs(i) {
   hide(i - 10);
   window.scrollTo(0, 0);
 }
+

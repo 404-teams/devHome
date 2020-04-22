@@ -6,58 +6,159 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/index.css">
+  <!-- <link rel="stylesheet" href="./css/index.css"> -->
   <link rel="stylesheet" href="./css/footer.css">
-  <link rel="stylesheet" href="./css/main.css">
+  <!-- <link rel="stylesheet" href="./css/main.css"> -->
+  <link rel="stylesheet" href="./css/home.css">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <script src="https://use.fontawesome.com/8635f9ef47.js"></script>
+  <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
 </head>
 
+
+
 <body>
-  <%- include ('../views/layout/header.ejs') %>
-  <main>
-    <img class="mainpic" src="/img/goran-ivos-idmvPhF8t4E-unsplash.jpg" alt="">
+<!--PHOTO SECTION -- START -->
+<div class="photo-container">
+  
+<header>
+  
+  <div id="logoo">
+    
+  </div>
+  <div class="mid-section-header" id="color-change">
+    <a href="#"><div class="header-links">مقالات</div></a>
+    <a href="/cdns"><div class="header-links">CDN</div></a>
+    <a href="/questions"><div class="header-links">اسألني</div></a>
+    <a href="/jobs/search"><div class="header-links">وظائف</div></a>
+    <a href="/"><div class="header-links">الصفحة الرئيسية</div></a>
+   
+  </div>
+  
+  <div class="right-section-header">
+    
+    <a href="/login">
+      <div id="log-in-section">
+      <i class="fa fa-lock" aria-hidden="true"></i>
+      <span id="log-in"> تسجيل الدخول</span>
+      </div>
+    </a>
+    
+    <a href="/signupNewUser" class="sign">
+      <div class="btn-header">
+      <i class="fa fa-lock"></i>
+      <span id="sign-up">إنشاء حساب</span>
+      </div>
+    </a>
+  </div>
+  
+ </header>
+ <!-- <div id="logoo">
+  <img class="logo" src="./IMG/home.png" alt="">
+  <img class="name" src="./IMG/name.png" alt="">
+</div> -->
+  
+ <div id="headline">
+  <span id="breakline2"><img class="name2" src="./IMG/home.png" alt=""></span>
+  
+  <span id="breakline"><img class="name" src="./IMG/name.png" alt=""></span>
+ 
+ </div>
 
-    <section id="content">
-      <img id="rrrr" src="https://svgsilh.com/svg/2780178.svg" alt="">
-      <div class="profile" data-text="ابحث عن وظيفه
-            يمكنك موقعنا من البحث عن الوظائف التي تناسبك من كل انحاء العالم لتستطيع التقديم على الوظيفة بكل سهولة">
-        <img class="up" src="img/razvan-chisu-Ua-agENjmI4-unsplash.jpg"></div>
-      <div class="profile" data-text="CDN ابحث عن
-    يمكنك موقعنا من الحصول على هذه الروابط التي تبحث عنها سريعا دون الحاجه لتصفح مواقع اخرى للحصول عليه ">
-        <img class="up" src="img/razvan-chisu-Ua-agENjmI4-unsplash.jpg"></div>
+ <div id="sub-headline">
+  نطور الوسائل التي تمكن المبرمجين ونقدم لهم الحلول التي تمكنهم من زيادة الانتاجية والتطور  والاكتشاف 
+</br>ونساعدك في الحصول على إجابات لأصعب أسئلة البرمجة الخاصة بك ، ومشاركة المعرفة مع زملائك في العمل بشكل خاص ، والعثور على 
+ وظيفة أحلامك التالية</div> 
+ 
+  <a href="/signupNewUser">
+      <div class="sign-up-free">
+      <i class="fa fa-lock"></i>
+      <span id="sign-up">إنشاء حساب مجاني</span>
+      </div>
+    </a>
+  
+  <div class="chat-btn">
+   
+    
+  </div>
+  
+ </div>
+  
+ <!--UNDER-PHOTO SECTION -- START --> 
 
-      <div class="profile"
-        data-text="اسألني
-        يتميز موقعنا بهذه الخدمة الرائعةالتي تمكنك كعربي من طرح استفساراتك وافكارك باللغة العربية لتسهيل اكتساب المعلومة">
-        <img class="up" src="img/razvan-chisu-Ua-agENjmI4-unsplash.jpg"></div>
-      <img id="rrr" src="https://svgsilh.com/svg/2780178.svg" alt="">
-    </section>
-    <div class="homeDev">
-      <h2 class="itroheader">من نحن </h2>
-      <div class="paragra">
-        <p class="introp">بيت المبرمج هو موقع إلكتروني لإثراء المحتوى العربي على شبكة التواصل الإجتماعي</p>
-        <p class="introp"> الهدف الرئيسي من هذا الموقع هو تمكين أي شخص عربي لطرح الأسئلة باللغة العربية وكسب
-          الخبرات والتعرف على لغات البرمجة بكافة أشكالها دون الحاجة لمعرفة عميقة باللغة الإنجليزية كي لا تكون
-          عائق أمام تعلمه وتقدمه في هذا المجال</p>
-        <p class="introp"> .يقدم موقعنا للمستخدم أهم اللغات المتداولة في عالم البرمجة ويُمَكِنُه من الإستفسار عن
-          أي شيء يختص بهذا المجال بكل حرية وسهولة،كما ويستطيع الإجابة عن الأسئلة الأخرى للمستخدمين</p>
+ <div class="personalized">
+   <div class="perso-content">
+     <div class="perso-image"></div>
+     <div class="perso-text">
+       <h3 class="cell-header">ابحث عن وظيفة</h3>
+       <ul>
+         <li class="list-icon1">  يمكنك موقعنا من البحث عن الوظائف التي تناسبك من كل انحاء العالم لتستطيع التقديم على الوظيفة بكل سهولة</li>
+         <li class="list-icon2">اعثر على الوظيفة المناسبة من خلال قوائم عالية الجودة وابحث عن الوظائف بناءً على العنوان ،  والموقع ، والمزيد..</li>
+         <li class="list-icon3"></li>
+         <li><a href="#" id="sign-up-free">Sign up free</a></li>
+       </ul>
+     </div>
+   </div>
+ </div>
+  <!--GET STARTED SIMPLY AND SECURELY SECTION -- START -->
+  <div class="get-started">
+      <div class="get-started-text">
+       <h3 class="cell-header1"> ابحث عن  CDN </h3>
+       <ul>
+         <li class="list-icon4">يمكنك موقعنا من الحصول على هذه الروابط التي تبحث عنها سريعا دون الحاجه لتصفح مواقع اخرى للحصول عليه .</li>
+         <li class="list-icon5">شبكة CDN هي طريقة لتقديم المحتوى من موقعك على الويب أو تطبيق الهاتف المحمول إلى الأشخاص بشكل أسرع وأكثر كفاءة ، بناءً على موقعهم الجغرافي.</li>
+         <li class="list-icon6"></li>
+         <li><a href="#" class="blue-link"></a></li>
+       </ul>
+    </div>
+    <div class="get-started-photo">
+    </div>
+  </div>
+  <!-- -------------------- -->
+  <div class="personalized">
+    <div class="perso-content">
+      <div class="perso-image2"></div>
+      <div class="perso-text">
+        <h3 class="cell-header">اسألني</h3>
+        <ul>
+          <li class="list-icon1">يتميز موقعنا بهذه الخدمة الرائعةالتي تمكنك كعربي من طرح استفساراتك وافكارك باللغة العربية لتسهيل اكتساب المعلومة</li>
+          <li class="list-icon2">أجب عن الأسئلة واكتسب رؤى من جمهور المطورين باستخدام التكنولوجيا الخاصة بك على بيت البرمجة.</li>
+          <li class="list-icon3"></li>
+         
+        </ul>
       </div>
     </div>
-
-
-
-
-
-
-  </main>
-
-
-
-
+  </div>
+  <!--INTUITIVE FEATURES SECTION -- START -->
+  
+  
+  <div class="blue-section">
+    <div id="leaf-on-blue">
+      </div>
+    <div class="inside-panel-blue">
+      <h3 class="blue-section-header">! من نحن  </h3>
+      <div id="homep">
+        <p class="blue-section-text"> بيت المبرمج هو موقع إلكتروني لإثراء المحتوى العربي على شبكة التواصل الإجتماعي الهدف الرئيسي من هذا الموقع هو تمكين أي شخص عربي لطرح الأسئلة باللغة العربية وكسب
+          الخبرات والتعرف على لغات البرمجة بكافة أشكالها دون الحاجة لمعرفة عميقة باللغة الإنجليزية كي لا تكون
+         ,.يقدم موقعنا للمستخدم أهم اللغات المتداولة في عالم البرمجة ويُمَكِنُه من الإستفسار عن
+         أي شيء يختص بهذا المجال بكل حرية وسهولة،كما ويستطيع الإجابة عن الأسئلة الأخرى للمستخدمين عائق أمام تعلمه وتقدمه في هذا المجال</p>
+      </div>
+            
+      
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
   <%- include ('../views/layout/footer.ejs') %>
-
-  <!-- <script src="./js/signup.js"></script> -->
+  <script src="./js/home.js"></script>
 </body>
-
+    
+        
 </html>
