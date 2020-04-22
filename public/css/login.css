@@ -61,7 +61,7 @@ a {
     width: 943px;
     max-width: 100%;
     height: 563px;
-    /* min-height: 480px; */
+    margin: 3% 24px;
 }
 .form-container form {
     background: #fff;
@@ -172,6 +172,9 @@ button.ghost {
 }
 .overlay-right {
     right: 0;
+    background-image: url(https://images.unsplash.com/photo-1535931642064-4bd025b69b5d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9);
+    opacity: .8;
+    background-size: cover;
     transform: translateY(0);
 }
 .overlay-left {
@@ -265,4 +268,13 @@ p.both {
     border-radius: 34px;
     margin-bottom: 12px;
     width: 91%;
+}
+
+#lg{
+    font-weight: bold;
+    margin: 0;
+    padding: 6%;
+    color: white;
+    font-family: 'Rakkas', cursive;
+    background: rgba(18, 18, 19, 0.51);
 }

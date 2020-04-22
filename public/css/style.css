@@ -118,11 +118,10 @@ form#searchs {
   transition: 0.7s ease-in-out;
   margin: 8% 1% 10% 3%;
 }
-section {
+/* section {
   clear: both;
   text-align: center;
-  /* display: inline-flex; */
-}
+} */
 img.up {
   height: 340px;
   width: 230px;
