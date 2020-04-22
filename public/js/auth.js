@@ -11,7 +11,10 @@ newLogin.addEventListener('submit', function (event) {
     } else if (result === 'this email is not signup please signup') {
       alert('check if the email is correct or to signup');
     } else {
-      window.localStorage.token = result;
+      // console.log(result)
+      window.localStorage.token = result.token;
+      window.localStorage.id = result.userInfo.id;
+      window.localStorage.img = result.userInfo.image;
       window.location.href = '/';
     }
   });
