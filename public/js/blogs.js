@@ -54,34 +54,25 @@ function clicked(id) {
 
 function addBlog() {
   $.ajax({
-    url: '/blog/create/' + 1,
+    url: '/blog/create/' + localStorage.id,
     // data: { signature: authHeader },
     type: 'GET',
     headers: { authorization: `bearer ${localStorage.token}` },
     success: function (data) {
+      console.log(data)
       if (data === 'not the same user') {
         alert('not the same user');
       } else if (data === 'please login or singup') {
         alert('login please');
       } else {
-        window.location.href = '/blog/create/jj';
+        window.location.href = '/blog/create';
       }
     },
     error: function (err) {
       console.log(err);
     },
   });
-  // $.ajaxSetup({
-  //     headers:{
-  //        'Authorization': "Bearer "+localStorage.token
-  //     }
-  //  });
-  // $.get('/blog/create/'+10,function(data){
-  //     console.log('jskfljdskfljdksljflk')
-  //     if(data === true){
-  //         window.location.href ='/blog/create/true'
-  //     }
-  // })
+
 }
 
 localStorage.id = 1;

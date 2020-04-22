@@ -154,6 +154,7 @@ API.addblog = function (req, res) {
 };
 
 API.addBlog = function (req, res) {
+  console.log(req.body)
   let { tittle, blog, img, id, des } = req.body;
   DB.addBlog([tittle, blog, img, id, des]).then((blog) => res.send(blog[0]));
 };
@@ -165,8 +166,10 @@ API.showBlog = function (req, res) {
 };
 
 API.showBlogs = function (req, res) {
-  DB.showBlogs().then((blogs) =>
+  DB.showBlogs().then((blogs) =>{
+    console.log(blogs.rows,'sdfdsfsf')
     res.render('pages/blogs', { blogs: JSON.stringify(blogs.rows) })
+  }
   );
 };
 
