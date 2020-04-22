@@ -49,6 +49,7 @@ function addcdntem(i) {
     });
     $(rendered).appendTo('.flex-col');
   }
+  window.scrollTo(0, 0);
   addForm();
 }
 
