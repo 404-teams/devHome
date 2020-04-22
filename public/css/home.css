@@ -551,7 +551,7 @@ div#homep {
 
   img.name {
     position: relative;
-    top: -75%;
+    top: -29%;
     left: 18%;
     width: 66%;
     animation-name: bounceIn;
@@ -560,10 +560,11 @@ div#homep {
 
 
 img.name2 {
-    position: relative;
-    top: -195%;
-    left: -73%;
-    width: 28%;
+  position: fixed;
+  top: -17px;
+  left: -8px;
+  width: 11%;
+  z-index: 9999;
 }
 
 @-webkit-keyframes bounceIn {

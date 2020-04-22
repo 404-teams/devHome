@@ -17,15 +17,15 @@ body{
 
 img.logo {
   width: 192px;
-  /* float: right; */
   position: absolute;
+  right: 1%;
   margin-right: -2%;
   margin-top: -61px;
 }
 img.name {
   width: 16%;
-  /* float: right; */
   position: absolute;
+  right: 1%;
   margin-right: 9%;
   margin-top: -45px;
 }
