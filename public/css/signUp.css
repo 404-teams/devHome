@@ -246,7 +246,9 @@ label {
 }
 
 
-
+div#container {
+  margin: auto;
+}
 
 
 div#container {
