@@ -3,33 +3,32 @@ body{
   overflow-x: hidden;
 
 }
-main {
-  width: 100%;
-  box-sizing: border-box;
-}
-header {
+
+#headerHeader {
   background-color: #293252;
   padding: 3%;
   position: sticky;
   z-index: 999999;
   top: 0;
   opacity: 0.8;
-  width: 100%;
   box-shadow: 0px 5px 6px rgba(83, 72, 72, 0.699);
 
 }
 
 img.logoFor {
   width: 192px;
-  float: right;
-  margin-right: 1%;
+  position: absolute;
+  right: 1%;
+  margin-right: -2%;
   margin-top: -61px;
 }
+
 img.nameFor {
   width: 17%;
   float: right;
   margin-right: -4%;
   margin-top: -53px;
+
 }
 a.nav {
   float: left;
