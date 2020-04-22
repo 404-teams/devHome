@@ -52,6 +52,7 @@ $(function () {
   data = $('#serverJobs').text();
   console.log(data);
   data = JSON.parse(data);
+  // console.log(data)
   btns = data.length / 20 + (data.length % 20 > 0 ? 1 : 0);
   btns = Math.floor(btns);
   for (let i = 0; i < btns; i++) {
@@ -75,12 +76,11 @@ $(function () {
       number: i + 1,
     });
     $(rendered).appendTo('#sec2');
-    $(data[i].description).appendTo('#jobDes'+i)
-  }
+   $(data[i].description).appendTo('#jobDes'+i)
+ }
   hide(0);
   addForm();
-  // });
-  console.log(data);
+  // console.log(data);
 });
 
 function show(indx) {
