@@ -180,7 +180,7 @@ function done() {
     $('#blog').find('img').length > 0
       ? $('#blog').find('img')[0].src
       : 'https://www.knstek.com/wp-content/uploads/2012/12/default_blog_large.png';
-  $.post('/blog/create', { blog, tittle, img, des, id: 1 }, function (s) {
+  $.post('/blog/create/save', { blog, tittle, img, des, id: 1 }, function (s) {
     window.location.href = '/blog?id=' + s.id;
   });
 }
