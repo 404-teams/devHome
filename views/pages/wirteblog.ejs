@@ -7,6 +7,12 @@
   <title>Document</title>
   <script src="https://kit.fontawesome.com/60a3d0faa7.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <style>
     .dropdown {
       float: left;
@@ -29,7 +35,7 @@
     .navbar a:hover,
     .dropdown:hover .dropbtn,
     .dropbtn:focus {
-      background-color: red;
+      background-color: #515973;
     }
 
     .dropdown-content {
@@ -79,7 +85,7 @@
     .navbar1 a:hover,
     .dropdown1:hover .dropbtn1,
     .dropbtn1:focus {
-      background-color: red;
+      background-color: #515973;
     }
 
     .dropdown-content1 {
@@ -224,14 +230,46 @@
 </head>
 
 <body style="height: 100%;">
-  <section id="blog" style="background: #ffffff ; min-height: 100%; width: 80%; margin: auto; padding: 5px 0 50px 0 ;">
-    <h1 id="0" class="item" name="text" contenteditable="true"
-      style="font-size: 50px; text-align: center; display: inline-block; width: 100%;">....العنوان</h1>
-    <button name="doneall" style="
-    position: fixed;
-    top: 33px;
-    left: 1107px;" onclick="done()">DONE</button>
-  </section>
+  <%- include ('../layout/header.ejs') %>
+  <main>
+    <section id="blog" style="background: #ffffff ; min-height: 100%; width: 80%; margin: auto; padding: 5px 0 50px 0 ;">
+      <h1 id="0" class="item" name="text" contenteditable="true"
+        style="font-size: 50px; text-align: center; display: inline-block; width: 100%; color: #e89a3d;">....العنوان</h1>
+      <button name="doneall" style="
+      position: fixed;
+      top: 33px;
+      left: 1107px;" onclick="done()">DONE</button>
+    </section>
+  </main>
+ 
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section links">
+        <p id="follow">تابعنا على </p>
+        <div id="links">
+          <a class="slinks" href=""><i class="fab fa-facebook-f"></i></a>
+          <a class="slinks" href="#"><i class="fab fa-twitter"></i></a>
+          <a class="slinks" href=""><i class="fab fa-instagram"></i></a>
+          <a class="slinks" href="#"><i class="fab fa-youtube"></i></a>
+          <a class="slinks" href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-section contact-form">
+        <p id="email">
+          شاركنا برأيك
+        </p>
+        <br>
+        <form action="" class="newsletter-form">
+          <input type="submit" class="btn" value="أرسل">
+          <input type="text" class="txtb" placeholder="أدخل تعليقك">
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      جميع الحقوق محفوظة &copy; | طور بواسطة فريق 404
+    </div>
+  </footer>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
   <script src="https://unpkg.com/mustache@latest"></script>
   <script src="../../js/blog.js"></script>

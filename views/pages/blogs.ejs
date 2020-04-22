@@ -7,6 +7,9 @@
   <title>Document</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/blog.css">
+  <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script id="blog" type="x-tmpl-mustache">
         <div class="containr" onclick="clicked({{id}})">
             <div >
@@ -23,11 +26,13 @@
                 </div>
                 <div class="aot">
                     <p>                 
-                        كتبة بواسطة :{{name}}
+                        {{name}} : كتبت بواسطة 
                     </p>
                 </div>
             </div>
         </div>
+
+
     </script>
   <script id="btn" type="x-tmpl-mustache">
         <button onclick="chengeblogs({{index}})">{{number}}</button>
@@ -35,13 +40,46 @@
 </head>
 
 <body>
-  <button onclick="addBlog()">صنع محتوى</button>
-  <p id="blogs" style="display: none;"><%=blogs%></p>
-  <div class="containrbtn">
-  </div>
-  <script src="https://unpkg.com/mustache@latest"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
-  <script src="js/blogs.js"></script>
+
+    <%- include ('../layout/header.ejs') %>
+
+    <main>
+        <button class="blogbutt" onclick="addBlog()">صنع محتوى</button>
+        <p id="blogs" style="display: none;"><%=blogs%></p>
+        <div class="containrbtn">
+        </div>
+        <script src="https://unpkg.com/mustache@latest"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
+        <script src="js/blogs.js"></script>
+    </main>
+<footer>
+    <div class="footer-content">
+      <div class="footer-section links">
+        <p id="follow">تابعنا على </p>
+        <div id="links">
+          <a class="slinks" href=""><i class="fab fa-facebook-f"></i></a>
+          <a class="slinks" href="#"><i class="fab fa-twitter"></i></a>
+          <a class="slinks" href=""><i class="fab fa-instagram"></i></a>
+          <a class="slinks" href="#"><i class="fab fa-youtube"></i></a>
+          <a class="slinks" href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-section contact-form">
+        <p id="email">
+          شاركنا برأيك
+        </p>
+        <br>
+        <form action="" class="newsletter-form">
+          <input type="submit" class="btn" value="أرسل">
+          <input type="text" class="txtb" placeholder="أدخل تعليقك">
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      جميع الحقوق محفوظة &copy; | طور بواسطة فريق 404
+    </div>
+  </footer>
+  
 </body>
 
 </html>
