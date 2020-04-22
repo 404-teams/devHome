@@ -108,18 +108,15 @@ API.goToSearchPage = function (req, res) {
     let result = data.body.map((val) => {
       return new Obj.Job(val);
     });
-    res.render('jobs/search.ejs', { job: result.splice(1,20)});
+    // res.render('jobs/search.ejs', { job: result.splice(1,20)});
 
-    // res.render('jobs/search.ejs', { job: JSON.stringify(result) });
+    res.render('jobs/search.ejs', { job: JSON.stringify(result) });
   });
-  // res.render('jobs/search.ejs');
 };
 
 // function to show the result of the jobs
 API.searchJobResult = function (req, res) {
   let url = `https://jobs.github.com/positions.json?description=${req.body.description}&location=${req.body.location}&full_time=`;
-  // console.log('ssssssssssss',url);
-
   if (req.body.type === 'on') {
     url += `true`;
   }

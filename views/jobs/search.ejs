@@ -28,7 +28,7 @@
               عرض التفاصيل</button>
           </div>
           <section id="detSec{{indx}}">
-            <p id='jobDes{{indx}}'>تفاصيل الوظيفة : <{{description }}</p>
+            <p id='jobDes{{indx}}'>تفاصيل الوظيفة :</p>
           </section>
           <form onsubmit="return false">
             <input class="jobf" type="hidden" name="company_logo" value="{{company_logo  }}">
@@ -64,8 +64,28 @@
   </header>
   <main class="mainj">
     <p id="serverJobs" style="display: none;"><%=job%></p>
-    <div id="jobs">
+      <%console.log(job)%>
+    <div  class="bigdiv">
+      <section id="secj">
+        <h4>ابحث عن وظيفة</h4>
+        <form class="jobfm" action="/jobs" method="post">
+          <label class="joblab">
+            <input class="in" type="text" name="description" placeholder="ادخل نوع لغة البرمجة" required>
+          </label>
+          <label>
+            <label class="joblab">
+              <input class="in" type="text" name="location" placeholder="ادخل موقع الوظيفة المطلوبة">
+            </label>
+            <label class="joblab">
+              <span>دوام كامل </span>
+              <input type="checkbox" name="type">
+            </label>
+            <button id="search-btn">ابحث</button>
+        </form>
+      </section>
+      <section id="sec2" >
 
+      </section>
     </div>
     <div class="containrbtn" style="justify-content: center; display: flex;"></div>
     <%-include ('../../views/layout/footer.ejs') %>
