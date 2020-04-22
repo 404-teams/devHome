@@ -1,122 +1,124 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./css/footer.css">
-  <link rel="stylesheet" href="./css/cdn.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
-  <script id="btn" type="x-tmpl-mustache">
-    <button onclick="addcdntem({{index}})">{{number}}</button>
-</script>
-  <script id="cdntemp" type="x-tmpl-mustache">
-    <div class="card-view" style="border: 1px solid var(--theme-color1);">
-      <div class="r-layout">
-        <div class="r-content">
-          <div class="nameOfCards">
-            <h4 class="title">{{name}}</h4>
-          </div>
-          <p>
-            {{latest}}
-                    </p>
-          <div class="taglist">
-            <div class="tag">{{keywords0}}</div>
-            <div class="tag">{{keywords1}}</div>
-            <div class="tag">{{keywords2}}</div>
-          </div>
-          <p>
-            {{description}}
-                    </p>
-          <p>
-            {{latest}}
-                    </p>
-          <p>
-            {{filename}}
-                    </p>
-          <p class="color-text">
-            {{author}}
-                    </p>
-          <div class="s-tag">{{version}}</div>
-        </div>
-        <div class="buttdiv">
-          <form name="savescdn" onsubmit="return false" >
-            <input style="display:none;" id="version" type="text" value={{version}}>
-            <input style="display:none;" id="author" type="text" value={{author}}>
-            <input style="display:none;" id="filename" type="text" value={{filename}}>
-            <input style="display:none;" id="latest" type="text" value={{latest}}>
-            <input style="display:none;" id="description" type="text" value={{description}}>
-            <input style="display:none;" id="name" type="text" value={{name}}>
-            <input style="display:none;" id="keywords0" type="text" value={{keywords0}}>
-            <input style="display:none;" id="keywords1" type="text" value={{keywords1}}>
-            <input style="display:none;" id="keywords2" type="text" value={{keywords2}}>
-
-             <button class="save">حفظ</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/cdn.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+  
 </head>
+<body class="bodyHed">
+    <%- include ('../layout/header.ejs') %>
+    <div id="develdev">
+        <main>
+    
+            <form class="form-wrapper cf">
+                <input type="text" placeholder="إبحث هنا..." required>
+                <button type="submit">بحث</button>
+          </form>
+          
+    
+    
+            <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+    
+            <section class="spacer bg-gray card-sm-content ">
+                    <div class="c-container ">
+                        <h3 class="h3-titlte">CDN Cards</h3>
+                        <div class="flex-row">
+                            <div class="flex-col">
+                                <%cdns.forEach((val)=>{ %>
+                                <div class="card-view"  style="border: 1px solid var(--theme-color1);">
+                                    <div class="r-layout">
+                                       
+                                        <div class="r-content">
+                                         <div class="nameOfCards">
+                                            <h4 class="title"><%= val.name%></h4>
+                                         </div>
+                                          
+                                
+                                          <p>
+                                            <%=val.latest%>
+                                          </p>
+                                          <div class="taglist">
+                                              <div class="tag"><%=val.keywords[0]%></div>
+                                              <div class="tag"><%=val.keywords[1]%></div>
+                                              <div class="tag"><%=val.keywords[2]%></div>
+                                            </div>
+                                          
+                                          <p>
+                                            <%=val.description%>
+                                          </p>
+                                          <p>
+                                            <%=val.latest%>
+                                          </p>
+                                         <p>
+                                            <%=val.filename%>
+                                         </p> 
+                                          <p class="color-text">
+                                            <%=val.author%>
+                                          </p>
+                                         
+                                          <div class="s-tag"><%=val.version%></div>
 
-<body>
-  <%- include ('../layout/header.ejs') %>
-  <div id="develdev">
-    <main>
-      <form id="searchs" class="form-wrapper cf" onsubmit="return false">
-        <input id="cdnsearch" type="text" placeholder="إبحث هنا..." required>
-        <button type="submit">بحث</button>
-      </form>
-      <button onclick="seesavevalue()">المحفوظات</button>
-      <section class="spacer bg-gray card-sm-content ">
-        <div class="c-container ">
-          <h3 class="h3-titlte">CDN Cards</h3>
-          <div class="flex-row">
-            <div class="flex-col">
-              <p style="display: none;" id="cdnsser"><%=cdns%></p>
-
-
+                                          
+                                      
+                                        </div>
+                                        <div class="buttdiv">
+                                            <button class="save">حفظ</button>
+                                          </div>
+                                          
+                                    </div>
+                                   
+                                    
+                                </div>
+                               
+                                <%})%> 
+                               
+                            </div>
+                            
+                          
+                          </div>
+                    </div>
+                  </section>
+    
+        </main>
+    </div>
+ 
+        <footer>
+            <div class="footer-content">
+    
+                <div class="footer-section links">
+                    
+                    <p id="follow">تابعنا على </p>
+                    <div id="links">
+                        <a class="slinks" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="slinks" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="slinks" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="slinks" href="#"><i class="fab fa-youtube"></i></a>
+                        <a class="slinks" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section contact-form">
+                    <p id="email">
+                        شاركنا برأيك  
+                    </p>
+                    <br>
+                    <form action="" class="newsletter-form">
+                        <input type="submit" class="btn" value="أرسل">
+                        <input type="text" class="txtb" placeholder="أدخل تعليقك">
+                    </form>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
-      <div class="containrbtn"></div>
-    </main>
-  </div>
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section links">
-        <p id="follow">تابعنا على </p>
-        <div id="links">
-          <a class="slinks" href=""><i class="fab fa-facebook-f"></i></a>
-          <a class="slinks" href="#"><i class="fab fa-twitter"></i></a>
-          <a class="slinks" href=""><i class="fab fa-instagram"></i></a>
-          <a class="slinks" href="#"><i class="fab fa-youtube"></i></a>
-          <a class="slinks" href="#"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-      </div>
-      <div class="footer-section contact-form">
-        <p id="email">
-          شاركنا برأيك
-        </p>
-        <br>
-        <form action="" class="newsletter-form">
-          <input type="submit" class="btn" value="أرسل">
-          <input type="text" class="txtb" placeholder="أدخل تعليقك">
-        </form>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      جميع الحقوق محفوظة &copy; | طور بواسطة فريق 404
-    </div>
-  </footer>
-  <script src="https://unpkg.com/mustache@latest"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
-  <script src="./js/cdn.js"></script>
+            <div class="footer-bottom">
+                جميع الحقوق محفوظة &copy; | طور بواسطة فريق  404
+            </div>
+        </footer>
+ 
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
+    <script src="./js/signup.js"></script>
 </body>
-
-
 </html>
