@@ -19,13 +19,13 @@ header {
 
 }
 
-img.logo {
+img.logoFor {
   width: 192px;
   float: right;
   margin-right: 1%;
   margin-top: -61px;
 }
-img.name {
+img.nameFor {
   width: 17%;
   float: right;
   margin-right: -4%;
@@ -36,8 +36,11 @@ a.nav {
   color: white;
   padding: 1%;
   text-decoration: none;
-  margin-top: -2%;
+  margin-top: -25px;
   font-size: 18px;
+  font-family: 'Lateef', cursive;
+    font-family: 'Rakkas', cursive;
+    font-family: 'Amiri', serif;
 }
 
 a.navspe {
@@ -47,6 +50,9 @@ a.navspe {
   text-decoration: none;
   margin-top: -2%;
   font-size: 18px;
+  font-family: 'Lateef', cursive;
+    font-family: 'Rakkas', cursive;
+    font-family: 'Amiri', serif;
 }
 a.nav:hover {
   color: #e9e9e9;
