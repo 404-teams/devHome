@@ -8,6 +8,7 @@ if (token && id && img) {
 } else {
   $('#login').show();
   $('#signup').show();
+  $('#userimg').hide()
 }
 
 function logout() {
@@ -15,8 +16,5 @@ function logout() {
   $('#login').show();
   $('#signup').show();
   $('#logout').hide();
-  $('#userimg').attr(
-    'src',
-    'https://d2hqr1s9kfm9jo.cloudfront.net/production/images/sales_agents/19129/data.original.?1583194255'
-  );
+  $('#userimg').hide()
 }
