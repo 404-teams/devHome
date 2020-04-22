@@ -1,50 +1,50 @@
-function show(indx) {
-  $(`#detSec${indx}`).toggle();
-}
+// function show(indx) {
+//   $(`#detSec${indx}`).toggle();
+// }
 
-$(document).ready(function () {
-  for (var i = 0; i < 20; i++) {
-    $(`#detSec${i}`).hide();
-  }
-});
+// $(document).ready(function () {
+//   for (var i = 0; i < 20; i++) {
+//     $(`#detSec${i}`).hide();
+//   }
+// });
 
-for (var i = 0; i < 20; i++) {
-  var str = $(`#jobDes${i}`).text();
-  $(`#jobDes${i}`).html(str);
-}
-$('form').each(function (i, e) {
-  $(this).submit(function (event) {
+// for (var i = 0; i < 20; i++) {
+//   var str = $(`#jobDes${i}`).text();
+//   $(`#jobDes${i}`).html(str);
+// }
+// $('form').each(function (i, e) {
+//   $(this).submit(function (event) {
 
-    $.ajax({
-      url: '/jobs/save/'+localStorage.id,
-      data: {
-        type: event.target.type.value,
-        company_logo: event.target.company_logo.value,
-        company: event.target.company.value,
-        company_url: event.target.company_url.value,
-        location: event.target.location.value,
-        title: event.target.title.value,
-        description: event.target.description.value,
-      },
-      type: 'POST',
-      headers: { authorization: `bearer ${localStorage.token}` },
-      success: function (data) {
-        if (data === 'not the same user') {
-          alert('not the same user');
-        } else if (data === 'please login or singup') {
-          alert('login please');
-        } else {
-            alert('done')
-        }
-      },
-      error: function (err) {
-        console.log(err);
-      },
-    });
-    console.log('jsfdsfjkl');
-  });
+//     $.ajax({
+//       url: '/jobs/save/'+localStorage.id,
+//       data: {
+//         type: event.target.type.value,
+//         company_logo: event.target.company_logo.value,
+//         company: event.target.company.value,
+//         company_url: event.target.company_url.value,
+//         location: event.target.location.value,
+//         title: event.target.title.value,
+//         description: event.target.description.value,
+//       },
+//       type: 'POST',
+//       headers: { authorization: `bearer ${localStorage.token}` },
+//       success: function (data) {
+//         if (data === 'not the same user') {
+//           alert('not the same user');
+//         } else if (data === 'please login or singup') {
+//           alert('login please');
+//         } else {
+//             alert('done')
+//         }
+//       },
+//       error: function (err) {
+//         console.log(err);
+//       },
+//     });
+//     console.log('jsfdsfjkl');
+//   });
 
-});
+// });
 
 // ------------------------------------
 let data;
@@ -52,7 +52,7 @@ $(function () {
   data = $('#serverJobs').text();
   console.log(data);
   data = JSON.parse(data);
-  btns = data.length / 10 + (data.length % 10 > 0 ? 1 : 0);
+  btns = data.length / 20 + (data.length % 20 > 0 ? 1 : 0);
   btns = Math.floor(btns);
   for (let i = 0; i < btns; i++) {
     var template = document.getElementById('btn').innerHTML;
@@ -62,7 +62,7 @@ $(function () {
     });
     $(rendered).appendTo('.containrbtn');
   }
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 20; i++) {
     var template = document.getElementById('job').innerHTML;
     var rendered = Mustache.render(template, {
       company_logo: data[i].company_logo,
@@ -71,11 +71,12 @@ $(function () {
       company_url: data[i].company_url,
       location: data[i].location,
       title: data[i].title,
-      description: data[i].description,
+      // description: data[i].description,
       indx: i,
       number: i + 1,
     });
-    $(rendered).appendTo('#jobs');
+    $(rendered).appendTo('#sec2');
+    $(data[i].description).appendTo('#jobDes'+i)
   }
   hide(0);
   addForm();
@@ -88,7 +89,7 @@ function show(indx) {
 }
 function hide(i) {
   console.log(i);
-  let end = i + 10;
+  let end = i + 20;
   for (; i < end; i++) {
     $(`#detSec${i}`).hide();
   }
@@ -129,13 +130,13 @@ function addForm() {
 }
 function chengeJobs(i) {
   console.log(i, 'fist');
-  $('#jobs').empty();
+  $('#sec2').empty();
   if (i < 100) {
-    i *= 10;
+    i *= 20;
   } else {
-    i += 10;
+    i += 20;
   }
-  let end = i + 10;
+  let end = i + 20;
   for (; i < end; i++) {
     if (data[i] === undefined) {
       // break;
@@ -152,10 +153,10 @@ function chengeJobs(i) {
         indx: i,
         number: i + 1,
       });
-      $(rendered).appendTo('#jobs');
+      $(rendered).appendTo('#sec2');
     }
   }
-  hide(i - 10);
+  hide(i - 20);
   window.scrollTo(0, 0);
 }
 
