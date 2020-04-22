@@ -36,9 +36,9 @@ app.set('view engine', 'ejs');
 //------------------ jobs route ------------------
 app.get('/', API.homePage);
 app.get('/jobs/search', API.goToSearchPage); ///////////// rework on it
-app.post('/jobs', API.searchJobResult);
+app.get('/jobs', API.searchJobResult);
 app.post('/jobs/save/:id', Auth, API.savedJobs);
-app.get('/jobs/user/:id', API.eachUserJob);
+app.get('/jobs/user/:id',Auth, API.eachUserJob);
 
 // -------------end of jobs route------------------
 
