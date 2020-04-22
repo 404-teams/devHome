@@ -2,54 +2,58 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/login.css">
-  <link href="https://fonts.googleapis.com/css2?family=Lateef&family=Rakkas&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Lateef&family=Rakkas&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lateef&family=Rakkas&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Lateef&family=Rakkas&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <main id="signup">
-    <div class="container" id="container">
-      <div class="form-container sign-in-container">
-        <form class="signupform" id="login">
-          <h1>تسجيل الدخول </h1>
-          <label id="email" for="email">: البريد الإلكتروني</label><br>
-          <input id="email" type="text" name="email" placeholder="أدخل بريدك الإلكتروني" required>
 
-          <label id="password" for="password">: كلمة المرور</label><br>
-          <input id="Password" type="password" name="password" placeholder=" أدخل كلمة المرور" required>
-          <div id="check">
-            <input type="checkbox" onclick="myFunction()">اظهار كلمة المرور
-          </div>
-          <button type="submit">تسجيل </button>
-        </form>
-      </div>
-      <div class="overlay-container">
-        <div class="overlay">
-          <div class="overlay-panel overlay-right">
-            <h1>أهلا بك</h1>
+    <main id="signup">
+        <div class="container" id="container">
+            <div class="form-container sign-in-container">
+                <form class="signupform" id="login">
+                    <h1>تسجيل الدخول </h1>
+                    <label id="email" for="email">: البريد الإلكتروني</label><br>
+                    <input id="email" type="text" name="email" placeholder="أدخل بريدك الإلكتروني" required>
 
-          </div>
+                    <label id="password" for="password">: كلمة المرور</label><br>
+                    <input id="Password" type="password" name="password" placeholder=" أدخل كلمة المرور" required>
+                    <div id ="check">
+                        <input id="ch" type="checkbox" onclick="myFunction()">اظهار كلمة المرور
+                    </div>
+                    <hr>
+                   <div id="chbox">
+
+                    <input id="ch" type="checkbox" onclick="myFunction()" required>من خلال إنشاء حساب فأنت توافق على <a href="#">الشروط والأحكام</a> الخاصة بنا  
+
+                   </div>
+                  
+                   
+                    <button type="submit">تسجيل </button>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-right">
+                        <h1> أهلا بك مجدداً</h1>
+                       
+                    </div>
+                </div>
+            </div>
+            <div id="go">
+              <a id="aj" href="/"> الرجوع الى الصفحة الرئيسية</a>
+            </div>
         </div>
-      </div>
-    </div>
-  </main>
-  <!-- <h2 id="log">تسجيل الدخول </h2>
-    <form id=login >
-        <label>ايميل </label>
-            <input  class="inputs" type="text" id="email" name="email" placeholder="ادخل ايميلك " required> 
-    
-        <label>كلمة المرور</label>
-            <input  class="inputs" type="text" id="password" name="password" placeholder="ادخل كلمة المرور" >
-             
-            <input type="submit" placeholder="تسجيل الدخول ">
-    </form> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
-  <script src="js/auth.js"></script>
+
+    </main>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
+    <script src="js/auth.js"></script>
 </body>
 
 </html>
