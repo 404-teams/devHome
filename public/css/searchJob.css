@@ -8,7 +8,8 @@ h4 {
   overflow: hidden;
   font-size: 28px;
   color: #e89a3d;
-  margin: 2% 44%;
+  margin: 0% 44%;
+  margin-bottom: 1%;
 }
 
 .bigdiv {
@@ -30,7 +31,7 @@ img.jobimage {
   clear: both;
   text-align: center;
   display: block;
-  margin: 2%;
+  margin: 1%;
   direction: rtl;
 }
 .jf {
@@ -122,4 +123,14 @@ input.in {
 .pulse {
   -webkit-animation-name: pulse;
   animation-name: pulse;
+}
+button#jobb {
+  display: inline-block;
+  background: orange;
+  padding: 1%;
+  margin: 1% 6%;
+  border-radius: 10px;
+  font-size: 104%;
+  font-weight: 800;
+  color: white;
 }

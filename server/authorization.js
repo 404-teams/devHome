@@ -8,10 +8,12 @@ module.exports = (req, res, next) => {
     // check if there is a value
 console.log(bearerHeader)
     if (bearerHeader !== 'bearer undefined') {
+
       /// take the token from the header
       let decodedToken = bearerHeader.split(' ');
       let token = decodedToken[1];
       ///// verify the token that its not expired and take the id user from it
+
 
       const userData = jwt.verify(token, 'devhome');
       //// check if the user is the same for the request
@@ -39,7 +41,7 @@ console.log(bearerHeader)
   } catch {
     
     res.status(401).json({
-      error: new Error('Invalid request!'),
+      error: new Error('Invalid request!')
     });
   }
 };
