@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css">
     <link href="https://fonts.googleapis.com/css2?family=Lateef&family=Rakkas&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
     <link rel="stylesheet" href="./css/question.css">
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
@@ -16,7 +18,9 @@
         <h1 id="que">  السؤال <i class="fas fa-question fa-flip-horizontal"></i><i class="fas fa-exclamation"></i></h1>
         <div class="div"> 
             <p id="title" ><%=queData[0].title%></p>
-            <p id="username" ><img id="img" src="<%=queData[0].image%>" alt="" onerror=this.src=" class='fas fa-user-ninja'">بواسطة: <%=queData[0].username%></p>
+            <a href="/userPofile?id=<%=queData[0].user_id%>" class="aaa">
+                <p id="username" ><img id="img" src="<%=queData[0].image%>" alt="" onerror=this.src=" class='fas fa-user-ninja'">بواسطة: <%=queData[0].username%></p>
+            </a>
             <p id="description"><%=queData[0].que_description%></p>
             <pre id="code"><%=queData[0].que_code%></pre>
 
@@ -36,10 +40,12 @@
                       </label>
                     <p id='rank<%=ele.ans_id%>' class="rank"><%=ele.ans_rank%></p>
                     <button type="button" onclick="PlusMinus('<%=ele.ans_id%>','<%=ele.ans_user_id%>',1)" class="plus"><i class="fas fa-plus"></i></button>
-                    <button type="button" onclick="PlusMinus('<%=ele.ans_id%>','<%=ele.ans_user_id%>',-1)"><i class="fas fa-minus"></i></button>
+                    <button type="button" onclick="PlusMinus('<%=ele.ans_id%>','<%=ele.ans_user_id%>',-1)" class="plus"><i class="fas fa-minus"></i></button>
                      </div>
                     <p id="title"><%=ele.answer%></p>
-                    <p id="username" ><img id="img" src="<%=ele.image%>" alt="" onerror=this.src=" class='fas fa-user-md'"> بواسطة: <%=ele.username%></p>
+                    <a href="/userPofile?id=<%=ele.user_id%>" class="aaa">
+                        <p id="username" ><img id="img" src="<%=ele.image%>" alt="" onerror=this.src=" class='fas fa-user-md'"> بواسطة: <%=ele.username%></p>
+                    </a>
                     <p id="description"><%=ele.ans_description%></p>
                     <pre id="code"><%=ele.ans_code%></pre>
                     <!-- <p id="approved">Approved: <%=ele.approved%></p> -->
@@ -48,7 +54,9 @@
                     <% if (rep.rep_answer_id === ele.ans_id){ %>
                         <div class="section">
                             <p id="title">عنوان الرد: <%=rep.reply%></p>
-                            <p id="username" ><img id="img" src="<%=rep.image%>" alt="" onerror=this.src=" class='fas fa-user-cog'"> بواسطة: <%=rep.username%></p>
+                            <a href="/userPofile?id=<%=rep.user_id%>" class="aaa">
+                                <p id="username" ><img id="img" src="<%=rep.image%>" alt="" onerror=this.src=" class='fas fa-user-cog'"> بواسطة: <%=rep.username%></p>
+                            </a>
                             <p id="description"><%=rep.rep_description%></p>
                             <pre id="code"><%=rep.rep_code%></pre>
                         </div>
@@ -59,7 +67,7 @@
                             <input type="text" name="repId" value="<%=ele.ans_id%>" style="display: none;" required>
                             <textarea  rows="4" cols="50" name="description" placeholder="أضف وصف للرد" required></textarea>
                             <textarea  rows="4" cols="50" class="formCode" name="code" placeholder="Add code" required></textarea>
-                            <input id="add" type="submit" value="أضف رد">
+                            <input id="add" class="button" type="submit" value="أضف رد">
                         </form>
                     </div>
                 <%});%>
@@ -70,7 +78,7 @@
             <input type="text" name="queId" value="<%=queData[0].que_id%>" style="display: none;" required>
             <textarea  rows="4" cols="50" name="description" placeholder="أضف وصف للإجابة" required></textarea>
             <textarea  rows="4" cols="50" class="formCode" name="code" placeholder="Add code" required></textarea>
-            <input id="add" type="submit" value="أضف إجابة">
+            <input id="add" class="button" type="submit" value="أضف إجابة">
         </form>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
