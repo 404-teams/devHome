@@ -1,3 +1,7 @@
+$('#passHidden').hide();
+$('#emailHidden').hide();
+$('#sign').hide();
+
 var newLogin = document.getElementById('login');
 newLogin.addEventListener('submit', function (event) {
   event.preventDefault();
@@ -7,9 +11,14 @@ newLogin.addEventListener('submit', function (event) {
     result
   ) {
     if (result === 'wrong password') {
-      alert('rewrite the password');
+      // alert('rewrite the password');
+      $('#passHidden').toggle();
+
     } else if (result === 'this email is not signup please signup') {
-      alert('check if the email is correct or to signup');
+      // alert('check if the email is correct or to signup');
+      $('#emailHidden').toggle();
+      $('#sign').toggle();
+
     } else {
       // console.log(result)
       window.localStorage.token = result.token;
@@ -28,3 +37,8 @@ function myFunction() {
     x.type = 'password';
   }
 }
+
+// ----------------------
+
+$('#emailHidden').hide();
+
