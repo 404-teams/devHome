@@ -5,7 +5,7 @@ let user_Id;
 let que_ID;
 function getAllQue(req,res){
     if (req.query.search || req.query.filter){
-        let allQusetionQuery='select u.image as image , q.id as id,q.description as description,u.name as username,q.title as title FROM questions q LEFT JOIN USERS U ON U.id = q.user_id where q.title Like $1 OR q.tags Like $2;'
+        let allQusetionQuery='select q.user_id as user_id, u.image as image , q.id as id,q.description as description,u.name as username,q.title as title FROM questions q LEFT JOIN USERS U ON U.id = q.user_id where q.title Like $1 OR q.tags Like $2;'
         DB.client.query((allQusetionQuery),
         [`%${req.query.search}%` , `%${req.query.filter}%`]
         )
@@ -14,7 +14,7 @@ function getAllQue(req,res){
         })
     }
     else{
-        let allQusetionQuery='select u.image as image , q.id as id,q.description as description, u.name as username,q.title as title FROM questions q LEFT JOIN USERS U ON U.id = q.user_id;'
+        let allQusetionQuery='select  q.user_id as user_id, u.image as image , q.id as id,q.description as description, u.name as username,q.title as title FROM questions q LEFT JOIN USERS U ON U.id = q.user_id;'
         DB.client.query(allQusetionQuery)
         .then((queData)=>{
             res.render('questions',{'queData':queData.rows})
@@ -25,13 +25,13 @@ function getAllQue(req,res){
 function getQue(req,res){
     que_ID = req.query.id || que_ID;
     console.log(que_ID)
-    var QusetionQuery='select u.image as image , q.user_id as q_user_id, u.name as username, q.id as que_id, q.title as title,q.description as que_description,q.tags as tags ,q.code as que_code,q.rank as que_rank from questions q LEFT JOIN USERS U ON U.id = q.user_id where q.id = $1;'
+    var QusetionQuery='select q.user_id as user_id, u.image as image , q.user_id as q_user_id, u.name as username, q.id as que_id, q.title as title,q.description as que_description,q.tags as tags ,q.code as que_code,q.rank as que_rank from questions q LEFT JOIN USERS U ON U.id = q.user_id where q.id = $1;'
     DB.client.query((QusetionQuery),[que_ID])
     .then((queData)=>{  
-        var answersQuery='select u.image as image ,u.id as ans_user_id , u.name as username, a.id as ans_id, a.answer as answer,a.description as ans_description,a.code as ans_code,a.rank as ans_rank,a.approved as approved from answers a LEFT JOIN USERS U ON U.id = a.user_id where a.question_id = $1;'
+        var answersQuery='select a.user_id as user_id, u.image as image ,u.id as ans_user_id , u.name as username, a.id as ans_id, a.answer as answer,a.description as ans_description,a.code as ans_code,a.rank as ans_rank,a.approved as approved from answers a LEFT JOIN USERS U ON U.id = a.user_id where a.question_id = $1;'
         DB.client.query((answersQuery),[que_ID])
         .then((ansData)=>{ 
-            var repliesQuery='select u.image as image , r.answer_id as rep_answer_id, r.reply as reply,r.description as rep_description,r.code as rep_code,u.id as ans_user_id , u.name as username from replies r LEFT JOIN USERS U ON U.id = r.user_id'
+            var repliesQuery='select r.user_id as user_id, u.image as image , r.answer_id as rep_answer_id, r.reply as reply,r.description as rep_description,r.code as rep_code,u.id as ans_user_id , u.name as username from replies r LEFT JOIN USERS U ON U.id = r.user_id'
             DB.client.query(repliesQuery)
             .then(repdata =>{
                 console.log(ansData.rows);
@@ -57,6 +57,7 @@ function myQue(req,res){
 
 function addNewQ(req,res){
     user_Id = req.body.id;
+    console.log(user_Id,"hi");
     let addNewQueQuery = 'INSERT INTO questions (user_id,title,description,tags,code,rank) VALUES ($1,$2,$3,$4,$5,$6);'
     DB.client.query(addNewQueQuery,[user_Id,req.body.title,req.body.description,req.body.tags,req.body.code,req.body.rank])
     .then((data)=>{
@@ -98,6 +99,17 @@ function rankAns(req,res){
     }).catch(err => console.log(err))
 }
 
+function getUser(req,res){
+    console.log(req.query.id);
+    var UserQuery='select * from Users where Users.id = $1;'
+    DB.client.query((UserQuery),[req.query.id])
+    .then((UserData)=>{ 
+        res.render('UserPage', {
+            'UserData':UserData.rows
+          })
+    }).catch((err) => console.log(err))
+}
+
 function ans_approved(req,res){
     console.log(req.body.id,req.body.q_user_id,req.body.is_approved,req.body.ans_id)
     if(req.body.id == req.body.q_user_id){
@@ -121,4 +133,5 @@ queFunctions.myQue = myQue;
 queFunctions.addNewQ = addNewQ;
 queFunctions.addAns = addAns;
 queFunctions.addRep = addRep;
+queFunctions.getUser = getUser;
 module.exports=queFunctions;

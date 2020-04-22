@@ -6,8 +6,8 @@
     direction: rtl;
 }
 html{
-    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.4)),url(../IMG/que.png) no-repeat center center fixed  ; 
-    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.4)),url(../IMG/que3.png) no-repeat center center fixed  ; 
+    /* box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2); */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -54,8 +54,9 @@ h1{
 #title{
     border-bottom: rgb(12, 179, 165) dashed 1px;
     text-align: center;
+    color: #E89A3D;
     font-size: 150%;
-    background-color: papayawhip;
+    background-color: #545b75;
     padding-top: 0.5%;
     padding-bottom: 0.5%;
     border-radius: 25px 25px 0px 0px;
@@ -88,20 +89,25 @@ h1{
 .rank{
     float: left;
     padding: 1%;
-    background: green;
+    background: #E89A3D;
     display: -webkit-inline-box;
+    color: #545b75;
 }
-button,#add{
+.button,#add{
     float: left;
-    background-color: #2C3531;
+    background-color: #E89A3D;
+    color: #545b75 !important;
+    font-weight: bold;
+    font-size: 107%;
     padding: 1%;
     color: honeydew;
     border: none;
     text-align: center;
-    opacity: 0.6;
+    opacity: 0.85;
     transition: 0.3s;
 }
-button:hover {opacity: 1}
+
+.button:hover {opacity: 1}
 #add:hover {opacity: 1}
 #reply{
     display: flex;
@@ -154,9 +160,11 @@ margin-bottom: 3%;
     -webkit-transition: .4s;
     transition: .4s;
   }
-  
+  .aaa{
+    text-decoration: none;
+  }
   input:checked + .slider {
-    background-color: #2196F3;
+    background-color: rgba(67, 245, 96, 0.685);
   }
   
   input:focus + .slider {
@@ -178,11 +186,22 @@ margin-bottom: 3%;
     border-radius: 50%;
   }
   #que{
-    margin-top: 1%;
+    margin-top: 3%;
   }
   .plus{
-    margin-left: 1%;
+    margin-left: 0.1%;
+    float: left;
+    background-color: #545b75;
+    color: #E89A3D;
+    padding: 1%;
+    color: honeydew;
+    border: none;
+    text-align: center;
+    opacity: 0.6;
+    transition: 0.3s;
   }
+  .plus:hover {opacity: 1}
+
   .fa-lightbulb:before {
     color: rgb(255, 153, 0);
     content: "\f0eb";

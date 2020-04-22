@@ -8,6 +8,12 @@ body {
   font-family: 'Lato', sans-serif;
   background-color: #f8f8f8;
 }
+element.style {
+  /* border: 1px solid var(--theme-color1); */
+}
+.card-sm-content .r-layout .r-content .title {
+  font-size: 35px;
+}
 :root {
   --dark-green: #9cc675;
 --dark-yellow: #e89a3d;
@@ -37,23 +43,23 @@ z-index: 1;
   padding: 22px;
   margin-bottom: 20px;
   background: #fff;
-  width: 479px;
+  width: 469px;
   height: 324px;
-  box-shadow: 0px 2px 6px #535b75;
+  box-shadow: 0px 2px 6px #535B75;
   display: inline-flex;
   margin: 1% 4%;
   top: 0;
 }
 
 .nameOfCards {
-  /* background-color: #e89a3d; */
+  background-color: #525973;
   padding: 1%;
   text-align: center;
   background-size: cover;
-  width: 513px;
+  width: 504px;
   margin-top: -22px;
   margin-left: -22px;
-  border-block-end: solid 1px #e89a3d;
+  /* border-block-end: solid 1px #E89A3D; */
   border-radius: 3px;
 }
 .flex-row {
