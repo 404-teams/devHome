@@ -1,59 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" id="html">
 <head>
-  <title>Document</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/questions.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./css/reset.css"> -->
+    <link rel="stylesheet" href="./css/questions.css">
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
 </head>
-
 <body>
   <%- include ('../views/layout/header.ejs') %>
-  <main id="main">
-    <div id="div">
-      <form action="/questions">
-        <input type="text" name="search" list="title" placeholder="What do you want to search for (:" id="css-search">
-        <datalist id="title">
-          <%queData.forEach((ele)=>{%>
-          <option value="<%=ele.title%>">
+    <main id="main">
+        <div class="form-wrapper cf">
+        <form action="/questions" >
+            <input type="text" name="search" list="title" placeholder="ما هو سؤالك؟" id="css-search">
+                <datalist id="title">
+                    <%queData.forEach((ele)=>{%>
+                        <option value="<%=ele.title%>" >
+                    <%})%>
+                </datalist>
+            <input type="text" list="tags" name="filter" placeholder="فلترة النتائج" id="css-filter">
+                <datalist id="tags">
+                    <option value="html">
+                    <option value="css">
+                    <option value="Js">
+                    <option value="Python">
+                    <option value="C#">
+                    <option value="C++">
+                    <option value="Java">
+                    <option value="Ts">
+                    <option value="PHP">
+                </datalist>
+            <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300&display=swap" rel="stylesheet">
+            <button type="submit" id="search">إبحث</button>
+        </form>
+        <form id = "myQue">
+            <input id="addButton" type="submit" value="عرض أسئلتي | إضافة سؤال جديد">
+        </form>
+        </div>
+        <%queData.forEach((ele)=>{%>
+            <ul> 
+                <a href="/question?id=<%=ele.id%>" class="a"><li><p id="p"><%=ele.title%></p></li></a>
+                <p id="description"><%=ele.description%></p>
+                <div class="userImg">
+                <p id="userName">بواسطة : <br><%=ele.username%></p>
+                <img id="img" src="<%=ele.image%>" alt="Not Found" onerror=this.src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTlL3DN5OJlU0fcyCgPcTTrD_cGPLH3FcXPXyN1sXc5UPQOijFV&usqp=CAU">
+                </div>
+            </ul>
             <%})%>
-        </datalist>
-        <input type="text" list="tags" name="filter" placeholder="In witch category" id="css-filter">
-        <datalist id="tags">
-          <option value="html">
-          <option value="css">
-          <option value="Js">
-          <option value="Python">
-          <option value="C#">
-          <option value="C++">
-          <option value="Java">
-          <option value="Ts">
-          <option value="PHP">
-        </datalist>
-        <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300&display=swap" rel="stylesheet">
-        <button type="submit" id="search">Search</button>
-      </form>
-      <form id="myQue">
-        <input id="addButton" type="submit" value="My Questions">
-      </form>
-    </div>
-    <ul>
-      <%queData.forEach((ele)=>{%>
-      <p><%=ele.username%></p>
-      <a href="/question?id=<%=ele.id%>" class="a">
-        <li>
-          <p id="p">Title: <%=ele.title%></p>
-        </li>
-      </a>
-      <%})%>
-    </ul>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
-    <script src="js/myQue.js"></script>
-  </main>
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
+        <script src="js/myQue.js"></script>
+    </main>
+    <%- include ('../views/layout/footer.ejs') %>
 </body>
-
 </html>

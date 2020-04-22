@@ -1,28 +1,124 @@
-* {
-  /* background-color: aquamarine; */
-  margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Almarai&display=swap');
+*{
+    /* background-color: aquamarine; */
+    margin: 0;
+    direction: rtl;
+    }
+#html{
+    background:rgba(0,0,0,0.9) url(../IMG/956.jpg) no-repeat center center fixed  ; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
-#div {
-  background-color: #116466;
-  padding: 1%;
-  /* width: 1000px; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-bottom: 2%;
-  margin-top: 4%;
+#main{
+    margin-left: 10%;
+    margin-Right: 10%;
 }
-button {
-  background-color: #2c3531;
-  padding: 1%;
-  color: honeydew;
-  border: none;
-  text-align: center;
-  opacity: 0.6;
-  transition: 0.3s;
+ul{
+    padding: 0px;
+    background-color: beige;
+    border: #E89A3D solid 1px;
+    margin-bottom: 1%;
+    border-radius: 10px;
+    height: 120px;
+    margin-left: 10%;
+    margin-right: 10%;
+}  
+#div{
+    /* background-color: #116466; */
+    padding: 1%;
+    /* width: 1000px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* margin-left: 15%; */
+    /* margin-Right: 15%; */
+    margin-bottom: 2%;
+    margin-top: 4%;
 }
-button:hover {
-  opacity: 1;
+#p{
+    /* background-color: #D1E8E2; */
+    font-size: 30px;
+    border-bottom: rgb(167, 112, 46) dashed 1px;
+    padding: 0%;
+    direction: rtl;
+    }
+#description{
+    margin-left: 21%;
+    margin-right: 4%;
+    margin-top: 1%;
+    height: 30px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: 'Almarai', sans-serif;
+}
+li {
+    list-style: none;
+    /* background-color: #D1E8E2; */
+    padding: 0%;
+    /* border: solid #116466 1px; */
+    text-align: center;
+    opacity: 0.6;
+    transition: 0.3s;
+    border-bottom: #E89A3D;
+
+}
+.a{
+    text-decoration: none;
+    font-family: 'Tajawal', sans-serif;
+}
+
+#add{
+    float: left;
+    background-color: #2C3531;
+    padding: 1%;
+    color: honeydew;
+    border: none;
+    text-align: center;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+#add:hover {opacity: 1}
+h1{
+    color: brown;
+    font-family: 'Lateef', cursive;
+    font-family: 'Rakkas', cursive;
+    font-size: 35px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-Right: 7%;
+}
+#myQue{
+    margin-top: 20%;
+    margin-left: 10%;
+    margin-Right: 10%;
+
+}
+#addQueh1{
+    margin-top: 4%;
+    margin-bottom: -5% !important;
+}
+#addQueForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10%;
+    margin-Right: 10%;
+    margin-bottom: 2%;
+    margin-top: 3%;
+}
+.fa-question:before {
+    color: black;
+    content: "\f128";
+  }
+.fa-exclamation:before {
+    color: black;
+    content: "\f12a";
+}
+.fa-clipboard:before {
+    color: black;
+    content: "\f328";
 }
