@@ -6,7 +6,7 @@ module.exports = (req, res, next) => {
     // take the baerer auth from the header
     const bearerHeader = req.headers.authorization;
     // check if there is a value
-console.log(bearerHeader)
+console.log(bearerHeader,'fdsffsddsdsffds')
     if (bearerHeader !== 'bearer undefined') {
 
       /// take the token from the header
@@ -18,7 +18,7 @@ console.log(bearerHeader)
       const userData = jwt.verify(token, 'devhome');
       //// check if the user is the same for the request
       console.log('inside')
-
+      console.log(userData.id,req.params.id)
       if (userData.id === Number(req.params.id)) {
         //// allow the process
 
