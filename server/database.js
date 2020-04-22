@@ -25,10 +25,10 @@ DB.addUser = function(userInput){
 //********************************************CDN*******************************************
 
 // this function will add CDN to the DB -------------------------
-DB.sendDataToDataBase = function(data){
-    let {name,latest,version,description,author,filename,user_id} = data;
-    let SQL='INSERT INTO cdns (name,latest,version,description,author,filename,user_id) VALUES ($1,$2,$3,$4,$5,$6,$7);';
-    let safeValues = [name,latest,version,description,author,filename,Number(user_id)];
+DB.sendDataToDataBase = function(data,id){
+    let {name,latest,version,description,author,filename,keywords} = data;
+    let SQL='INSERT INTO cdns (name,latest,version,description,author,filename,user_id,keywords) VALUES ($1,$2,$3,$4,$5,$6,$7,$8);';
+    let safeValues = [name,latest,version,description,author,filename,Number(id),keywords];
   return client.query(SQL,safeValues);
 }
 
@@ -43,11 +43,11 @@ DB.eachUserCdnData = function(data,id){
 
 
 // function to add the jobs to database 
-DB.addJobsToDataBase=function(data){
-  let { type, company, company_url, location,title,description,company_logo,user_id }=data;
+DB.addJobsToDataBase=function(data,id){
+  let { type, company, company_url, location,title,description,company_logo }=data;
   let SQL = 'INSERT INTO jobs (type,company,company_url,location,title,description,company_logo,user_id) VALUES ($1,$2,$3,$4,$5,$6,$7,$8);';
   
-  let safeValues = [type,company,company_url,location,title,description,company_logo,Number(user_id)];
+  let safeValues = [type,company,company_url,location,title,description,company_logo,Number(id)];
   return client.query(SQL, safeValues)
 }
 
@@ -60,7 +60,7 @@ DB.getEachUserJobFromDb=function(id){
 }
 
 DB.addBlog = function(safeValues){
-  let SQL = 'INSERT INTO blogs (tittle,blog,img,user_id) VALUES ($1,$2,$3,$4) RETURNING id'
+  let SQL = 'INSERT INTO blogs (tittle,blog,img,user_id,des) VALUES ($1,$2,$3,$4,$5) RETURNING id'
  return client.query(SQL,safeValues).then(data=>data.rows)
 }
 

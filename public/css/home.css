@@ -44,6 +44,7 @@ body{
   .mid-section-header{
       display: flex;
       justify-content: space-between;
+      margin-left: -30%;
   }
   .header-links{
         padding: 10px;
@@ -92,9 +93,9 @@ body{
       font-family: Helvetica;
       font-weight: 800;
       cursor: pointer;
-      border: solid 1px rgb(252, 137, 16);
+      border: solid 1px rgb(236, 135, 36);
       border-radius: 2px;
-      background-color: rgb(252, 137, 16);
+      background-color: rgb(236, 135, 36);
       line-height: 15px;
       padding: 3px 22px;
   }
@@ -119,18 +120,22 @@ body{
       font-weight: 900;
       text-transform: uppercase;
   }
+
+
   #sub-headline {
     color: white;
-    font-size: 29px;
+    font-size: 30px;
+    background: rgba(8, 8, 6, 0.67);
     font-family: 'Scheherazade', serif;
-    /* font-weight: 700; */
-    height: 28px;
-    margin-bottom: 48px;
+    padding: 9px;
+    border-radius: 8px;
+    width: 96%;
+    margin-bottom: -19px;
     text-align: center;
     line-height: 1.5;
     animation-name: bounceInUp;
     animation-duration: 2s;
-} 
+}
 @-webkit-keyframes bounceInUp {
     from,
     60%,
@@ -307,31 +312,35 @@ div#homep {
   .perso-image{
     background-image: url(https://images.unsplash.com/photo-1529400971008-f566de0e6dfc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
     background-size: 100%;
-    width: 800px;
+    width: 679px;
     height: 358px;
+    margin-left: 14%;
     margin-right: 6%;
     border-radius: 9px;
-    box-shadow: 2px 4px 3px 3px rgba(232, 230, 223, 0.95);
+    box-shadow: 0px 2px 6px #535b75;
   }
   .perso-image:hover{
     animation-name: pulse;
     animation-duration: 2s;
-    box-shadow: 3px 3px 3px 3px rgba(250, 185, 45, 0.897);
+    box-shadow: 0px 2px 6px #e89a3d;
+
   }
 
-  .perso-image2{
+  .perso-image2 {
     background-image: url(https://images.unsplash.com/photo-1518644730709-0835105d9daa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
     background-size: 100%;
-    width: 800px;
+    width: 679px;
     height: 358px;
+    margin-left: 14%;
     margin-right: 6%;
     border-radius: 9px;
-    box-shadow: 2px 4px 3px 3px rgba(232, 230, 223, 0.95);
+    box-shadow: 0px 2px 6px #535b75;
   }
   .perso-image2:hover{
     animation-name: pulse;
     animation-duration: 2s;
-    box-shadow: 3px 3px 3px 3px rgba(250, 185, 45, 0.897);
+    box-shadow: 0px 2px 6px #e89a3d;
+
   }
   .perso-text{
     width: 455px;
@@ -410,7 +419,8 @@ div#homep {
   }
   .get-started-photo{
   background-image: url(https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
-  box-shadow: 2px 4px 3px 3px rgba(232, 230, 223, 0.95);  width: 37%;
+  box-shadow: 0px 2px 6px #535b75;
+  width: 37%;
   box-sizing: border-box;
   background-repeat: no-repeat;
   height: 335.5px;
@@ -420,8 +430,25 @@ div#homep {
   .get-started-photo:hover{
     animation-name: pulse;
     animation-duration: 2s;
-    box-shadow: 3px 3px 3px 3px rgba(250, 185, 45, 0.897);
+    box-shadow: 0px 2px 6px #e89a3d;
   }
+
+  
+  .get-started-photo2{
+    background-image: url(https://firstsiteguide.com/wp-content/uploads/2018/04/what-is-a-blog-641x400-2-1-641x400.jpg);
+    box-shadow: 0px 2px 6px #535b75;
+    width: 37%;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    height: 335.5px;
+    border-radius: 9px;
+    }
+  
+    .get-started-photo2:hover{
+      animation-name: pulse;
+      animation-duration: 2s;
+      box-shadow: 0px 2px 6px #e89a3d;
+    }
   .list-icon4{
     position: relative;
   }
@@ -551,7 +578,7 @@ div#homep {
 
   img.name {
     position: relative;
-    top: -75%;
+    top: -29%;
     left: 18%;
     width: 66%;
     animation-name: bounceIn;
@@ -560,10 +587,11 @@ div#homep {
 
 
 img.name2 {
-    position: relative;
-    top: -195%;
-    left: -73%;
-    width: 28%;
+  position: fixed;
+  top: -17px;
+  left: -8px;
+  width: 11%;
+  z-index: 9999;
 }
 
 @-webkit-keyframes bounceIn {
