@@ -72,7 +72,6 @@ $(function () {
       company_url: data[i].company_url,
       location: data[i].location,
       title: data[i].title,
-      // description: data[i].description,
       indx: i,
       number: i + 1,
     });
@@ -149,11 +148,11 @@ function chengeJobs(i) {
         company_url: data[i].company_url,
         location: data[i].location,
         title: data[i].title,
-        description: data[i].description,
         indx: i,
         number: i + 1,
       });
       $(rendered).appendTo('#sec2');
+      $(data[i].description).appendTo('#jobDes'+i)
     }
   }
   hide(i - 20);
