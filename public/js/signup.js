@@ -1,5 +1,5 @@
 'use strict';
-
+$('#emailHidden').hide();
 $('#signupform').submit(function (event) {
   event.preventDefault();
   let email = event.target.email.value;
@@ -13,11 +13,11 @@ $('#signupform').submit(function (event) {
   ) {
     // console.log(result);
     if (result === 'this user is here') {
-      //     errorNombre.innerHTML = "<font  color='#0f2352'  > أنت من عائلتنا منذ زمن ! <br> هل تود تسجيل الدخول ؟</font>";
-      // return false;
-      alert(' أنت من عائلتنا منذ زمن !  هل تود تسجيل الدخول ؟');
+    
+      $('#emailHidden').toggle();
+
     } else {
-      window.location.assign('/');
+      window.location.assign('/login');
     }
   });
 
