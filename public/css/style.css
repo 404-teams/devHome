@@ -1,9 +1,12 @@
 
+
 .bodyHed{
   overflow-x: hidden;
 
 }
 .bodyHed {
+
+main {
   width: 100%;
   box-sizing: border-box;
 }
@@ -21,18 +24,15 @@ header {
 
 img.logoFor {
   width: 192px;
-  position: absolute;
-  right: 1%;
-  margin-right: -2%;
+  float: right;
+  margin-right: 1%;
   margin-top: -61px;
 }
-
 img.nameFor {
   width: 17%;
   float: right;
   margin-right: -4%;
   margin-top: -53px;
-
 }
 a.nav {
   float: left;
@@ -175,5 +175,6 @@ img.up {
   font-weight: bolder;
   font-size: 1.2em;
 }
+
 
 
