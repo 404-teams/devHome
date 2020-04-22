@@ -60,7 +60,7 @@ DB.getEachUserJobFromDb=function(id){
 }
 
 DB.addBlog = function(safeValues){
-  let SQL = 'INSERT INTO blogs (tittle,blog,img,user_id) VALUES ($1,$2,$3,$4) RETURNING id'
+  let SQL = 'INSERT INTO blogs (tittle,blog,img,user_id,des) VALUES ($1,$2,$3,$4,$5) RETURNING id'
  return client.query(SQL,safeValues).then(data=>data.rows)
 }
 

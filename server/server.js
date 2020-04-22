@@ -78,7 +78,8 @@ app.get('/blogs',API.showBlogs)
 app.get('/blog/create/:id',API.blog)
 app.get('/login',API.logintest)
 
-app.post('/blog/create',API.addBlog)
+app.get('/blog/create',API.addblog)
+app.post('/blog/create/save',API.addBlog)
 app.get('/blog',API.showBlog)
 
 app.use(API.error);
