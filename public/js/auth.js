@@ -13,12 +13,10 @@ newLogin.addEventListener('submit', function (event) {
     if (result === 'wrong password') {
       // alert('rewrite the password');
       $('#passHidden').toggle();
-
     } else if (result === 'this email is not signup please signup') {
       // alert('check if the email is correct or to signup');
       $('#emailHidden').toggle();
       $('#sign').toggle();
-
     } else {
       // console.log(result)
       window.localStorage.token = result.token;

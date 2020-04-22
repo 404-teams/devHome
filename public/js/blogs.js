@@ -75,5 +75,5 @@ function addBlog() {
 
 }
 
-localStorage.id = 1;
-console.log(localStorage.token);
+// localStorage.id = 1;
+// console.log(localStorage.token);
