@@ -12,6 +12,7 @@ const DB = require('./database');
 const API = require('./apis')
 const Obj = require('./constructor')
 const Auth = require('./authorization')
+const abdAuth = require('./abdAuth')
 const queFunctions = require('./queFunctions')
 //------------------ End of Import ------------------
 
@@ -50,12 +51,13 @@ app.get('/jobs/user/:id',Auth, API.eachUserJob);
 app.get('/',API.homePage);
 app.get('/questions',queFunctions.getAllQue)
 app.get('/question',queFunctions.getQue)
-app.get('/myQue',Auth,queFunctions.myQue)
-app.post('/addNewQ',Auth,queFunctions.addNewQ)
-app.post('/addAns:id',Auth,queFunctions.addAns)
-app.post('/addRep:id',Auth,queFunctions.addRep)
+app.get('/myQue',abdAuth,queFunctions.myQue)
+app.get('/userPofile',queFunctions.getUser)
+app.post('/addNewQ',abdAuth,queFunctions.addNewQ)
+app.post('/addAns:id',abdAuth,queFunctions.addAns)
+app.post('/addRep:id',abdAuth,queFunctions.addRep)
 app.put('/rankAns',queFunctions.rankAns)
-app.put('/ans_approved',Auth,queFunctions.ans_approved)
+app.put('/ans_approved',abdAuth,queFunctions.ans_approved)
 
 // -------------endAsk/Solve routes------------------
 

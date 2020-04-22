@@ -6,7 +6,7 @@
     direction: rtl;
     }
 #html{
-    background:rgba(0,0,0,0.9) url(../IMG/956.jpg) no-repeat center center fixed  ; 
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.4)),url(../IMG/que3.png) no-repeat center center fixed  ; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -39,11 +39,13 @@ ul{
     margin-top: 4%;
 }
 #p{
-    /* background-color: #D1E8E2; */
+    background-color: #545b75;
     font-size: 30px;
-    border-bottom: rgb(167, 112, 46) dashed 1px;
+    color: #E89A3D;
+    /* border-bottom: rgb(167, 112, 46) dashed 1px; */
     padding: 0%;
     direction: rtl;
+    border-radius: 9px 9px 0px 0px;
     }
 #description{
     margin-left: 21%;
@@ -61,11 +63,11 @@ li {
     padding: 0%;
     /* border: solid #116466 1px; */
     text-align: center;
-    opacity: 0.6;
+    opacity: 0.80;
     transition: 0.3s;
     border-bottom: #E89A3D;
-
 }
+li:hover {opacity: 1}
 .a{
     text-decoration: none;
     font-family: 'Tajawal', sans-serif;
@@ -73,12 +75,15 @@ li {
 
 #add{
     float: left;
-    background-color: #2C3531;
+    background-color: #E89A3D;
+    color: #545b75 !important;
+    font-weight: bold;
+    font-size: 107%;
     padding: 1%;
     color: honeydew;
     border: none;
     text-align: center;
-    opacity: 0.6;
+    opacity: 0.85;
     transition: 0.3s;
 }
 #add:hover {opacity: 1}
@@ -87,9 +92,9 @@ h1{
     font-family: 'Lateef', cursive;
     font-family: 'Rakkas', cursive;
     font-size: 35px;
-    margin-top: 1%;
+    margin-top: 3%;
     margin-bottom: 1%;
-    margin-Right: 7%;
+    margin-Right: 10%;
 }
 #myQue{
     margin-top: 20%;
@@ -99,7 +104,7 @@ h1{
 }
 #addQueh1{
     margin-top: 4%;
-    margin-bottom: -5% !important;
+    margin-bottom: -6% !important;
 }
 #addQueForm{
     display: flex;

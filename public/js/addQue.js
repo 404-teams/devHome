@@ -1,5 +1,5 @@
 
-var addQue = document.getElementById('addQue');
+var addQue = document.getElementById('addQueForm');
 addQue.addEventListener('submit', function(event){
     event.preventDefault();
     let token =  localStorage.getItem('token');
@@ -9,7 +9,7 @@ addQue.addEventListener('submit', function(event){
     }
     $.ajax({
       type:'POST',
-      data:$('#addQue').serialize(),
+      data:$('#addQueForm').serialize(),
       headers:{
         'authorization' : `bearer ${token}`
       },
