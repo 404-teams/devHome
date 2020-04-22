@@ -47,14 +47,16 @@
 </head>
 
 <body>
-  <header>
+  
+  <header id="headerHeader">
     <img class="logo" src="../IMG/home.png" alt="">
     <img class="name" src="../IMG/name.png" alt="">
     <nav>
       <div>
-        <img class="unknown" src="https://emanong-ph.com/api/people/avatar/0" alt="">
-        <a class="navspe" href="/login"> تسجيل الدخول </a>
-        <a class="navspe" href="/signupNewUser"> إنشاء حساب </a>
+        <img id="userimg" class="unknown" src="https://emanong-ph.com/api/people/avatar/0" alt="">
+        <a id="login" class="navspe" href="/login"> تسجيل الدخول </a>
+        <a id="signup" class="navspe" href="/signupNewUser"> إنشاء حساب </a>
+        <a id="logout"  class="navspe" href="javascript:logout()">تسجيل خروج</a>
         <a class="nav" href="/cdns">CDN </a>
         <a class="nav" href="/questions">اسألني</a>
         <a class="nav" href="/jobs/search">وظائف</a>
@@ -62,7 +64,7 @@
       </div>
     </nav>
   </header>
-  <button id="jobb">الوظائف المحفوظة</button>
+  <button id="jobb" onclick="savedjobs()"  >الوظائف المحفوظة</button>
   <main class="mainj">
     <p id="serverJobs" style="display: none;"><%=job%></p>
     <div  class="bigdiv">
@@ -73,7 +75,7 @@
             <input id="description" class="in" type="text" name="description" placeholder="ادخل نوع لغة البرمجة" required>
           </label>
           <label>
-            <label class="joblab">
+            <la bel class="joblab">
               <input  class="in" type="text" name="location" placeholder="ادخل موقع الوظيفة المطلوبة">
             </label>
             <label class="joblab">
@@ -84,7 +86,7 @@
         </form>
       </section>
       <section id="sec2" >
-        <button onclick="savedjobs()">المحفوظات</button>
+        
       </section>
     </div>
     <div class="containrbtn" style="justify-content: center; display: flex;"></div>

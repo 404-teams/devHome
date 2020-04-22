@@ -13,7 +13,6 @@
 </head>
 
 <body>
-
     <main id="signup">
         <div class="container" id="container">
             <div class="form-container sign-in-container">
@@ -22,28 +21,19 @@
                     <label id="email" for="email">: البريد الإلكتروني</label><br>
                     <input id="email" type="text" name="email" placeholder="أدخل بريدك الإلكتروني" required>
                     <div id="emailHidden">
-                        <p class="both"> تأكد من ان الايميل المدخل مسجل مسبقاً أو اذهب الى انشاء حساب </p>
+                        <p class="both"> تأكد من ان الايميل المدخل مسجل مسبقاً أو اذهب الى انشاء حساب *</p>
                     </div>
 
                     <label id="password" for="password">: كلمة المرور</label><br>
                     <input id="Password" type="password" name="password" placeholder=" أدخل كلمة المرور" required>
                     <div id="check">
                         <div id="passHidden">
-                            <p class="both">أعد كتابة كلمة المرور </p>
+                            <p class="both">أعد كتابة كلمة المرور * </p>
                         </div>
                         <input id="ch" type="checkbox" onclick="myFunction()"><h5>اظهار كلمة المرور</h5>
                     </div>
                     <hr>
-                    <div id="chbox">
-
-                        <input id="ch" type="checkbox" onclick="myFunction()" required><h5>
-                            من خلال إنشاء حساب فأنت توافق على
-                        <a href="#">الشروط والأحكام</a> الخاصة بنا
-
-                        </h5>
-                    </div>
-
-
+                    
                     <button type="submit">تسجيل </button>
                     <button id="sign" type="submit">انشاء حساب </button>
                 </form>

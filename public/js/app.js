@@ -1,3 +1,4 @@
+
 let data;
 $(function () {
   data = $('#serverJobs').text();
@@ -26,13 +27,9 @@ $(function () {
       number: i + 1,
     });
     $(rendered).appendTo('#sec2');
-
-    $(data[i].description).appendTo('#jobDes' + i);
-  }
+ }
   hide(0);
   addForm();
- 
-
 });
 
 function show(indx) {
@@ -104,15 +101,15 @@ function chengeJobs(i) {
         number: i + 1,
       });
       $(rendered).appendTo('#sec2');
-      $(data[i].description).appendTo('#jobDes' + i);
+      $(data[i].description).appendTo('#jobDes'+i)
     }
   }
   hide(i - 20);
   window.scrollTo(0, 0);
 }
 
-$('#searchjob').submit(function (event) {
-  $.get(
+$('#searchjob').submit(function (event) { 
+   $.get(
     `/jobs?description=${event.target.description.value}&type=${event.target.type.value}&location=${event.target.location.value}`
   ).then((resulte) => {
     data = resulte;
