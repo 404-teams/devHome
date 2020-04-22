@@ -53,7 +53,7 @@ API.login = function (req, res) {
 // the function that return the data from API server -------------------------------
 API.cdnFunction = function (req, res) {
   getCdn().then((results) => {
-    res.render('CDN/cdn', { cdns: results.slice(0, 10) });
+    res.render('CDN/cdn', { cdns:JSON.stringify(results.slice(0, 200)) });
     // res.render('views/cdns', {cdns:results});
   });
 };
@@ -71,7 +71,7 @@ function getCdn() {
 API.searchOfCdn = function (req, res) {
   const search = req.query.search_query;
   searchResult(search).then((results) => {
-    res.send({ results });
+    res.send(results.slice(0,200));
   });
 };
 
@@ -85,11 +85,12 @@ function searchResult(search) {
 }
 
 API.saveDataForCdnToDataBase = function (req, res) {
-  DB.sendDataToDataBase(req.body).then(res.send('all good'));
+  console.log(req.body)
+  DB.sendDataToDataBase(req.body,req.params.id).then(res.send('all good'));
 };
 
 API.getEachUserCdnData = function (req, res) {
-  DB.eachUserCdnData(req.query, req.params.id).then(res.send('all good'));
+  DB.eachUserCdnData(req.query, req.params.id).then(data=>res.send(data));
 };
 
 // function to render home page
@@ -153,6 +154,7 @@ API.addblog = function (req, res) {
 };
 
 API.addBlog = function (req, res) {
+  console.log(req.body)
   let { tittle, blog, img, id, des } = req.body;
   DB.addBlog([tittle, blog, img, id, des]).then((blog) => res.send(blog[0]));
 };
@@ -164,8 +166,10 @@ API.showBlog = function (req, res) {
 };
 
 API.showBlogs = function (req, res) {
-  DB.showBlogs().then((blogs) =>
+  DB.showBlogs().then((blogs) =>{
+    console.log(blogs.rows,'sdfdsfsf')
     res.render('pages/blogs', { blogs: JSON.stringify(blogs.rows) })
+  }
   );
 };
 

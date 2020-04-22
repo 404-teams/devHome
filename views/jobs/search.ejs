@@ -28,65 +28,72 @@
               عرض التفاصيل</button>
           </div>
           <section id="detSec{{indx}}">
-            <p id='jobDes{{indx}}'>تفاصيل الوظيفة :</p>
+            <p id='jobDes{{indx}}'>تفاصيل الوظيفة :{{description }}</p>
           </section>
           <form name="addjob" onsubmit="return false">
             <input class="jobf" type="hidden" name="company_logo" value="{{company_logo  }}">
             <input class="jobf" type="hidden" name="type" value="{{type }}">
             <input class="jobf" type="hidden" name="company" value="{{company }}">
-            <input class="jobf" type="hidden" name="company_url" value="<{{company_url }}">
+            <input class="jobf" type="hidden" name="company_url" value="{{company_url }}">
             <input class="jobf" type="hidden" name="location" value="{{location }}">
             <input class="jobf" type="hidden" name="title" value="{{title }}">
-            <input class="jobf" type="hidden" name="description" value="<{{description }}">
+            <input class="jobf" type="hidden" name="description" value="{{description }}">
             <div id="bn">
-              <button class="savebtn">اضف الى المحفوظات</button>
+              <button class="savebtn">اضف الى المفضلة</button>
             </div>
           </form>
         </div>
 </script>
+  <script id="popup" type="x-tmpl-mustache">
+  <div class="popup {{i}}" style="position: fixed;
+    top: 110px;
+    width: 50%;
+    left: 25%;
+    height: 356px;
+    background:red">
+    <div style="
+      height: 356px;
+      overflow-y: scroll;">
+      {{description}}
+         </div>
+    <button onclick="remove({{i}})">done</button>
+  </div>
+</script>
 </head>
 
 <body>
-  <header>
-    <img class="logo" src="../IMG/home.png" alt="">
-    <img class="name" src="../IMG/name.png" alt="">
-    <nav>
-      <div>
-        <img class="unknown" src="https://emanong-ph.com/api/people/avatar/0" alt="">
-        <a class="navspe" href="/login"> تسجيل الدخول </a>
-        <a class="navspe" href="/signupNewUser"> إنشاء حساب </a>
-        <a class="nav" href="/cdns">CDN </a>
-        <a class="nav" href="/questions">اسألني</a>
-        <a class="nav" href="/jobs/search">وظائف</a>
-        <a class="nav" href="/">الصفحة الرئيسية </a>
-      </div>
-    </nav>
-  </header>
-  <button id="jobb">الوظائف المحفوظة</button>
+
+  <%- include ('../layout/header.ejs') %>
+
   <main class="mainj">
+    <button onclick="savedjobs()">jkdsjkfljdslk</button>
     <p id="serverJobs" style="display: none;"><%=job%></p>
-    <div  class="bigdiv">
+    <div class="bigdiv">
       <section id="secj">
         <h4>ابحث عن وظيفة</h4>
         <form class="jobfm" id="searchjob" onsubmit="return false">
           <label class="joblab">
-            <input id="description" class="in" type="text" name="description" placeholder="ادخل نوع لغة البرمجة" required>
+            <input id="description" class="in" type="text" name="description" placeholder="ادخل نوع لغة البرمجة"
+              required>
           </label>
           <label>
-            <label class="joblab">
+            <la bel class="joblab">
+
               <input  class="in" type="text" name="location" placeholder="ادخل موقع الوظيفة المطلوبة">
             </label>
             <label class="joblab">
-              <span>دوام كامل </span>
+              <span id="spn">دوام كامل </span>
               <input type="checkbox" name="type">
             </label>
             <button id="search-btn">ابحث</button>
+
         </form>
       </section>
-      <section id="sec2" >
-        <button onclick="savedjobs()">المحفوظات</button>
+      <section id="sec2">
+
       </section>
     </div>
+
     <div class="containrbtn" style="justify-content: center; display: flex;"></div>
     <%-include ('../../views/layout/footer.ejs') %>
   </main>

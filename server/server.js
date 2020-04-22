@@ -65,8 +65,8 @@ app.put('/ans_approved',abdAuth,queFunctions.ans_approved)
 //------------------ CDN route ------------------
 
 app.get('/cdns/search' , API.searchOfCdn);
-app.post('/cdns/save' , API.saveDataForCdnToDataBase);
-app.get('/cdns/user/:id' , API.getEachUserCdnData);
+app.post('/cdns/save/:id',Auth , API.saveDataForCdnToDataBase);
+app.get('/cdns/user/:id' , Auth,API.getEachUserCdnData);
 app.get('/cdns',API.cdnFunction);
 app.post('/signup',API.signup);
 app.get('/signupNewUser', API.creatNewUser);
@@ -80,7 +80,8 @@ app.get('/blogs',API.showBlogs)
 app.get('/blog/create/:id',API.blog)
 app.get('/login',API.logintest)
 
-app.post('/blog/create',API.addBlog)
+app.get('/blog/create',API.addblog)
+app.post('/blog/create/save',API.addBlog)
 app.get('/blog',API.showBlog)
 
 app.use(API.error);

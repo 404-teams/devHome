@@ -30,8 +30,7 @@ h1 {
     font-family: 'Rakkas', cursive;
 }
 label {
-    margin-left: -7px;
-    padding: 97px;
+    margin-left: 71%;
     color: #0F2352;
     font-family: 'Lateef', cursive;
     font-family: 'Rakkas', cursive;
@@ -62,7 +61,7 @@ a {
     width: 943px;
     max-width: 100%;
     height: 563px;
-    /* min-height: 480px; */
+    margin: 3% 24px;
 }
 .form-container form {
     background: #fff;
@@ -96,7 +95,8 @@ a {
     width: 100%;
 }
 button {
-    border-radius: 20px;
+    border-radius: 4px;
+    margin-top: 6%;
     border: 1px solid #0F2352;
     background: #7F8B9E;
     color: #fff;
@@ -133,7 +133,7 @@ button.ghost {
     left: 0;
     width: 50%;
     z-index: 2;
-    margin-top: 3%;
+    margin-top: 8%;
 }
 .overlay-container {
     position: absolute;
@@ -172,6 +172,9 @@ button.ghost {
 }
 .overlay-right {
     right: 0;
+    background-image: url(https://images.unsplash.com/photo-1535931642064-4bd025b69b5d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9);
+    opacity: .8;
+    background-size: cover;
     transform: translateY(0);
 }
 .overlay-left {
@@ -250,21 +253,28 @@ main#signup {
 }
 
 #emailHidden{
-    background-color: rgba(216, 34, 34, 0.8);
-    color: #fdf3de;
+   
     border-radius: 34px;
     margin-bottom: 12px;
 }
 
 p.both {
     font-size: 14px;
+    color: #dc4343;
     margin-bottom: 12px;
 }
-
 #passHidden {
-    background-color: rgba(216, 34, 34, 0.8);
-    color: #fdf3de;
+   
     border-radius: 34px;
     margin-bottom: 12px;
     width: 91%;
+}
+
+#lg{
+    font-weight: bold;
+    margin: 0;
+    padding: 6%;
+    color: white;
+    font-family: 'Rakkas', cursive;
+    background: rgba(18, 18, 19, 0.51);
 }

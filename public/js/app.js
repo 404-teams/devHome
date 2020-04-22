@@ -24,19 +24,25 @@ $(function () {
       title: data[i].title,
       indx: i,
       number: i + 1,
+      // description:data[i].description
     });
+    var template2 = document.getElementById('popup').innerHTML;
+    var rendered2 = Mustache.render(template2, {
+      description: data[i].description,
+      i,
+    });
+    $(rendered2).appendTo('body');
     $(rendered).appendTo('#sec2');
-
-    $(data[i].description).appendTo('#jobDes' + i);
   }
+  $('.popup').hide();
   hide(0);
   addForm();
- 
-
 });
 
 function show(indx) {
-  $(`#detSec${indx}`).toggle();
+  console.log(indx);
+  $('.popup').hide();
+  $(`.${indx}`).show();
 }
 function hide(i) {
   console.log(i);
@@ -45,11 +51,11 @@ function hide(i) {
     $(`#detSec${i}`).hide();
   }
 }
-// console.log(data);
-// alert('dsffsdf');
+
 function addForm() {
   $('form[name="addjob"]').each(function (i, e) {
     $(this).submit(function (event) {
+      console.log(event.target.description.value);
       $.ajax({
         url: '/jobs/save/' + localStorage.id,
         data: {
@@ -59,7 +65,7 @@ function addForm() {
           company_url: event.target.company_url.value,
           location: event.target.location.value,
           title: event.target.title.value,
-          description: event.target.description.value,
+          description: JSON.stringify(event.target.description.value),
         },
         type: 'POST',
         headers: { authorization: `bearer ${localStorage.token}` },
@@ -80,7 +86,6 @@ function addForm() {
   });
 }
 function chengeJobs(i) {
-  console.log(i, 'fist');
   $('#sec2').empty();
   if (i < 100) {
     i *= 20;
@@ -90,7 +95,7 @@ function chengeJobs(i) {
   let end = i + 20;
   for (; i < end; i++) {
     if (data[i] === undefined) {
-      // break;
+      break;
     } else {
       var template = document.getElementById('job').innerHTML;
       var rendered = Mustache.render(template, {
@@ -103,11 +108,19 @@ function chengeJobs(i) {
         indx: i,
         number: i + 1,
       });
+      var template2 = document.getElementById('popup').innerHTML;
+      var rendered2 = Mustache.render(template2, {
+        description: data[i].description,
+        i,
+      });
+      // console.log(rendered2)
+      $(rendered2).appendTo('body');
       $(rendered).appendTo('#sec2');
-      $(data[i].description).appendTo('#jobDes' + i);
     }
   }
+  $('.popup').hide();
   hide(i - 20);
+  addForm();
   window.scrollTo(0, 0);
 }
 
@@ -116,15 +129,23 @@ $('#searchjob').submit(function (event) {
     `/jobs?description=${event.target.description.value}&type=${event.target.type.value}&location=${event.target.location.value}`
   ).then((resulte) => {
     data = resulte;
+    btns = data.length / 20 + (data.length % 20 > 0 ? 1 : 0);
+    btns = Math.floor(btns);
+    $('.containrbtn').empty();
+
+    for (let i = 0; i < btns; i++) {
+      var template = document.getElementById('btn').innerHTML;
+      var rendered = Mustache.render(template, {
+        index: i,
+        number: i + 1,
+      });
+      $(rendered).appendTo('.containrbtn');
+    }
     chengeJobs(0);
   });
-  // console.log(event.target);
 });
 
 function savedjobs() {
-  // $.get('/jobs/user/'+localStorage.id).then(data=>{
-  //   console.log(data)
-  // })
   $.ajax({
     type: 'GET',
     headers: {
@@ -132,19 +153,31 @@ function savedjobs() {
     },
     url: '/jobs/user/' + localStorage.id,
     success: function (msg) {
-      console.log(msg.rows)
-      data = msg.rows
-      chengeJobs(0);
+      if (msg === 'not the same user') {
+        alert(msg);
+      } else if (msg === 'please login or singup') {
+        alert(msg);
+      } else {
+        data = msg.rows;
+        chengeJobs(0);
+        btns = data.length / 20 + (data.length % 20 > 0 ? 1 : 0);
+        btns = Math.floor(btns);
+        $('.containrbtn').empty();
+        for (let i = 0; i < btns; i++) {
+          var template = document.getElementById('btn').innerHTML;
+          var rendered = Mustache.render(template, {
+            index: i,
+            number: i + 1,
+          });
+          $(rendered).appendTo('.containrbtn');
+        }
+        console.log(msg.rows);
+      }
     },
   });
-  // $.ajax({
-  //   type: "GET",
-  //   beforeSend: function(request) {
-  //     request.setRequestHeader("Authority", `bearer ${localStorage.token}`);
-  //   },
-  //   url: '/jobs/user/'+localStorage.id,
-  //   success: function(msg) {
-  //    console.log(msh)
-  //   }
-  // });
+}
+
+function remove(i) {
+  $('.' + i).hide();
+  console.log(i);
 }
