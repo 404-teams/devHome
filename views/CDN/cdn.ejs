@@ -9,11 +9,13 @@
   <link rel="stylesheet" href="./css/footer.css">
   <link rel="stylesheet" href="./css/cdn.css">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script id="btn" type="x-tmpl-mustache">
     <button onclick="addcdntem({{index}})">{{number}}</button>
 </script>
   <script id="cdntemp" type="x-tmpl-mustache">
-    <div class="card-view" style="border: 1px solid var(--theme-color1);">
+    <div class="card-view" ">
       <div class="r-layout">
         <div class="r-content">
           <div class="nameOfCards">
@@ -66,14 +68,15 @@
   <%- include ('../layout/header.ejs') %>
   <div id="develdev">
     <main>
+        <button class="saveButt" onclick="seesavevalue()">المحفوظات</button>
       <form id="searchs" class="form-wrapper cf" onsubmit="return false">
-        <input id="cdnsearch" type="text" placeholder="إبحث هنا..." required>
+        <input id="cdnsearch" type="text" placeholder="إبحث هنا..." >
         <button type="submit">بحث</button>
+        
       </form>
-      <button onclick="seesavevalue()">المحفوظات</button>
+    
       <section class="spacer bg-gray card-sm-content ">
         <div class="c-container ">
-          <h3 class="h3-titlte">CDN Cards</h3>
           <div class="flex-row">
             <div class="flex-col">
               <p style="display: none;" id="cdnsser"><%=cdns%></p>
