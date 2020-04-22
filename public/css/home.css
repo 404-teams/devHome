@@ -639,4 +639,8 @@ img.name2 {
     }
   }
 
-  
+  img#userimg {
+    width: 16%;
+    margin-left: 2%;
+    border-radius: 35px;
+}

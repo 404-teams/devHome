@@ -23,7 +23,6 @@ function PlusMinus(ansId ,ansUserId,value) {
 
 function approved(cb,q_user_id, ans_id){
   event.preventDefault();
-  console.log(cb.checked,q_user_id,ans_id)
   let token =  localStorage.getItem('token');
   if(token === null){
     alert("log in before")
