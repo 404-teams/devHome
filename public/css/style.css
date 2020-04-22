@@ -3,33 +3,31 @@ body{
   overflow-x: hidden;
 
 }
-main {
-  width: 100%;
-  box-sizing: border-box;
-}
-header {
+
+#headerHeader {
   background-color: #293252;
   padding: 3%;
   position: sticky;
   z-index: 999999;
   top: 0;
   opacity: 0.8;
-  width: 100%;
   box-shadow: 0px 5px 6px rgba(83, 72, 72, 0.699);
 
 }
 
 img.logo {
   width: 192px;
-  float: right;
-  margin-right: 1%;
+  /* float: right; */
+  position: absolute;
+  margin-right: -2%;
   margin-top: -61px;
 }
 img.name {
-  width: 17%;
-  float: right;
-  margin-right: -4%;
-  margin-top: -53px;
+  width: 16%;
+  /* float: right; */
+  position: absolute;
+  margin-right: 9%;
+  margin-top: -45px;
 }
 a.nav {
   float: left;
