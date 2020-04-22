@@ -38,7 +38,7 @@ API.login = function (req, res) {
       if (req.body.password === data.rows[0].password) {
         /// create a token for the uer with expires in 1 min and send it back to the clinet side
         let token = jwt.sign({ id, email }, 'devhome', { expiresIn: 1000000 });
-        return res.send({token,userInfo:data.rows[0]});
+        return res.send({ token, userInfo: data.rows[0] });
         //// if the user input the wrong password
       } else {
         return res.send('wrong password');
@@ -50,14 +50,10 @@ API.login = function (req, res) {
   });
 };
 
-API.error = (req, res, next) => {
-  res.status(404).send("Sorry can't find that!");
-};
-
 // the function that return the data from API server -------------------------------
 API.cdnFunction = function (req, res) {
   getCdn().then((results) => {
-    res.render('CDN/cdn', { cdns: results.slice(0, 10) });
+    res.render('CDN/cdn', { cdns:JSON.stringify(results.slice(0, 200)) });
     // res.render('views/cdns', {cdns:results});
   });
 };
@@ -75,7 +71,7 @@ function getCdn() {
 API.searchOfCdn = function (req, res) {
   const search = req.query.search_query;
   searchResult(search).then((results) => {
-    res.send({ results });
+    res.send(results.slice(0,200));
   });
 };
 
@@ -89,11 +85,12 @@ function searchResult(search) {
 }
 
 API.saveDataForCdnToDataBase = function (req, res) {
-  DB.sendDataToDataBase(req.body).then(res.send('all good'));
+  console.log(req.body)
+  DB.sendDataToDataBase(req.body,req.params.id).then(res.send('all good'));
 };
 
 API.getEachUserCdnData = function (req, res) {
-  DB.eachUserCdnData(req.query, req.params.id).then(res.send('all good'));
+  DB.eachUserCdnData(req.query, req.params.id).then(data=>res.send(data));
 };
 
 // function to render home page
@@ -108,32 +105,26 @@ API.goToSearchPage = function (req, res) {
     let result = data.body.map((val) => {
       return new Obj.Job(val);
     });
-    // res.render('jobs/search.ejs', { job: result.splice(1,20)});
-
     res.render('jobs/search.ejs', { job: JSON.stringify(result) });
   });
 };
 
 // function to show the result of the jobs
 API.searchJobResult = function (req, res) {
-  let url = `https://jobs.github.com/positions.json?description=${req.body.description}&location=${req.body.location}&full_time=`;
-  if (req.body.type === 'on') {
+  let url = `https://jobs.github.com/positions.json?description=${req.query.description}&location=${req.query.location}&full_time=`;
+  if (req.query.type === 'on') {
     url += `true`;
   }
-  // let url = `https://jobs.github.com/positions.json`;
   superagent.get(url).then((data) => {
     let result = data.body.map((val) => {
       return new Obj.Job(val);
     });
-    // console.log('rrrrrrrrrrrrrrrrrrr',result);
-    res.render('jobs/job.ejs', { job: result.splice(1, 20) });
-    // res.send(result.splice(1,10) );
+    res.send(result);
   });
 };
 // function to  save specific job
 API.savedJobs = function (req, res) {
   DB.addJobsToDataBase(req.body, req.params.id).then((data) => {
-    console.log(data);
     res.send('done');
   });
 };
@@ -178,4 +169,9 @@ API.showBlogs = function (req, res) {
     res.render('pages/blogs', { blogs: JSON.stringify(blogs.rows) })
   );
 };
+
+API.error = (req, res, next) => {
+  res.status(404).send("Sorry can't find that!");
+};
+
 module.exports = API;

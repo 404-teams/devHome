@@ -30,8 +30,7 @@ h1 {
     font-family: 'Rakkas', cursive;
 }
 label {
-    margin-left: -7px;
-    padding: 97px;
+    margin-left: 71%;
     color: #0F2352;
     font-family: 'Lateef', cursive;
     font-family: 'Rakkas', cursive;
@@ -59,10 +58,10 @@ a {
     box-shadow: 0 14px 8px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22);
     position: relative;
     overflow: hidden;
-    width: 768px;
+    width: 943px;
     max-width: 100%;
-    min-height: 480px;
-    
+    height: 563px;
+    /* min-height: 480px; */
 }
 .form-container form {
     background: #fff;
@@ -89,19 +88,21 @@ a {
 }
 .form-container input {
     background: #eee;
+    text-align: end;
     border: none;
     padding: 12px 15px;
     margin: 8px 0;
     width: 100%;
 }
 button {
-    border-radius: 20px;
+    border-radius: 4px;
+    margin-top: 6%;
     border: 1px solid #0F2352;
     background: #7F8B9E;
     color: #fff;
     font-size: 17px;
     font-weight: bold;
-    padding: 12px 45px;
+    padding: 9px 45px;
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: transform 80ms ease-in;
@@ -132,7 +133,7 @@ button.ghost {
     left: 0;
     width: 50%;
     z-index: 2;
-    margin-top: 3%;
+    margin-top: 8%;
 }
 .overlay-container {
     position: absolute;
@@ -220,8 +221,12 @@ div#check {
 input#ch {
     position: relative;
     top: 23px;
-    right: -141px;
-}
+    right: -160px;}
+
+    h5 {
+        padding-right: 9%;
+        margin-bottom: 12px;
+    }
 
 div#chbox {
   margin-bottom: 9%;
@@ -236,9 +241,28 @@ div#go {
   
 }
 a#aj {
-  color: #ec953a;
-  font-size: 16px;
+    color: #ec953a;
+    font-size: 17px;
+    margin-top: .5%;
 }
 main#signup {
   margin-top: 0px;
+}
+
+#emailHidden{
+   
+    border-radius: 34px;
+    margin-bottom: 12px;
+}
+
+p.both {
+    font-size: 14px;
+    color: #dc4343;
+    margin-bottom: 12px;
+}
+#passHidden {
+   
+    border-radius: 34px;
+    margin-bottom: 12px;
+    width: 91%;
 }

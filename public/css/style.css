@@ -21,15 +21,18 @@ header {
 
 img.logoFor {
   width: 192px;
-  float: right;
-  margin-right: 1%;
+  position: absolute;
+  right: 1%;
+  margin-right: -2%;
   margin-top: -61px;
 }
+
 img.nameFor {
   width: 17%;
   float: right;
   margin-right: -4%;
   margin-top: -53px;
+
 }
 a.nav {
   float: left;

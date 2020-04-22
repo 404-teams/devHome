@@ -30,14 +30,14 @@
           <section id="detSec{{indx}}">
             <p id='jobDes{{indx}}'>تفاصيل الوظيفة :</p>
           </section>
-          <form onsubmit="return false">
+          <form name="addjob" onsubmit="return false">
             <input class="jobf" type="hidden" name="company_logo" value="{{company_logo  }}">
             <input class="jobf" type="hidden" name="type" value="{{type }}">
             <input class="jobf" type="hidden" name="company" value="{{company }}">
-            <input class="jobf" type="hidden" name="company_url" value="<{{company_url }}">
+            <input class="jobf" type="hidden" name="company_url" value="{{company_url }}">
             <input class="jobf" type="hidden" name="location" value="{{location }}">
             <input class="jobf" type="hidden" name="title" value="{{title }}">
-            <input class="jobf" type="hidden" name="description" value="<{{description }}">
+            <input class="jobf" type="hidden" name="description" value="{{description }}">
             <div id="bn">
               <button class="savebtn">اضف الى المحفوظات</button>
             </div>
@@ -46,21 +46,26 @@
 </script>
 </head>
 
+<<<<<<< HEAD
 <body class="bodyHed">
+=======
+<body>
+
+>>>>>>> bba4e2d837ec8efc07898ef2854f85b9517ecadc
   <%- include ('../layout/header.ejs') %>
+
   <main class="mainj">
     <p id="serverJobs" style="display: none;"><%=job%></p>
-      <%console.log(job)%>
     <div  class="bigdiv">
       <section id="secj">
         <h4>ابحث عن وظيفة</h4>
-        <form class="jobfm" action="/jobs" method="post">
+        <form class="jobfm" id="searchjob" onsubmit="return false">
           <label class="joblab">
-            <input class="in" type="text" name="description" placeholder="ادخل نوع لغة البرمجة" required>
+            <input id="description" class="in" type="text" name="description" placeholder="ادخل نوع لغة البرمجة" required>
           </label>
           <label>
-            <label class="joblab">
-              <input class="in" type="text" name="location" placeholder="ادخل موقع الوظيفة المطلوبة">
+            <la bel class="joblab">
+              <input  class="in" type="text" name="location" placeholder="ادخل موقع الوظيفة المطلوبة">
             </label>
             <label class="joblab">
               <span>دوام كامل </span>
@@ -70,7 +75,7 @@
         </form>
       </section>
       <section id="sec2" >
-
+        
       </section>
     </div>
     <div class="containrbtn" style="justify-content: center; display: flex;"></div>

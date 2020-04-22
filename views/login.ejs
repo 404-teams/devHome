@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/login.css">
     <link href="https://fonts.googleapis.com/css2?family=Lateef&family=Rakkas&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Lateef&family=Rakkas&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Lateef&family=Rakkas&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-
     <main id="signup">
         <div class="container" id="container">
             <div class="form-container sign-in-container">
@@ -20,38 +20,39 @@
                     <h1>تسجيل الدخول </h1>
                     <label id="email" for="email">: البريد الإلكتروني</label><br>
                     <input id="email" type="text" name="email" placeholder="أدخل بريدك الإلكتروني" required>
+                    <div id="emailHidden">
+                        <p class="both"> تأكد من ان الايميل المدخل مسجل مسبقاً أو اذهب الى انشاء حساب *</p>
+                    </div>
 
                     <label id="password" for="password">: كلمة المرور</label><br>
                     <input id="Password" type="password" name="password" placeholder=" أدخل كلمة المرور" required>
-                    <div id ="check">
-                        <input id="ch" type="checkbox" onclick="myFunction()">اظهار كلمة المرور
+                    <div id="check">
+                        <div id="passHidden">
+                            <p class="both">أعد كتابة كلمة المرور * </p>
+                        </div>
+                        <input id="ch" type="checkbox" onclick="myFunction()"><h5>اظهار كلمة المرور</h5>
                     </div>
                     <hr>
-                   <div id="chbox">
-
-                    <input id="ch" type="checkbox" onclick="myFunction()" required>من خلال إنشاء حساب فأنت توافق على <a href="#">الشروط والأحكام</a> الخاصة بنا  
-
-                   </div>
-                  
-                   
+                    
                     <button type="submit">تسجيل </button>
+                    <button id="sign" type="submit">انشاء حساب </button>
                 </form>
             </div>
             <div class="overlay-container">
                 <div class="overlay">
                     <div class="overlay-panel overlay-right">
                         <h1> أهلا بك مجدداً</h1>
-                       
+
                     </div>
                 </div>
             </div>
             <div id="go">
-              <a id="aj" href="/"> الرجوع الى الصفحة الرئيسية</a>
+                <a id="aj" href="/"> الرجوع الى الصفحة الرئيسية</a>
             </div>
         </div>
 
     </main>
-   
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
     <script src="js/auth.js"></script>
 </body>
