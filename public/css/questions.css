@@ -68,7 +68,7 @@
         transition: 0.3s;
         border-bottom: #E89A3D;
         color: #E89A3D;
-
+        cursor: pointer;
         }
     .userImg{
         width: 80px;
