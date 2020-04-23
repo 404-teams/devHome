@@ -1,25 +1,34 @@
 @import url('https://fonts.googleapis.com/css?family=Bellota:700|Cardo:700|Cormorant+Garamond:700|Courgette|Fredoka+One|Kalam:700|Open+Sans:700|Pacifico|Satisfy&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower|Open+Sans+Condensed:300&display=swap');
+
 footer {
   background: #303036;
   color: #d3d3d3;
   height: 250px;
   position: relative;
   overflow: hidden;
+    direction: ltr;
+
 }
 
 .footer-content {
   /* border: 1px solid red; */
   height: 200px;
   display: flex;
+  direction: ltr;
+
 }
 .footer-section {
   flex: 1;
   padding: 10px 0;
   /* border: 1px solid white; */
+  direction: ltr;
+
 }
 .footer-section.links {
   padding-left: 170px;
+  direction: ltr;
+
 }
 .footer-bottom {
   background: #343a40;
@@ -32,6 +41,8 @@ footer {
   padding-top: 18px;
   width: 100%;
   padding-bottom: 18px;
+  direction: ltr;
+
 }
 
 p#follow {
@@ -44,6 +55,8 @@ p#follow {
   /* letter-spacing: 3px; */
   font-family: 'Open Sans Condensed', sans-serif;
   word-spacing: 5px;
+  direction: ltr;
+
 }
 div#links {
   margin-left: 22px;
@@ -51,14 +64,20 @@ div#links {
   position: relative;
   left: 99%;
   top: 93px;
+  direction: ltr;
+
 }
 .slinks {
   margin: 7px;
   color: rgb(226, 223, 223);
   font-size: 27px;
+  direction: ltr;
+
 }
 .slinks:hover {
   color: rgb(130, 138, 175);
+  direction: ltr;
+
 }
 
 p#email {
@@ -74,6 +93,8 @@ p#email {
   font-family: 'Open Sans Condensed', sans-serif;
   word-spacing: 5px;
   margin-right: 70px;
+  direction: ltr;
+
 }
 .newsletter-form {
   float: left;
@@ -82,6 +103,8 @@ p#email {
   right: 126%;
   top: 17%;
   margin-top: 22px;
+  direction: ltr;
+
 }
 .txtb {
   flex: 1;
@@ -96,6 +119,8 @@ p#email {
   outline: none;
   border-radius: 9px;
   min-width: 260px;
+  direction: ltr;
+
 }
 .btn {
   padding: 8px 30px;
@@ -109,9 +134,13 @@ p#email {
   cursor: pointer;
   font-family: 'Open Sans Condensed', sans-serif;
   transition: opacity 0.5s linear;
+  direction: ltr;
+
 }
 .btn:hover {
   opacity: 0.7;
+  direction: ltr;
+
 }
 
 /* @-webkit-keyframes jackInTheBox {

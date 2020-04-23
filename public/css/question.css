@@ -61,7 +61,12 @@ h1{
     padding-top: 0.5%;
     padding-bottom: 0.5%;
     border-radius: 25px 25px 0px 0px;
+    opacity: 0.85;
+    transition: 0.3s;
+    cursor: pointer;
 }
+#title:hover {opacity: 1}
+
 #description{
     /* text-align: left; */
     background-color: rgb(247, 247, 247);
@@ -93,6 +98,7 @@ h1{
     background: #E89A3D;
     display: -webkit-inline-box;
     color: #545b75;
+    cursor: pointer;
 }
 .button,#add{
     float: left;
@@ -106,6 +112,7 @@ h1{
     text-align: center;
     opacity: 0.85;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .button:hover {opacity: 1}
@@ -200,6 +207,7 @@ margin-bottom: 3%;
     text-align: center;
     opacity: 0.6;
     transition: 0.3s;
+    cursor: pointer;
   }
   .plus:hover {opacity: 1}
 

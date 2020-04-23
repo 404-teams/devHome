@@ -57,6 +57,13 @@ ul{
     overflow: hidden;
     font-family: 'Almarai', sans-serif;
 }
+#code{
+    /* text-align: left; */
+    background-color: #D1E8E2;
+    padding: 3%;
+    direction: ltr;
+    font-family: 'Almarai', sans-serif;
+}
 li {
     list-style: none;
     /* background-color: #D1E8E2; */
@@ -66,6 +73,7 @@ li {
     opacity: 0.80;
     transition: 0.3s;
     border-bottom: #E89A3D;
+    cursor: pointer;
 }
 li:hover {opacity: 1}
 .a{
@@ -85,6 +93,7 @@ li:hover {opacity: 1}
     text-align: center;
     opacity: 0.85;
     transition: 0.3s;
+    cursor: pointer;
 }
 #add:hover {opacity: 1}
 h1{
