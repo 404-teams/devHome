@@ -55,7 +55,7 @@ function hide(i) {
 function addForm() {
   $('form[name="addjob"]').each(function (i, e) {
     $(this).submit(function (event) {
-      console.log(event.target.description.value);
+      // console.log(event.target.description.value);
       $.ajax({
         url: '/jobs/save/' + localStorage.id,
         data: {
@@ -180,4 +180,9 @@ function savedjobs() {
 function remove(i) {
   $('.' + i).hide();
   console.log(i);
+}
+
+for(var i=0;i<10;i++){
+  var str = $( `#jobDes${i}` ).text();
+  $(`#jobDes${i}` ).html( str );  
 }
