@@ -58,7 +58,7 @@ button {
 button:hover {
   padding: 1%;
   width: 5%;
-  background-color:#515973 ;
+  background-color: #515973;
   color: #e4e4e4;
 }
 
@@ -67,7 +67,6 @@ img.imgblog {
   height: 300px;
   width: 300px;
 }
-
 
 .containrbtn {
   display: flex;
@@ -118,4 +117,15 @@ button.blogbutt {
   color: #f0ead7;
   font-size: 104%;
   font-weight: bold;
+}
+
+.des {
+  margin: 0 31px 0 0;
+  text-align: right;
+  position: relative;
+  top: -325px;
+  left: 94px;
+  font-size: larger;
+  color: gray;
+  width: 81%;
 }

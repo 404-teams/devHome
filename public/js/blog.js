@@ -176,11 +176,12 @@ function done() {
   let tittle = $('#blog').find('h1')[0].textContent;
   let des =
     $('#blog').find('p').length > 0 ? $('#blog').find('p')[0].textContent : '';
-  let img =
+  // console.log(des)
+    let img =
     $('#blog').find('img').length > 0
       ? $('#blog').find('img')[0].src
       : 'https://www.knstek.com/wp-content/uploads/2012/12/default_blog_large.png';
-  $.post('/blog/create/save', { blog, tittle, img, des, id: 1 }, function (s) {
+  $.post('/blog/create/save', { blog, tittle, img, des, id: localStorage.id }, function (s) {
     window.location.href = '/blog?id=' + s.id;
   });
 }

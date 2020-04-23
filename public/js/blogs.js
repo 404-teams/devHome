@@ -48,8 +48,8 @@ function chengeblogs(i) {
 }
 
 function clicked(id) {
-  console.log(typeof id);
-  window.location.href = '/blog?id=' + 10;
+  // console.log( id);
+  window.location.href = '/blog?id=' + id;
 }
 
 function addBlog() {

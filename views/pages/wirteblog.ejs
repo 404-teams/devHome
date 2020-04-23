@@ -14,6 +14,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <style>
+    body,
+    html {
+      height: 100%;
+    }
+
     .dropdown {
       float: left;
       overflow: hidden;
@@ -141,13 +146,21 @@
         </div>   </script>
   <script id="fontplace" type="x-tmpl-mustache">
         <div>
-        <form name="place">
+        <form name="place"  style="    display: flex;
+        flex-direction: column;
+        width: 54px;
+        padding: 11px;
+        background: gray;
+        border-radius: 7px;">
             <select onchange="plChange(event)" >
                 <option value="center">المنتصف</option>
                 <option value="right">يمين</option>
                 <option value="left">يسار</option>
               </select>
-         <button onclick="finshPlace()">تم</button>   
+         <button  style="    margin: 5px 0 0 0;
+         border: 0;
+         border-radius: 4px;
+         background: orange;" onclick="finshPlace()">تم</button>   
     </form>  
 </div> 
     </script>
@@ -164,7 +177,7 @@
     </script>
   <script id="display" type="x-tmpl-mustache">
       <div>
-        <form name="display">
+        <form name="display" >
             <select onchange="diChange(event)" >
                 <option value="inline-block">كتلة مضمنة</option>
                 <option value="block">كتلة</option>
@@ -176,36 +189,58 @@
     </script>
   <script id="imgsize" type="x-tmpl-mustache">
       <div>
-        <form name="size">
+        <form name="size" style=" display: flex;
+        flex-direction: column;
+        width: 52px;
+        background:#51596e;
+        padding: 12px;
+        border-radius: 10px;">
+        <label for="" style="color:#ffffff">العرض </label>
             <input type="number" name="width"  style="width:50px" onkeyup="sizechimg(event)" onchange="sizechimg(event)" value={{wsize}} />
-            <label for="">العرض </label>
+            <label for="" style="color:#ffffff">الطول </label>
             <input type="number" name="height"  style="width:50px" onkeyup="sizechimg(event)" onchange="sizechimg(event)" value={{hsize}} />
-            <label for="">الطول </label>
-         <button onclick="finshSize()">تم</button>   
+         <button   style="  border: 0;
+         padding: 2px;
+         background: orange;
+         border-radius: 4px;" onclick="finshSize()">تم</button>   
     </form>
 </div>   
     </script>
   <script id="fontsize" type="x-tmpl-mustache">
       <div>
-        <form name="size">
+        <form name="size" style="    display: flex;
+        flex-direction: column;
+        width: 54px;
+        padding: 11px;
+        background:#51596e;
+        border-radius: 7px;">
         <input type="number"  style="width:50px" onkeyup="sizech(event)" onchange="sizech(event)" value={{size}} />
-         <button onclick="finshSize()">تم</button>   
+         <button style="    margin: 5px 0 0 0;
+         border: 0;
+         border-radius: 4px;
+         background: orange;" onclick="finshSize()">تم</button>   
     </form>
 </div>   
     </script>
   <script id="h1" type="x-tmpl-mustache">
-        <h1 id='{{ids}}' contenteditable="true" style="display: inline-block;width:100%;text-align: right;">.... النص</h1>
+        <h1 id='{{ids}}' contenteditable="true" style="margin: 10px 0 10px 0;display: inline-block;width:100%;text-align: right;">.... النص</h1>
       </script>
   <script id="img" type="x-tmpl-mustache">
         <img id='{{ids}}' src="{{img}}"  alt="{{alt}}" style="display: inline-block;width:200px;height:200px">
       </script>
   <script id="p" type="x-tmpl-mustache">
-        <p id='{{ids}}' contenteditable="true" style="display: inline-block;width:100%;text-align: right;">.... النص</p>
+        <p id='{{ids}}' contenteditable="true" style="display: inline-block;margin: 10px 0 10px 0;width:100%;text-align: right;">.... النص</p>
       </script>
   <script id="addimg" type="x-tmpl-mustache">
        <div>
-        <div id='addItem' class="addItem" style="position:absolute;left=40px">
-            <i onclick="remove()" class="fas fa-skull"></i>
+        <div id='addItem' class="addItem" style="position: absolute;
+        left=40px: ;
+        justify-content: center;
+        background: #51596e;
+        padding: 10px;
+        border-radius: 10px;">
+            <i onclick="remove()" class="fas fa-times" style="    margin: 0 0 5px 0;"></i>
+           
             <div>
                 <input id="imgurl" onkeypress="return finshImg(event)" type="text" placeholder="url here ....">
             </div>
@@ -221,28 +256,38 @@
         position: absolute;
         top: 125px;
         left: 33px;
-        background: grey;">
+        background: #51596e;
+        padding: 10px;
+        border-radius: 10px;">
             <input type="color" id="color" style="background: none; border: 0;"/> 
-            <button>done</button>
+            <button style="    background: #efa41d;
+            border: 0;
+            border-radius: 4px;">done</button>
         </form>
     </div>
     </script>
 </head>
 
 <body style="height: 100%;">
+
   <%- include ('../layout/header.ejs') %>
   <main>
-    <section id="blog" style="background: #ffffff ; min-height: 100%; width: 80%; margin: auto; padding: 5px 0 50px 0 ;">
+    <section id="blog"
+      style="padding: 30px 0 70px 0;background: #ffffff ; min-height: 100%; width: 80%; margin: auto; padding: 5px 0 50px 0 ;">
       <h1 id="0" class="item" name="text" contenteditable="true"
-        style="font-size: 50px; text-align: center; display: inline-block; width: 100%; color: #e89a3d;">....العنوان</h1>
+        style="font-size: 50px; text-align: center; display: inline-block; width: 100%; ">....العنوان</h1>
       <button name="doneall" style="
-      position: fixed;
-      top: 33px;
-      left: 1107px;" onclick="done()">DONE</button>
+     position: fixed;
+    top: 100px;
+    background: orange;
+    left: 1107px;
+    border: 0;
+    padding: 10px 20px;
+    border-radius: 15px;font-size: larger;" onclick="done()">نشر</button>
     </section>
   </main>
- 
-  <footer>
+
+  <footer style="position: fixed; bottom: 0;left: 0;right: 0;height: 9%;">
     <div class="footer-content">
       <div class="footer-section links">
         <p id="follow">تابعنا على </p>

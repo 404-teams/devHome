@@ -71,7 +71,7 @@ DB.showBlog = function(safeValues){
 }
 
 DB.showBlogs = function(){
-  let SQL = 'SELECT b.tittle,b.img,b.id,u.id as userid,u.name FROM blogs b INNER JOIN users u ON u.id=b.user_id ORDER BY b.id DESC'
+  let SQL = 'SELECT b.des,b.tittle,b.img,b.id,u.id as userid,u.name FROM blogs b INNER JOIN users u ON u.id=b.user_id ORDER BY b.id DESC'
   return client.query(SQL)
 }
 
